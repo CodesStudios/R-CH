@@ -21,35 +21,58 @@
 	
 •───────•°•❀•°•───────•୧‿̩͙ ˖︵ꕀ ⠀𓏶 ̣̣̥⠀ ꕀ︵˖ ̩͙‿୨•───────•°•❀•°•───────•]]
 
--- 🔐 CodysHUB Key System (Top of Script)
-local ValidKey = "G7kP-29Xr-VtLm-Q84a-YZ2d" -- You can rotate this anytime
-local HttpService = game:GetService("HttpService")
+-- 🔐 CodysHUB Key System
+local ValidKey = "G7kP-29Xr-VtLm-Q84a-YZ2d"
 
-if not isfile or not writefile then
-    warn("⚠️ Your executor doesn't support file functions (isfile/writefile)")
-    return
+local player = game:GetService("Players").LocalPlayer
+local inputBox = Instance.new("ScreenGui", player:WaitForChild("PlayerGui"))
+inputBox.Name = "KeyPrompt"
+
+local frame = Instance.new("Frame", inputBox)
+frame.Size = UDim2.new(0, 300, 0, 150)
+frame.Position = UDim2.new(0.5, -150, 0.5, -75)
+frame.BackgroundColor3 = Color3.fromRGB(20, 20, 40)
+frame.BorderSizePixel = 0
+
+local title = Instance.new("TextLabel", frame)
+title.Size = UDim2.new(1, 0, 0, 30)
+title.BackgroundTransparency = 1
+title.Text = "Enter CodysHUB Key"
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.Font = Enum.Font.SourceSansBold
+title.TextSize = 22
+
+local textbox = Instance.new("TextBox", frame)
+textbox.Position = UDim2.new(0.1, 0, 0.4, 0)
+textbox.Size = UDim2.new(0.8, 0, 0, 30)
+textbox.PlaceholderText = "Enter key..."
+textbox.Text = ""
+textbox.TextScaled = true
+textbox.Font = Enum.Font.SourceSans
+textbox.TextColor3 = Color3.new(1, 1, 1)
+textbox.BackgroundColor3 = Color3.fromRGB(40, 40, 80)
+
+local button = Instance.new("TextButton", frame)
+button.Position = UDim2.new(0.3, 0, 0.75, 0)
+button.Size = UDim2.new(0.4, 0, 0, 30)
+button.Text = "Submit"
+button.TextScaled = true
+button.Font = Enum.Font.SourceSansBold
+button.TextColor3 = Color3.new(1, 1, 1)
+button.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
+
+local function validate()
+	if textbox.Text == ValidKey then
+		inputBox:Destroy()
+		-- ✅ PASTE YOUR LONG SCRIPT HERE
+	else
+		button.Text = "❌ Invalid"
+		wait(1)
+		button.Text = "Submit"
+	end
 end
 
-local keyFile = "codys_hub_key.txt"
-
-if not isfile(keyFile) then
-    local userKey = tostring(game:GetService("Players").LocalPlayer:Prompt("Enter CodysHUB Key"))
-    writefile(keyFile, userKey)
-end
-
-local enteredKey = readfile(keyFile)
-
-if enteredKey ~= ValidKey then
-    warn("❌ Invalid key. Please delete 'codys_hub_key.txt' and try again.")
-    game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "CodysHUB",
-        Text = "❌ Invalid key.",
-        Duration = 5
-    })
-    return
-end
-
--- ✅ Continue loading CodysHUB...
+button.MouseButton1Click:Connect(validate)
 
 
 --! Debugger
