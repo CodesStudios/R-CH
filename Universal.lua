@@ -21,35 +21,7 @@
 	
 •───────•°•❀•°•───────•୧‿̩͙ ˖︵ꕀ ⠀𓏶 ̣̣̥⠀ ꕀ︵˖ ̩͙‿୨•───────•°•❀•°•───────•]]
 
--- 🔐 CodysHUB Key System (Top of Script)
-local ValidKey = "G7kP-29Xr-VtLm-Q84a-YZ2d" -- You can rotate this anytime
-local HttpService = game:GetService("HttpService")
 
-if not isfile or not writefile then
-    warn("⚠️ Your executor doesn't support file functions (isfile/writefile)")
-    return
-end
-
-local keyFile = "codys_hub_key.txt"
-
-if not isfile(keyFile) then
-    local userKey = tostring(game:GetService("Players").LocalPlayer:Prompt("Enter CodysHUB Key"))
-    writefile(keyFile, userKey)
-end
-
-local enteredKey = readfile(keyFile)
-
-if enteredKey ~= ValidKey then
-    warn("❌ Invalid key. Please delete 'codys_hub_key.txt' and try again.")
-    game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "CodysHUB",
-        Text = "❌ Invalid key.",
-        Duration = 5
-    })
-    return
-end
-
--- ✅ Continue loading CodysHUB...
 
 
 --! Debugger
