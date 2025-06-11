@@ -20,4 +20,2499 @@
 	Email: codesstudiosdevelopment@gmail.com
 	
 •───────•°•❀•°•───────•୧‿̩͙ ˖︵ꕀ ⠀𓏶 ̣̣̥⠀ ꕀ︵˖ ̩͙‿୨•───────•°•❀•°•───────•]]
-local v0="G7kP-29Xr-VtLm-Q84a-YZ2d";local v1=game:GetService("HttpService");if ( not isfile or  not writefile) then warn("⚠️ Your executor doesn't support file functions (isfile/writefile)");return;end local v2="codys_hub_key.txt";if  not isfile(v2) then local v286=tostring(game:GetService("Players").LocalPlayer:Prompt("Enter CodysHUB Key"));writefile(v2,v286);end local v3=readfile(v2);if (v3~=v0) then warn("❌ Invalid key. Please delete 'codys_hub_key.txt' and try again.");game:GetService("StarterGui"):SetCore("SendNotification",{Title="CodysHUB",Text="❌ Invalid key.",Duration=5});return;end local v4=false;if v4 then getfenv().getfenv=function() return setmetatable({},{__index=function() return function() return true;end;end});end;end local v1=game:GetService("HttpService");local v5=game:GetService("Players");local v6=game:GetService("UserInputService");local v7=game:GetService("RunService");local v8=game:GetService("TweenService");local v9={TabWidth=160,Size={580,460},Theme="VSC Dark High Contrast",Acrylic=false,Transparency=true,MinimizeKey="RightShift",ShowNotifications=true,ShowWarnings=true,RenderingMode="RenderStepped",AutoImport=true};local v10={};v10.ImportSettings=function(v158) pcall(function() if ( not v4 and getfenv().isfile and getfenv().readfile and getfenv().isfile("UISettings.ttwizz") and getfenv().readfile("UISettings.ttwizz")) then for v597,v598 in next,v1:JSONDecode(getfenv().readfile("UISettings.ttwizz")) do v9[v597]=v598;end end end);end;v10.ExportSettings=function(v159) pcall(function() if ( not v4 and getfenv().isfile and getfenv().readfile and getfenv().writefile) then getfenv().writefile("UISettings.ttwizz",v1:JSONEncode(v9));end end);end;v10:ImportSettings();v9.__LAST_RUN__=os.date();v10:ExportSettings();local v14={};v14.PackColour=function(v160,v161) return ((typeof(v161)=="Color3") and {R=v161.R * 255 ,G=v161.G * 255 ,B=v161.B * 255 }) or ((typeof(v161)=="table") and v161) or {R=255,G=255,B=255} ;end;v14.UnpackColour=function(v162,v163) return ((typeof(v163)=="table") and Color3.fromRGB(v163.R,v163.G,v163.B)) or ((typeof(v163)=="Color3") and v163) or Color3.fromRGB(255,255,255) ;end;local v17={};pcall(function() if ( not v4 and getfenv().isfile and getfenv().readfile and getfenv().isfile(string.format("%s.ttwizz",game.GameId)) and getfenv().readfile(string.format("%s.ttwizz",game.GameId)) and v9.AutoImport) then v17=v1:JSONDecode(getfenv().readfile(string.format("%s.ttwizz",game.GameId)));for v509,v510 in next,v17 do if ((v509=="FoVColour") or (v509=="NameESPOutlineColour") or (v509=="ESPColour")) then v17[v509]=v14:UnpackColour(v510);end end end end);local v18={};v18.Aimbot=v17['Aimbot'] or false ;v18.OnePressAimingMode=v17['OnePressAimingMode'] or false ;v18.AimKey=v17['AimKey'] or "RMB" ;v18.AimMode=v17['AimMode'] or "Camera" ;v18.SilentAimMethods=v17['SilentAimMethods'] or {"Mouse.Hit / Mouse.Target","GetMouseLocation"} ;v18.SilentAimChance=v17['SilentAimChance'] or 100 ;v18.OffAimbotAfterKill=v17['OffAimbotAfterKill'] or false ;v18.AimPartDropdownValues=v17['AimPartDropdownValues'] or {"Head","HumanoidRootPart"} ;v18.AimPart=v17['AimPart'] or "HumanoidRootPart" ;v18.RandomAimPart=v17['RandomAimPart'] or false ;v18.UseOffset=v17['UseOffset'] or false ;v18.OffsetType=v17['OffsetType'] or "Static" ;v18.StaticOffsetIncrement=v17['StaticOffsetIncrement'] or 10 ;v18.DynamicOffsetIncrement=v17['DynamicOffsetIncrement'] or 10 ;v18.AutoOffset=v17['AutoOffset'] or false ;v18.MaxAutoOffset=v17['MaxAutoOffset'] or 50 ;v18.UseSensitivity=v17['UseSensitivity'] or false ;v18.Sensitivity=v17['Sensitivity'] or 50 ;v18.UseNoise=v17['UseNoise'] or false ;v18.NoiseFrequency=v17['NoiseFrequency'] or 50 ;v18.SpinBot=v17['SpinBot'] or false ;v18.OnePressSpinningMode=v17['OnePressSpinningMode'] or false ;v18.SpinKey=v17['SpinKey'] or "Q" ;v18.SpinBotVelocity=v17['SpinBotVelocity'] or 50 ;v18.SpinPartDropdownValues=v17['SpinPartDropdownValues'] or {"Head","HumanoidRootPart"} ;v18.SpinPart=v17['SpinPart'] or "HumanoidRootPart" ;v18.RandomSpinPart=v17['RandomSpinPart'] or false ;v18.TriggerBot=v17['TriggerBot'] or false ;v18.OnePressTriggeringMode=v17['OnePressTriggeringMode'] or false ;v18.SmartTriggerBot=v17['SmartTriggerBot'] or false ;v18.TriggerKey=v17['TriggerKey'] or "E" ;v18.TriggerBotChance=v17['TriggerBotChance'] or 100 ;v18.AliveCheck=v17['AliveCheck'] or false ;v18.GodCheck=v17['GodCheck'] or false ;v18.TeamCheck=v17['TeamCheck'] or false ;v18.FriendCheck=v17['FriendCheck'] or false ;v18.FollowCheck=v17['FollowCheck'] or false ;v18.VerifiedBadgeCheck=v17['VerifiedBadgeCheck'] or false ;v18.WallCheck=v17['WallCheck'] or false ;v18.WaterCheck=v17['WaterCheck'] or false ;v18.FoVCheck=v17['FoVCheck'] or false ;v18.FoVRadius=v17['FoVRadius'] or 100 ;v18.MagnitudeCheck=v17['MagnitudeCheck'] or false ;v18.TriggerMagnitude=v17['TriggerMagnitude'] or 500 ;v18.TransparencyCheck=v17['TransparencyCheck'] or false ;v18.IgnoredTransparency=v17['IgnoredTransparency'] or 0.5 ;v18.WhitelistedGroupCheck=v17['WhitelistedGroupCheck'] or false ;v18.WhitelistedGroup=v17['WhitelistedGroup'] or 0 ;v18.BlacklistedGroupCheck=v17['BlacklistedGroupCheck'] or false ;v18.BlacklistedGroup=v17['BlacklistedGroup'] or 0 ;v18.IgnoredPlayersCheck=v17['IgnoredPlayersCheck'] or false ;v18.IgnoredPlayersDropdownValues=v17['IgnoredPlayersDropdownValues'] or {} ;v18.IgnoredPlayers=v17['IgnoredPlayers'] or {} ;v18.TargetPlayersCheck=v17['TargetPlayersCheck'] or false ;v18.TargetPlayersDropdownValues=v17['TargetPlayersDropdownValues'] or {} ;v18.TargetPlayers=v17['TargetPlayers'] or {} ;v18.PremiumCheck=v17['PremiumCheck'] or false ;v18.FoV=v17['FoV'] or false ;v18.FoVKey=v17['FoVKey'] or "R" ;v18.FoVThickness=v17['FoVThickness'] or 2 ;v18.FoVOpacity=v17['FoVOpacity'] or 0.8 ;v18.FoVFilled=v17['FoVFilled'] or false ;v18.FoVColour=v17['FoVColour'] or Color3.fromRGB(255,255,255) ;v18.SmartESP=v17['SmartESP'] or false ;v18.ESPKey=v17['ESPKey'] or "T" ;v18.ESPBox=v17['ESPBox'] or false ;v18.ESPBoxFilled=v17['ESPBoxFilled'] or false ;v18.NameESP=v17['NameESP'] or false ;v18.NameESPFont=v17['NameESPFont'] or "Monospace" ;v18.NameESPSize=v17['NameESPSize'] or 16 ;v18.NameESPOutlineColour=v17['NameESPOutlineColour'] or Color3.fromRGB(0,0,0) ;v18.HealthESP=v17['HealthESP'] or false ;v18.MagnitudeESP=v17['MagnitudeESP'] or false ;v18.TracerESP=v17['TracerESP'] or false ;v18.ESPThickness=v17['ESPThickness'] or 2 ;v18.ESPOpacity=v17['ESPOpacity'] or 0.8 ;v18.ESPColour=v17['ESPColour'] or Color3.fromRGB(255,255,255) ;v18.ESPUseTeamColour=v17['ESPUseTeamColour'] or false ;v18.RainbowVisuals=v17['RainbowVisuals'] or false ;v18.RainbowDelay=v17['RainbowDelay'] or 5 ;local v99=v5.LocalPlayer;local v100=v99:GetMouse();local v101=v6.KeyboardEnabled and v6.MouseEnabled ;local v102={"🎅%s❄️","☃️%s🏂","🌷%s☘️","🌺%s🎀","🐝%s🌼","🌈%s😎","🌞%s🏖️","☀️%s💐","🌦%s🍁","🎃%s💀","🍂%s☕","🎄%s🎁"};local v103={"💫PREMIUM💫","✨PREMIUM✨","🌟PREMIUM🌟","⭐PREMIUM⭐","🤩PREMIUM🤩"};local function v104(v164) if ((typeof(v164)=="string") and ( #v164>0)) then for v511,v512 in next,v5:GetPlayers() do if (string.sub(string.lower(v512.Name),1, #string.lower(v164))==string.lower(v164)) then return v512.Name;end end end return "";end local v105="";local v106=nil;local v107=false;local v108=true;local v109=os.clock();local v110=false;local v111=nil;local v112=nil;local v113=v6.MouseDeltaSensitivity;local v114=false;local v115=false;local v116=false;local v117=false;do if ((typeof(script)=="Instance") and script:FindFirstChild("Fluent") and script:FindFirstChild("Fluent"):IsA("ModuleScript")) then v106=require(script:FindFirstChild("Fluent"));else local v413,v414=pcall(function() return game:HttpGet("https://twix.cyou/Fluent.txt",true);end);if (v413 and (typeof(v414)=="string") and string.find(v414,"dawid")) then v106=getfenv().loadstring(v414)();if v106.Premium then return getfenv().loadstring(game:HttpGet("https://twix.cyou/Aimbot.txt",true))();end local v600,v601=pcall(function() return game:HttpGet("https://twix.cyou/AimbotStatus.json",true);end);if (v600 and (typeof(v601)=="string") and pcall(v1.JSONDecode,v1,v601) and (typeof(v1:JSONDecode(v601).message)=="string")) then v105=v1:JSONDecode(v601).message;end else return;end end end local v118;v118=v6:GetPropertyChangedSignal("MouseDeltaSensitivity"):Connect(function() if  not v106 then v118:Disconnect();elseif ( not v110 or ( not v4 and ((getfenv().mousemoverel and v101 and (v18.AimMode=="Mouse")) or (getfenv().hookmetamethod and getfenv().newcclosure and getfenv().checkcaller and getfenv().getnamecallmethod and (v18.AimMode=="Silent"))))) then v113=v6.MouseDeltaSensitivity;end end);do local v165=v106:CreateWindow({Title=string.format("%s <b><i>%s</i></b>",string.format(v102[os.date("*t").month],"Cody's Script"),(( #v105>0) and v105) or "🔥FREE🔥" ),SubTitle="By @CodesStudios",TabWidth=v9.TabWidth,Size=UDim2.fromOffset(table.unpack(v9.Size)),Theme=v9.Theme,Acrylic=v9.Acrylic,MinimizeKey=v9.MinimizeKey});local v166={Aimbot=v165:AddTab({Title="Aimbot",Icon="crosshair"})};v165:SelectTab(1);v166.Aimbot:AddParagraph({Title=string.format("%s 🔥FREE🔥",string.format(v102[os.date("*t").month],"Open Aimbot")),Content="✨Universal Aim Assist Framework✨\nhttps://github.com/CodesStudios/Roblox-Script"});local v167=v166.Aimbot:AddSection("Aimbot");local v168=v167:AddToggle("Aimbot",{Title="Aimbot",Description="Toggles the Aimbot",Default=v18.Aimbot});v168:OnChanged(function(v288) v18.Aimbot=v288;if  not v101 then v110=v288;end end);if v101 then local v415=v167:AddToggle("OnePressAimingMode",{Title="One-Press Mode",Description="Uses the One-Press Mode instead of the Holding Mode",Default=v18.OnePressAimingMode});v415:OnChanged(function(v513) v18.OnePressAimingMode=v513;end);local v416=v167:AddKeybind("AimKey",{Title="Aim Key",Description="Changes the Aim Key",Default=v18.AimKey,ChangedCallback=function(v515) v18.AimKey=v515;end});v18.AimKey=((v416.Value~="RMB") and Enum.KeyCode[v416.Value]) or Enum.UserInputType.MouseButton2 ;end local v169=v167:AddDropdown("AimMode",{Title="Aim Mode",Description="Changes the Aim Mode",Values={"Camera"},Default=v18.AimMode,Callback=function(v290) v18.AimMode=v290;end});if (getfenv().mousemoverel and v101) then table.insert(v169.Values,"Mouse");v169:BuildDropdownList();else v107=true;end if (getfenv().hookmetamethod and getfenv().newcclosure and getfenv().checkcaller and getfenv().getnamecallmethod) then table.insert(v169.Values,"Silent");v169:BuildDropdownList();local v418=v167:AddDropdown("SilentAimMethods",{Title="Silent Aim Methods",Description="Sets the Silent Aim Methods",Values={"Mouse.Hit / Mouse.Target","GetMouseLocation","Raycast","FindPartOnRay","FindPartOnRayWithIgnoreList","FindPartOnRayWithWhitelist"},Multi=true,Default=v18.SilentAimMethods});v418:OnChanged(function(v517) v18.SilentAimMethods={};for v603,v604 in next,v517 do if (typeof(v603)=="string") then table.insert(v18.SilentAimMethods,v603);end end end);v167:AddSlider("SilentAimChance",{Title="Silent Aim Chance",Description="Changes the Hit Chance for Silent Aim",Default=v18.SilentAimChance,Min=1,Max=100,Rounding=1,Callback=function(v519) v18.SilentAimChance=v519;end});else v107=true;end local v170=v167:AddToggle("OffAimbotAfterKill",{Title="Off After Kill",Description="Disables the Aiming Mode after killing a Target",Default=v18.OffAimbotAfterKill});v170:OnChanged(function(v292) v18.OffAimbotAfterKill=v292;end);local v171=v167:AddDropdown("AimPart",{Title="Aim Part",Description="Changes the Aim Part",Values=v18.AimPartDropdownValues,Default=v18.AimPart,Callback=function(v294) v18.AimPart=v294;end});local v172=v167:AddToggle("RandomAimPart",{Title="Random Aim Part",Description="Selects every second a Random Aim Part from Dropdown",Default=v18.RandomAimPart});v172:OnChanged(function(v296) v18.RandomAimPart=v296;end);v167:AddInput("AddAimPart",{Title="Add Aim Part",Description="After typing, press Enter",Finished=true,Placeholder="Part Name",Callback=function(v298) if (( #v298>0) and  not table.find(v18.AimPartDropdownValues,v298)) then table.insert(v18.AimPartDropdownValues,v298);v171:SetValue(v298);end end});v167:AddInput("RemoveAimPart",{Title="Remove Aim Part",Description="After typing, press Enter",Finished=true,Placeholder="Part Name",Callback=function(v299) if (( #v299>0) and table.find(v18.AimPartDropdownValues,v299)) then if (v18.AimPart==v299) then v171:SetValue(nil);end table.remove(v18.AimPartDropdownValues,table.find(v18.AimPartDropdownValues,v299));v171:SetValues(v18.AimPartDropdownValues);end end});v167:AddButton({Title="Clear All Items",Description="Removes All Elements",Callback=function() local v300= #v18.AimPartDropdownValues;v171:SetValue(nil);v18.AimPartDropdownValues={};v171:SetValues(v18.AimPartDropdownValues);v165:Dialog({Title=string.format(v102[os.date("*t").month],"Open Aimbot"),Content=((v300==0) and "Nothing has been cleared!") or ((v300==1) and "1 Item has been cleared!") or string.format("%s Items have been cleared!",v300) ,Buttons={{Title="Confirm"}}});end});local v173=v166.Aimbot:AddSection("Aim Offset");local v174=v173:AddToggle("UseOffset",{Title="Use Offset",Description="Toggles the Offset",Default=v18.UseOffset});v174:OnChanged(function(v302) v18.UseOffset=v302;end);v173:AddDropdown("OffsetType",{Title="Offset Type",Description="Changes the Offset Type",Values={"Static","Dynamic","Static & Dynamic"},Default=v18.OffsetType,Callback=function(v304) v18.OffsetType=v304;end});v173:AddSlider("StaticOffsetIncrement",{Title="Static Offset Increment",Description="Changes the Static Offset Increment",Default=v18.StaticOffsetIncrement,Min=1,Max=50,Rounding=1,Callback=function(v306) v18.StaticOffsetIncrement=v306;end});v173:AddSlider("DynamicOffsetIncrement",{Title="Dynamic Offset Increment",Description="Changes the Dynamic Offset Increment",Default=v18.DynamicOffsetIncrement,Min=1,Max=50,Rounding=1,Callback=function(v308) v18.DynamicOffsetIncrement=v308;end});local v175=v173:AddToggle("AutoOffset",{Title="Auto Offset",Description="Toggles the Auto Offset",Default=v18.AutoOffset});v175:OnChanged(function(v310) v18.AutoOffset=v310;end);v173:AddSlider("MaxAutoOffset",{Title="Max Auto Offset",Description="Changes the Max Auto Offset",Default=v18.MaxAutoOffset,Min=1,Max=50,Rounding=1,Callback=function(v312) v18.MaxAutoOffset=v312;end});local v176=v166.Aimbot:AddSection("Sensitivity & Noise");local v177=v176:AddToggle("UseSensitivity",{Title="Use Sensitivity",Description="Toggles the Sensitivity",Default=v18.UseSensitivity});v177:OnChanged(function(v314) v18.UseSensitivity=v314;end);v176:AddSlider("Sensitivity",{Title="Sensitivity",Description="Smoothes out the Mouse / Camera Movements when Aiming",Default=v18.Sensitivity,Min=1,Max=100,Rounding=1,Callback=function(v316) v18.Sensitivity=v316;end});local v178=v176:AddToggle("UseNoise",{Title="Use Noise",Description="Toggles the Camera Shaking when Aiming",Default=v18.UseNoise});v178:OnChanged(function(v318) v18.UseNoise=v318;end);v176:AddSlider("NoiseFrequency",{Title="Noise Frequency",Description="Changes the Noise Frequency",Default=v18.NoiseFrequency,Min=1,Max=100,Rounding=1,Callback=function(v320) v18.NoiseFrequency=v320;end});v166.Bots=v165:AddTab({Title="Bots",Icon="bot"});v166.Bots:AddParagraph({Title=string.format("%s 🔥FREE🔥",string.format(v102[os.date("*t").month],"Open Aimbot")),Content="✨Universal Aim Assist Framework✨\nhttps://github.com/CodesStudios/Roblox-Script/blob/main/Universal.lua"});local v180=v166.Bots:AddSection("SpinBot");v180:AddParagraph({Title="NOTE",Content="SpinBot does not function normally in RenderStepped Rendering Mode. Set a different Rendering Mode value than RenderStepped to solve this problem."});local v181=v180:AddToggle("SpinBot",{Title="SpinBot",Description="Toggles the SpinBot",Default=v18.SpinBot});v181:OnChanged(function(v322) v18.SpinBot=v322;if  not v101 then v114=v322;end end);if v101 then local v419=v180:AddToggle("OnePressSpinningMode",{Title="One-Press Mode",Description="Uses the One-Press Mode instead of the Holding Mode",Default=v18.OnePressSpinningMode});v419:OnChanged(function(v521) v18.OnePressSpinningMode=v521;end);local v420=v180:AddKeybind("SpinKey",{Title="Spin Key",Description="Changes the Spin Key",Default=v18.SpinKey,ChangedCallback=function(v523) v18.SpinKey=v523;end});v18.SpinKey=((v420.Value~="RMB") and Enum.KeyCode[v420.Value]) or Enum.UserInputType.MouseButton2 ;end v180:AddSlider("SpinBotVelocity",{Title="SpinBot Velocity",Description="Changes the SpinBot Velocity",Default=v18.SpinBotVelocity,Min=1,Max=50,Rounding=1,Callback=function(v324) v18.SpinBotVelocity=v324;end});local v182=v180:AddDropdown("SpinPart",{Title="Spin Part",Description="Changes the Spin Part",Values=v18.SpinPartDropdownValues,Default=v18.SpinPart,Callback=function(v326) v18.SpinPart=v326;end});local v183=v180:AddToggle("RandomSpinPart",{Title="Random Spin Part",Description="Selects every second a Random Spin Part from Dropdown",Default=v18.RandomSpinPart});v183:OnChanged(function(v328) v18.RandomSpinPart=v328;end);v180:AddInput("AddSpinPart",{Title="Add Spin Part",Description="After typing, press Enter",Finished=true,Placeholder="Part Name",Callback=function(v330) if (( #v330>0) and  not table.find(v18.SpinPartDropdownValues,v330)) then table.insert(v18.SpinPartDropdownValues,v330);v182:SetValue(v330);end end});v180:AddInput("RemoveSpinPart",{Title="Remove Spin Part",Description="After typing, press Enter",Finished=true,Placeholder="Part Name",Callback=function(v331) if (( #v331>0) and table.find(v18.SpinPartDropdownValues,v331)) then if (v18.SpinPart==v331) then v182:SetValue(nil);end table.remove(v18.SpinPartDropdownValues,table.find(v18.SpinPartDropdownValues,v331));v182:SetValues(v18.SpinPartDropdownValues);end end});v180:AddButton({Title="Clear All Items",Description="Removes All Elements",Callback=function() local v332= #v18.SpinPartDropdownValues;v182:SetValue(nil);v18.SpinPartDropdownValues={};v182:SetValues(v18.SpinPartDropdownValues);v165:Dialog({Title=string.format(v102[os.date("*t").month],"Open Aimbot"),Content=((v332==0) and "Nothing has been cleared!") or ((v332==1) and "1 Item has been cleared!") or string.format("%s Items have been cleared!",v332) ,Buttons={{Title="Confirm"}}});end});if (getfenv().mouse1click and v101) then local v422=v166.Bots:AddSection("TriggerBot");local v423=v422:AddToggle("TriggerBot",{Title="TriggerBot",Description="Toggles the TriggerBot",Default=v18.TriggerBot});v423:OnChanged(function(v525) v18.TriggerBot=v525;end);local v424=v422:AddToggle("OnePressTriggeringMode",{Title="One-Press Mode",Description="Uses the One-Press Mode instead of the Holding Mode",Default=v18.OnePressTriggeringMode});v424:OnChanged(function(v527) v18.OnePressTriggeringMode=v527;end);local v425=v422:AddToggle("SmartTriggerBot",{Title="Smart TriggerBot",Description="Uses the TriggerBot only when Aiming",Default=v18.SmartTriggerBot});v425:OnChanged(function(v529) v18.SmartTriggerBot=v529;end);local v426=v422:AddKeybind("TriggerKey",{Title="Trigger Key",Description="Changes the Trigger Key",Default=v18.TriggerKey,ChangedCallback=function(v531) v18.TriggerKey=v531;end});v18.TriggerKey=((v426.Value~="RMB") and Enum.KeyCode[v426.Value]) or Enum.UserInputType.MouseButton2 ;v422:AddSlider("TriggerBotChance",{Title="TriggerBot Chance",Description="Changes the Hit Chance for TriggerBot",Default=v18.TriggerBotChance,Min=1,Max=100,Rounding=1,Callback=function(v533) v18.TriggerBotChance=v533;end});else v107=true;end v166.Checks=v165:AddTab({Title="Checks",Icon="list-checks"});v166.Checks:AddParagraph({Title=string.format("%s 🔥FREE🔥",string.format(v102[os.date("*t").month],"Open Aimbot")),Content="✨Universal Aim Assist Framework✨\nhttps://github.com/CodesStudios/Roblox-Script/blob/main/Universal.lua"});local v185=v166.Checks:AddSection("Simple Checks");local v186=v185:AddToggle("AliveCheck",{Title="Alive Check",Description="Toggles the Alive Check",Default=v18.AliveCheck});v186:OnChanged(function(v334) v18.AliveCheck=v334;end);local v187=v185:AddToggle("GodCheck",{Title="God Check",Description="Toggles the God Check",Default=v18.GodCheck});v187:OnChanged(function(v336) v18.GodCheck=v336;end);local v188=v185:AddToggle("TeamCheck",{Title="Team Check",Description="Toggles the Team Check",Default=v18.TeamCheck});v188:OnChanged(function(v338) v18.TeamCheck=v338;end);local v189=v185:AddToggle("FriendCheck",{Title="Friend Check",Description="Toggles the Friend Check",Default=v18.FriendCheck});v189:OnChanged(function(v340) v18.FriendCheck=v340;end);local v190=v185:AddToggle("FollowCheck",{Title="Follow Check",Description="Toggles the Follow Check",Default=v18.FollowCheck});v190:OnChanged(function(v342) v18.FollowCheck=v342;end);local v191=v185:AddToggle("VerifiedBadgeCheck",{Title="Verified Badge Check",Description="Toggles the Verified Badge Check",Default=v18.VerifiedBadgeCheck});v191:OnChanged(function(v344) v18.VerifiedBadgeCheck=v344;end);local v192=v185:AddToggle("WallCheck",{Title="Wall Check",Description="Toggles the Wall Check",Default=v18.WallCheck});v192:OnChanged(function(v346) v18.WallCheck=v346;end);local v193=v185:AddToggle("WaterCheck",{Title="Water Check",Description="Toggles the Water Check if Wall Check is enabled",Default=v18.WaterCheck});v193:OnChanged(function(v348) v18.WaterCheck=v348;end);local v194=v166.Checks:AddSection("Advanced Checks");local v195=v194:AddToggle("FoVCheck",{Title="FoV Check",Description="Toggles the FoV Check",Default=v18.FoVCheck});v195:OnChanged(function(v350) v18.FoVCheck=v350;end);v194:AddSlider("FoVRadius",{Title="FoV Radius",Description="Changes the FoV Radius",Default=v18.FoVRadius,Min=10,Max=1000,Rounding=1,Callback=function(v352) v18.FoVRadius=v352;end});local v196=v194:AddToggle("MagnitudeCheck",{Title="Magnitude Check",Description="Toggles the Magnitude Check",Default=v18.MagnitudeCheck});v196:OnChanged(function(v354) v18.MagnitudeCheck=v354;end);v194:AddSlider("TriggerMagnitude",{Title="Trigger Magnitude",Description="Distance between the Native and the Target Character",Default=v18.TriggerMagnitude,Min=10,Max=1000,Rounding=1,Callback=function(v356) v18.TriggerMagnitude=v356;end});local v197=v194:AddToggle("TransparencyCheck",{Title="Transparency Check",Description="Toggles the Transparency Check",Default=v18.TransparencyCheck});v197:OnChanged(function(v358) v18.TransparencyCheck=v358;end);v194:AddSlider("IgnoredTransparency",{Title="Ignored Transparency",Description="Target is ignored if its Transparency is > than / = to the set one",Default=v18.IgnoredTransparency,Min=0.1,Max=1,Rounding=1,Callback=function(v360) v18.IgnoredTransparency=v360;end});local v198=v194:AddToggle("WhitelistedGroupCheck",{Title="Whitelisted Group Check",Description="Toggles the Whitelisted Group Check",Default=v18.WhitelistedGroupCheck});v198:OnChanged(function(v362) v18.WhitelistedGroupCheck=v362;end);v194:AddInput("WhitelistedGroup",{Title="Whitelisted Group",Description="After typing, press Enter",Default=v18.WhitelistedGroup,Numeric=true,Finished=true,Placeholder="Group Id",Callback=function(v364) v18.WhitelistedGroup=(( #tostring(v364)>0) and tonumber(v364)) or 0 ;end});local v199=v194:AddToggle("BlacklistedGroupCheck",{Title="Blacklisted Group Check",Description="Toggles the Blacklisted Group Check",Default=v18.BlacklistedGroupCheck});v199:OnChanged(function(v366) v18.BlacklistedGroupCheck=v366;end);v194:AddInput("BlacklistedGroup",{Title="Blacklisted Group",Description="After typing, press Enter",Default=v18.BlacklistedGroup,Numeric=true,Finished=true,Placeholder="Group Id",Callback=function(v368) v18.BlacklistedGroup=(( #tostring(v368)>0) and tonumber(v368)) or 0 ;end});local v200=v166.Checks:AddSection("Expert Checks");local v201=v200:AddToggle("IgnoredPlayersCheck",{Title="Ignored Players Check",Description="Toggles the Ignored Players Check",Default=v18.IgnoredPlayersCheck});v201:OnChanged(function(v370) v18.IgnoredPlayersCheck=v370;end);local v202=v200:AddDropdown("IgnoredPlayers",{Title="Ignored Players",Description="Sets the Ignored Players",Values=v18.IgnoredPlayersDropdownValues,Multi=true,Default=v18.IgnoredPlayers});v202:OnChanged(function(v372) v18.IgnoredPlayers={};for v428,v429 in next,v372 do if (typeof(v428)=="string") then table.insert(v18.IgnoredPlayers,v428);end end end);v200:AddInput("AddIgnoredPlayer",{Title="Add Ignored Player",Description="After typing, press Enter",Finished=true,Placeholder="Player Name",Callback=function(v374) v374=(( #v104(v374)>0) and v104(v374)) or (pcall(v5.GetUserIdFromNameAsync,v5,v374) and pcall(v5.GetNameFromUserIdAsync,v5,v5:GetUserIdFromNameAsync(v374)) and v5:GetNameFromUserIdAsync(v5:GetUserIdFromNameAsync(v374))) or ((string.sub(v374,1,1)=="@") and ((( #v104(string.sub(v374,2))>0) and v104(string.sub(v374,2))) or (pcall(v5.GetUserIdFromNameAsync,v5,string.sub(v374,2)) and pcall(v5.GetNameFromUserIdAsync,v5,v5:GetUserIdFromNameAsync(string.sub(v374,2))) and v5:GetNameFromUserIdAsync(v5:GetUserIdFromNameAsync(string.sub(v374,2)))))) or ((string.sub(v374,1,1)=="#") and pcall(v5.GetNameFromUserIdAsync,v5,tonumber(string.sub(v374,2))) and v5:GetNameFromUserIdAsync(tonumber(string.sub(v374,2)))) or "" ;if (( #v374>0) and  not table.find(v18.IgnoredPlayersDropdownValues,v374)) then table.insert(v18.IgnoredPlayersDropdownValues,v374);if  not table.find(v18.IgnoredPlayers,v374) then v202.Value[v374]=true;table.insert(v18.IgnoredPlayers,v374);end v202:BuildDropdownList();end end});v200:AddInput("RemoveIgnoredPlayer",{Title="Remove Ignored Player",Description="After typing, press Enter",Finished=true,Placeholder="Player Name",Callback=function(v375) v375=(( #v104(v375)>0) and v104(v375)) or (pcall(v5.GetUserIdFromNameAsync,v5,v375) and pcall(v5.GetNameFromUserIdAsync,v5,v5:GetUserIdFromNameAsync(v375)) and v5:GetNameFromUserIdAsync(v5:GetUserIdFromNameAsync(v375))) or ((string.sub(v375,1,1)=="@") and ((( #v104(string.sub(v375,2))>0) and v104(string.sub(v375,2))) or (pcall(v5.GetUserIdFromNameAsync,v5,string.sub(v375,2)) and pcall(v5.GetNameFromUserIdAsync,v5,v5:GetUserIdFromNameAsync(string.sub(v375,2))) and v5:GetNameFromUserIdAsync(v5:GetUserIdFromNameAsync(string.sub(v375,2)))))) or ((string.sub(v375,1,1)=="#") and pcall(v5.GetNameFromUserIdAsync,v5,tonumber(string.sub(v375,2))) and v5:GetNameFromUserIdAsync(tonumber(string.sub(v375,2)))) or "" ;if (( #v375>0) and table.find(v18.IgnoredPlayersDropdownValues,v375)) then if table.find(v18.IgnoredPlayers,v375) then v202.Value[v375]=nil;table.remove(v18.IgnoredPlayers,table.find(v18.IgnoredPlayers,v375));v202:Display();end table.remove(v18.IgnoredPlayersDropdownValues,table.find(v18.IgnoredPlayersDropdownValues,v375));v202:SetValues(v18.IgnoredPlayersDropdownValues);end end});v200:AddButton({Title="Deselect All Items",Description="Deselects All Elements",Callback=function() local v376= #v18.IgnoredPlayers;v202:SetValue({});v165:Dialog({Title=string.format(v102[os.date("*t").month],"Open Aimbot"),Content=((v376==0) and "Nothing has been deselected!") or ((v376==1) and "1 Item has been deselected!") or string.format("%s Items have been deselected!",v376) ,Buttons={{Title="Confirm"}}});end});v200:AddButton({Title="Clear Unselected Items",Description="Removes Unselected Players",Callback=function() local v377={};local v378=0;for v430,v431 in next,v18.IgnoredPlayersDropdownValues do if table.find(v18.IgnoredPlayers,v431) then table.insert(v377,v431);else v378=v378 + 1 ;end end v18.IgnoredPlayersDropdownValues=v377;v202:SetValues(v18.IgnoredPlayersDropdownValues);v165:Dialog({Title=string.format(v102[os.date("*t").month],"Open Aimbot"),Content=((v378==0) and "Nothing has been cleared!") or ((v378==1) and "1 Item has been cleared!") or string.format("%s Items have been cleared!",v378) ,Buttons={{Title="Confirm"}}});end});local v203=v200:AddToggle("TargetPlayersCheck",{Title="Target Players Check",Description="Toggles the Target Players Check",Default=v18.TargetPlayersCheck});v203:OnChanged(function(v380) v18.TargetPlayersCheck=v380;end);local v204=v200:AddDropdown("TargetPlayers",{Title="Target Players",Description="Sets the Target Players",Values=v18.TargetPlayersDropdownValues,Multi=true,Default=v18.TargetPlayers});v204:OnChanged(function(v382) v18.TargetPlayers={};for v432,v433 in next,v382 do if (typeof(v432)=="string") then table.insert(v18.TargetPlayers,v432);end end end);v200:AddInput("AddTargetPlayer",{Title="Add Target Player",Description="After typing, press Enter",Finished=true,Placeholder="Player Name",Callback=function(v384) v384=(( #v104(v384)>0) and v104(v384)) or (pcall(v5.GetUserIdFromNameAsync,v5,v384) and pcall(v5.GetNameFromUserIdAsync,v5,v5:GetUserIdFromNameAsync(v384)) and v5:GetNameFromUserIdAsync(v5:GetUserIdFromNameAsync(v384))) or ((string.sub(v384,1,1)=="@") and ((( #v104(string.sub(v384,2))>0) and v104(string.sub(v384,2))) or (pcall(v5.GetUserIdFromNameAsync,v5,string.sub(v384,2)) and pcall(v5.GetNameFromUserIdAsync,v5,v5:GetUserIdFromNameAsync(string.sub(v384,2))) and v5:GetNameFromUserIdAsync(v5:GetUserIdFromNameAsync(string.sub(v384,2)))))) or ((string.sub(v384,1,1)=="#") and pcall(v5.GetNameFromUserIdAsync,v5,tonumber(string.sub(v384,2))) and v5:GetNameFromUserIdAsync(tonumber(string.sub(v384,2)))) or "" ;if (( #v384>0) and  not table.find(v18.TargetPlayersDropdownValues,v384)) then table.insert(v18.TargetPlayersDropdownValues,v384);if  not table.find(v18.TargetPlayers,v384) then v204.Value[v384]=true;table.insert(v18.TargetPlayers,v384);end v204:BuildDropdownList();end end});v200:AddInput("RemoveTargetPlayer",{Title="Remove Target Player",Description="After typing, press Enter",Finished=true,Placeholder="Player Name",Callback=function(v385) v385=(( #v104(v385)>0) and v104(v385)) or (pcall(v5.GetUserIdFromNameAsync,v5,v385) and pcall(v5.GetNameFromUserIdAsync,v5,v5:GetUserIdFromNameAsync(v385)) and v5:GetNameFromUserIdAsync(v5:GetUserIdFromNameAsync(v385))) or ((string.sub(v385,1,1)=="@") and ((( #v104(string.sub(v385,2))>0) and v104(string.sub(v385,2))) or (pcall(v5.GetUserIdFromNameAsync,v5,string.sub(v385,2)) and pcall(v5.GetNameFromUserIdAsync,v5,v5:GetUserIdFromNameAsync(string.sub(v385,2))) and v5:GetNameFromUserIdAsync(v5:GetUserIdFromNameAsync(string.sub(v385,2)))))) or ((string.sub(v385,1,1)=="#") and pcall(v5.GetNameFromUserIdAsync,v5,tonumber(string.sub(v385,2))) and v5:GetNameFromUserIdAsync(tonumber(string.sub(v385,2)))) or "" ;if (( #v385>0) and table.find(v18.TargetPlayersDropdownValues,v385)) then if table.find(v18.TargetPlayers,v385) then v204.Value[v385]=nil;table.remove(v18.TargetPlayers,table.find(v18.TargetPlayers,v385));v204:Display();end table.remove(v18.TargetPlayersDropdownValues,table.find(v18.TargetPlayersDropdownValues,v385));v204:SetValues(v18.TargetPlayersDropdownValues);end end});v200:AddButton({Title="Deselect All Items",Description="Deselects All Elements",Callback=function() local v386= #v18.TargetPlayers;v204:SetValue({});v165:Dialog({Title=string.format(v102[os.date("*t").month],"Open Aimbot"),Content=((v386==0) and "Nothing has been deselected!") or ((v386==1) and "1 Item has been deselected!") or string.format("%s Items have been deselected!",v386) ,Buttons={{Title="Confirm"}}});end});v200:AddButton({Title="Clear Unselected Items",Description="Removes Unselected Players",Callback=function() local v387={};local v388=0;for v434,v435 in next,v18.TargetPlayersDropdownValues do if table.find(v18.TargetPlayers,v435) then table.insert(v387,v435);else v388=v388 + 1 ;end end v18.TargetPlayersDropdownValues=v387;v204:SetValues(v18.TargetPlayersDropdownValues);v165:Dialog({Title=string.format(v102[os.date("*t").month],"Open Aimbot"),Content=((v388==0) and "Nothing has been cleared!") or ((v388==1) and "1 Item has been cleared!") or string.format("%s Items have been cleared!",v388) ,Buttons={{Title="Confirm"}}});end});local v205=v166.Checks:AddSection("Premium Checks");local v206=v205:AddToggle("PremiumCheck",{Title="Premium Check",Description="Toggles the Premium Check",Default=v18.PremiumCheck});v206:OnChanged(function(v390) v18.PremiumCheck=v390;end);v205:AddParagraph({Title=string.format("%s 💫PREMIUM💫",string.format(v102[os.date("*t").month],"Open Aimbot")),Content="✨Upgrade to unlock all Options✨\nContact @ttwiz_z via Discord to buy"});if (v4 or (getfenv().Drawing and getfenv().Drawing.new)) then v166.Visuals=v165:AddTab({Title="Visuals",Icon="box"});v166.Visuals:AddParagraph({Title=string.format("%s 🔥FREE🔥",string.format(v102[os.date("*t").month],"Open Aimbot")),Content="✨Universal Aim Assist Framework✨\nhttps://github.com/CodesStudios/Roblox-Script/blob/main/Universal.lua"});local v437=v166.Visuals:AddSection("FoV");local v438=v437:AddToggle("FoV",{Title="FoV",Description="Graphically Displays the FoV Radius",Default=v18.FoV});v438:OnChanged(function(v535) v18.FoV=v535;if  not v101 then v116=v535;end end);if v101 then local v605=v437:AddKeybind("FoVKey",{Title="FoV Key",Description="Changes the FoV Key",Default=v18.FoVKey,ChangedCallback=function(v683) v18.FoVKey=v683;end});v18.FoVKey=((v605.Value~="RMB") and Enum.KeyCode[v605.Value]) or Enum.UserInputType.MouseButton2 ;end v437:AddSlider("FoVThickness",{Title="FoV Thickness",Description="Changes the FoV Thickness",Default=v18.FoVThickness,Min=1,Max=10,Rounding=1,Callback=function(v537) v18.FoVThickness=v537;end});v437:AddSlider("FoVOpacity",{Title="FoV Opacity",Description="Changes the FoV Opacity",Default=v18.FoVOpacity,Min=0.1,Max=1,Rounding=1,Callback=function(v539) v18.FoVOpacity=v539;end});local v439=v437:AddToggle("FoVFilled",{Title="FoV Filled",Description="Makes the FoV Filled",Default=v18.FoVFilled});v439:OnChanged(function(v541) v18.FoVFilled=v541;end);v437:AddColorpicker("FoVColour",{Title="FoV Colour",Description="Changes the FoV Colour",Default=v18.FoVColour,Callback=function(v543) v18.FoVColour=v543;end});local v440=v166.Visuals:AddSection("ESP");local v441=v440:AddToggle("SmartESP",{Title="Smart ESP",Description="Does not ESP the Whitelisted Players",Default=v18.SmartESP});v441:OnChanged(function(v545) v18.SmartESP=v545;end);if v101 then local v607=v440:AddKeybind("ESPKey",{Title="ESP Key",Description="Changes the ESP Key",Default=v18.ESPKey,ChangedCallback=function(v685) v18.ESPKey=v685;end});v18.ESPKey=((v607.Value~="RMB") and Enum.KeyCode[v607.Value]) or Enum.UserInputType.MouseButton2 ;end local v442=v440:AddToggle("ESPBox",{Title="ESP Box",Description="Creates the ESP Box around the Players",Default=v18.ESPBox});v442:OnChanged(function(v547) v18.ESPBox=v547;if  not v101 then if v547 then v117=true;elseif ( not v18.ESPBox and  not v18.NameESP and  not v18.HealthESP and  not v18.MagnitudeESP and  not v18.TracerESP) then v117=false;end end end);local v443=v440:AddToggle("ESPBoxFilled",{Title="ESP Box Filled",Description="Makes the ESP Box Filled",Default=v18.ESPBoxFilled});v443:OnChanged(function(v549) v18.ESPBoxFilled=v549;end);local v444=v440:AddToggle("NameESP",{Title="Name ESP",Description="Creates the Name ESP above the Players",Default=v18.NameESP});v444:OnChanged(function(v551) v18.NameESP=v551;if  not v101 then if v551 then v117=true;elseif ( not v18.ESPBox and  not v18.NameESP and  not v18.HealthESP and  not v18.MagnitudeESP and  not v18.TracerESP) then v117=false;end end end);v440:AddDropdown("NameESPFont",{Title="Name ESP Font",Description="Changes the Name ESP Font",Values={"UI","System","Plex","Monospace"},Default=v18.NameESPFont,Callback=function(v553) v18.NameESPFont=v553;end});v440:AddSlider("NameESPSize",{Title="Name ESP Size",Description="Changes the Name ESP Size",Default=v18.NameESPSize,Min=8,Max=28,Rounding=1,Callback=function(v555) v18.NameESPSize=v555;end});v440:AddColorpicker("NameESPOutlineColour",{Title="Name ESP Outline",Description="Changes the Name ESP Outline Colour",Default=v18.NameESPOutlineColour,Callback=function(v557) v18.NameESPOutlineColour=v557;end});local v445=v440:AddToggle("HealthESP",{Title="Health ESP",Description="Creates the Health ESP in the ESP Box",Default=v18.HealthESP});v445:OnChanged(function(v559) v18.HealthESP=v559;if  not v101 then if v559 then v117=true;elseif ( not v18.ESPBox and  not v18.NameESP and  not v18.HealthESP and  not v18.MagnitudeESP and  not v18.TracerESP) then v117=false;end end end);local v446=v440:AddToggle("MagnitudeESP",{Title="Magnitude ESP",Description="Creates the Magnitude ESP in the ESP Box",Default=v18.MagnitudeESP});v446:OnChanged(function(v561) v18.MagnitudeESP=v561;if  not v101 then if v561 then v117=true;elseif ( not v18.ESPBox and  not v18.NameESP and  not v18.HealthESP and  not v18.MagnitudeESP and  not v18.TracerESP) then v117=false;end end end);local v447=v440:AddToggle("TracerESP",{Title="Tracer ESP",Description="Creates the Tracer ESP in the direction of the Players",Default=v18.TracerESP});v447:OnChanged(function(v563) v18.TracerESP=v563;if  not v101 then if v563 then v117=true;elseif ( not v18.ESPBox and  not v18.NameESP and  not v18.HealthESP and  not v18.MagnitudeESP and  not v18.TracerESP) then v117=false;end end end);v440:AddSlider("ESPThickness",{Title="ESP Thickness",Description="Changes the ESP Thickness",Default=v18.ESPThickness,Min=1,Max=10,Rounding=1,Callback=function(v565) v18.ESPThickness=v565;end});v440:AddSlider("ESPOpacity",{Title="ESP Opacity",Description="Changes the ESP Opacity",Default=v18.ESPOpacity,Min=0.1,Max=1,Rounding=1,Callback=function(v567) v18.ESPOpacity=v567;end});v440:AddColorpicker("ESPColour",{Title="ESP Colour",Description="Changes the ESP Colour",Default=v18.ESPColour,Callback=function(v569) v18.ESPColour=v569;end});local v448=v440:AddToggle("ESPUseTeamColour",{Title="Use Team Colour",Description="Makes the ESP Colour match the Target Player Team",Default=v18.ESPUseTeamColour});v448:OnChanged(function(v571) v18.ESPUseTeamColour=v571;end);local v449=v166.Visuals:AddSection("Visuals");local v450=v449:AddToggle("RainbowVisuals",{Title="Rainbow Visuals",Description="Makes the Visuals Rainbow",Default=v18.RainbowVisuals});v450:OnChanged(function(v573) v18.RainbowVisuals=v573;end);v449:AddSlider("RainbowDelay",{Title="Rainbow Delay",Description="Changes the Rainbow Delay",Default=v18.RainbowDelay,Min=1,Max=10,Rounding=1,Callback=function(v575) v18.RainbowDelay=v575;end});else v107=true;end v166.Settings=v165:AddTab({Title="Settings",Icon="settings"});v166.Settings:AddParagraph({Title=string.format("%s 🔥FREE🔥",string.format(v102[os.date("*t").month],"Open Aimbot")),Content="✨Universal Aim Assist Framework✨\nhttps://github.com/CodesStudios/Roblox-Script/blob/main/Universal.lua"});local v208=v166.Settings:AddSection("UI");v208:AddDropdown("Theme",{Title="Theme",Description="Changes the UI Theme",Values=v106.Themes,Default=v106.Theme,Callback=function(v392) v106:SetTheme(v392);v9.Theme=v392;v10:ExportSettings();end});if v106.UseAcrylic then v208:AddToggle("Acrylic",{Title="Acrylic",Description="Blurred Background requires Graphic Quality >= 8",Default=v106.Acrylic,Callback=function(v577) if ( not v577 or  not v9.ShowWarnings) then v106:ToggleAcrylic(v577);elseif v9.ShowWarnings then v165:Dialog({Title="Warning",Content="This Option can be detected! Activate it anyway?",Buttons={{Title="Confirm",Callback=function() v106:ToggleAcrylic(v577);end},{Title="Cancel",Callback=function() v106.Options.Acrylic:SetValue(false);end}}});end end});end v208:AddToggle("Transparency",{Title="Transparency",Description="Makes the UI Transparent",Default=v9.Transparency,Callback=function(v394) v106:ToggleTransparency(v394);v9.Transparency=v394;v10:ExportSettings();end});if v101 then v208:AddKeybind("MinimizeKey",{Title="Minimize Key",Description="Changes the Minimize Key",Default=v106.MinimizeKey,ChangedCallback=function() v9.MinimizeKey=v106.Options.MinimizeKey.Value;v10:ExportSettings();end});v106.MinimizeKeybind=v106.Options.MinimizeKey;end local v209=v166.Settings:AddSection("Notifications & Warnings");local v210=v209:AddToggle("ShowNotifications",{Title="Show Notifications",Description="Toggles the Notifications Show",Default=v9.ShowNotifications});v210:OnChanged(function(v396) v106.ShowNotifications=v396;v9.ShowNotifications=v396;v10:ExportSettings();end);local v211=v209:AddToggle("ShowWarnings",{Title="Show Warnings",Description="Toggles the Security Warnings Show",Default=v9.ShowWarnings});v211:OnChanged(function(v399) v9.ShowWarnings=v399;v10:ExportSettings();end);local v212=v166.Settings:AddSection("Performance");v212:AddParagraph({Title="NOTE",Content="Heartbeat fires every frame, after the physics simulation has completed. RenderStepped fires every frame, prior to the frame being rendered. Stepped fires every frame, prior to the physics simulation."});v212:AddDropdown("RenderingMode",{Title="Rendering Mode",Description="Changes the Rendering Mode",Values={"Heartbeat","RenderStepped","Stepped"},Default=v9.RenderingMode,Callback=function(v401) v9.RenderingMode=v401;v10:ExportSettings();v165:Dialog({Title=string.format(v102[os.date("*t").month],"Open Aimbot"),Content="Changes will take effect after the Restart!",Buttons={{Title="Confirm"}}});end});if (getfenv().isfile and getfenv().readfile and getfenv().writefile and getfenv().delfile) then local v453=v166.Settings:AddSection("Configuration Manager");local v454=v453:AddToggle("AutoImport",{Title="Auto Import",Description="Toggles the Auto Import",Default=v9.AutoImport});v454:OnChanged(function(v580) v9.AutoImport=v580;v10:ExportSettings();end);v453:AddParagraph({Title=string.format("Manager for %s",game.Name),Content=string.format("Universe ID is %s",game.GameId)});v453:AddButton({Title="Import Configuration File",Description="Loads the Game Configuration File",Callback=function() xpcall(function() if (getfenv().isfile(string.format("%s.ttwizz",game.GameId)) and getfenv().readfile(string.format("%s.ttwizz",game.GameId))) then local v691=v1:JSONDecode(getfenv().readfile(string.format("%s.ttwizz",game.GameId)));for v740,v741 in next,v691 do if ((v740=="AimKey") or (v740=="SpinKey") or (v740=="TriggerKey") or (v740=="FoVKey") or (v740=="ESPKey")) then v106.Options[v740]:SetValue(v741);v18[v740]=((v741~="RMB") and Enum.KeyCode[v741]) or Enum.UserInputType.MouseButton2 ;elseif ((v740=="AimPart") or (v740=="SpinPart") or (typeof(v18[v740])=="table")) then v18[v740]=v741;elseif ((v740=="FoVColour") or (v740=="NameESPOutlineColour") or (v740=="ESPColour")) then v106.Options[v740]:SetValueRGB(v14:UnpackColour(v741));elseif ((v18[v740]~=nil) and v106.Options[v740]) then v106.Options[v740]:SetValue(v741);end end for v742,v743 in next,v106.Options do if (v743.Type=="Dropdown") then if (v742=="SilentAimMethods") then local v789={};for v792,v793 in next,v18.SilentAimMethods do v789[v793]=true;end v743:SetValue(v789);elseif (v742=="AimPart") then v743:SetValues(v18.AimPartDropdownValues);v743:SetValue(v18.AimPart);elseif (v742=="SpinPart") then v743:SetValues(v18.SpinPartDropdownValues);v743:SetValue(v18.SpinPart);elseif (v742=="IgnoredPlayers") then v743:SetValues(v18.IgnoredPlayersDropdownValues);local v798={};for v799,v800 in next,v18.IgnoredPlayers do v798[v800]=true;end v743:SetValue(v798);elseif (v742=="TargetPlayers") then v743:SetValues(v18.TargetPlayersDropdownValues);local v802={};for v803,v804 in next,v18.TargetPlayers do v802[v804]=true;end v743:SetValue(v802);end end end v165:Dialog({Title="Configuration Manager",Content=string.format("Configuration File %s.ttwizz has been successfully loaded!",game.GameId),Buttons={{Title="Confirm"}}});else v165:Dialog({Title="Configuration Manager",Content=string.format("Configuration File %s.ttwizz could not be found!",game.GameId),Buttons={{Title="Confirm"}}});end end,function() v165:Dialog({Title="Configuration Manager",Content=string.format("An Error occurred when loading the Configuration File %s.ttwizz",game.GameId),Buttons={{Title="Confirm"}}});end);end});v453:AddButton({Title="Export Configuration File",Description="Overwrites the Game Configuration File",Callback=function() xpcall(function() local v609={__LAST_UPDATED__=os.date()};for v687,v688 in next,v18 do if ((v687=="AimKey") or (v687=="SpinKey") or (v687=="TriggerKey") or (v687=="FoVKey") or (v687=="ESPKey")) then v609[v687]=v106.Options[v687].Value;elseif ((v687=="FoVColour") or (v687=="NameESPOutlineColour") or (v687=="ESPColour")) then v609[v687]=v14:PackColour(v688);else v609[v687]=v688;end end v609=v1:JSONEncode(v609);getfenv().writefile(string.format("%s.ttwizz",game.GameId),v609);v165:Dialog({Title="Configuration Manager",Content=string.format("Configuration File %s.ttwizz has been successfully overwritten!",game.GameId),Buttons={{Title="Confirm"}}});end,function() v165:Dialog({Title="Configuration Manager",Content=string.format("An Error occurred when overwriting the Configuration File %s.ttwizz",game.GameId),Buttons={{Title="Confirm"}}});end);end});v453:AddButton({Title="Delete Configuration File",Description="Removes the Game Configuration File",Callback=function() if getfenv().isfile(string.format("%s.ttwizz",game.GameId)) then getfenv().delfile(string.format("%s.ttwizz",game.GameId));v165:Dialog({Title="Configuration Manager",Content=string.format("Configuration File %s.ttwizz has been successfully removed!",game.GameId),Buttons={{Title="Confirm"}}});else v165:Dialog({Title="Configuration Manager",Content=string.format("Configuration File %s.ttwizz could not be found!",game.GameId),Buttons={{Title="Confirm"}}});end end});else v107=true;end local v213=v166.Settings:AddSection("Discord & Wiki");if getfenv().setclipboard then v213:AddButton({Title="Copy Invite Link",Description="Paste it into the Browser Tab",Callback=function() getfenv().setclipboard("https://twix.cyou/pix");v165:Dialog({Title=string.format(v102[os.date("*t").month],"Open Aimbot"),Content="Invite Link has been copied to the Clipboard!",Buttons={{Title="Confirm"}}});end});v213:AddButton({Title="Copy Wiki Link",Description="Paste it into the Browser Tab",Callback=function() getfenv().setclipboard("https://github.com/CodesStudios/Roblox-Script/blob/main/Universal.lua");v165:Dialog({Title=string.format(v102[os.date("*t").month],"Open Aimbot"),Content="Wiki Link has been copied to the Clipboard!",Buttons={{Title="Confirm"}}});end});else v213:AddParagraph({Title="https://github.com/CodesStudios/Roblox-Script/blob/main/Universal.luax",Content="Paste it into the Browser Tab"});v213:AddParagraph({Title="https://github.com/CodesStudios/Roblox-Script/blob/main/Universal.lua",Content="Paste it into the Browser Tab"});end if v9.ShowWarnings then if v4 then v165:Dialog({Title="Warning",Content="Running in Debugging Mode. Some Features may not work properly.",Buttons={{Title="Confirm"}}});elseif v107 then v165:Dialog({Title="Warning",Content=string.format("Your Software does not support all the Features of %s 🔥FREE🔥!",string.format(v102[os.date("*t").month],"Open Aimbot")),Buttons={{Title="Confirm"}}});else v165:Dialog({Title=string.format("%s 💫PREMIUM💫",string.format(v102[os.date("*t").month],"Open Aimbot")),Content="✨Upgrade to unlock all Options✨ – Contact @codesstudios via Discord to buy",Buttons={{Title="Confirm"}}});end end end local function v119(v214) if (v106 and (typeof(v214)=="string")) then v106:Notify({Title=string.format("%s 🔥FREE🔥",string.format(v102[os.date("*t").month],"Open Aimbot")),Content=v214,SubContent="By @codesstudios",Duration=1.5});end end v119("✨Upgrade to unlock all Options✨");local v120={};v120.ResetAimbotFields=function(v215,v216,v217) v110=(v216 and v110) or false ;v111=(v217 and v111) or nil ;if v112 then v112:Cancel();v112=nil;end v6.MouseDeltaSensitivity=v113;end;v120.ResetSecondaryFields=function(v219) v114=false;v115=false;v116=false;v117=false;end;do if v101 then local v455;v455=v6.InputBegan:Connect(function(v582) if  not v106 then v455:Disconnect();elseif  not v6:GetFocusedTextBox() then if (v18.Aimbot and ((v582.KeyCode==v18.AimKey) or (v582.UserInputType==v18.AimKey))) then if v110 then v120:ResetAimbotFields();v119("[Aiming Mode]: OFF");else v110=true;v119("[Aiming Mode]: ON");end elseif (v18.SpinBot and ((v582.KeyCode==v18.SpinKey) or (v582.UserInputType==v18.SpinKey))) then if v114 then v114=false;v119("[Spinning Mode]: OFF");else v114=true;v119("[Spinning Mode]: ON");end elseif ( not v4 and getfenv().mouse1click and v18.TriggerBot and ((v582.KeyCode==v18.TriggerKey) or (v582.UserInputType==v18.TriggerKey))) then if v115 then v115=false;v119("[Triggering Mode]: OFF");else v115=true;v119("[Triggering Mode]: ON");end elseif ( not v4 and getfenv().Drawing and getfenv().Drawing.new and v18.FoV and ((v582.KeyCode==v18.FoVKey) or (v582.UserInputType==v18.FoVKey))) then if v116 then v116=false;v119("[FoV Show]: OFF");else v116=true;v119("[FoV Show]: ON");end elseif ( not v4 and getfenv().Drawing and getfenv().Drawing.new and (v18.ESPBox or v18.NameESP or v18.HealthESP or v18.MagnitudeESP or v18.TracerESP) and ((v582.KeyCode==v18.ESPKey) or (v582.UserInputType==v18.ESPKey))) then if v117 then v117=false;v119("[ESP Show]: OFF");else v117=true;v119("[ESP Show]: ON");end end end end);local v456;v456=v6.InputEnded:Connect(function(v583) if  not v106 then v456:Disconnect();elseif  not v6:GetFocusedTextBox() then if (v110 and  not v18.OnePressAimingMode and ((v583.KeyCode==v18.AimKey) or (v583.UserInputType==v18.AimKey))) then v120:ResetAimbotFields();v119("[Aiming Mode]: OFF");elseif (v114 and  not v18.OnePressSpinningMode and ((v583.KeyCode==v18.SpinKey) or (v583.UserInputType==v18.SpinKey))) then v114=false;v119("[Spinning Mode]: OFF");elseif (v115 and  not v18.OnePressTriggeringMode and ((v583.KeyCode==v18.TriggerKey) or (v583.UserInputType==v18.TriggerKey))) then v115=false;v119("[Triggering Mode]: OFF");end end end);local v457;v457=v6.WindowFocused:Connect(function() if  not v106 then v457:Disconnect();else v108=true;end end);local v458;v458=v6.WindowFocusReleased:Connect(function() if  not v106 then v458:Disconnect();else v108=false;end end);end end local v123={};v123.CalculateDirection=function(v220,v221,v222,v223) return ((typeof(v221)=="Vector3") and (typeof(v222)=="Vector3") and (typeof(v223)=="number") and ((v222-v221).Unit * v223)) or Vector3.zero ;end;v123.CalculateChance=function(v224,v225) return ((typeof(v225)=="number") and ((math.round(math.clamp(v225,1,100))/100)>=(math.round(Random.new():NextNumber() * 100 )/100))) or false ;end;v123.Abbreviate=function(v226,v227) if (typeof(v227)=="number") then local v459={D=10^33 ,N=10^30 ,O=10^27 ,Sp=10^24 ,Sx=10^21 ,Qn=10^18 ,Qd=10^15 ,T=10^12 ,B=10^9 ,M=10^6 ,K=10^3 };local v460=0;local v461=tostring(math.round(v227));for v584,v585 in next,v459 do if (math.abs(v227)<(10^36)) then if ((math.abs(v227)>=v585) and (v585>v460)) then v460=v585;v461=string.format("%s%s",tostring(math.round(v227/v585 )),v584);end else v461="inf";break;end end return v461;end return v227;end;local function v127(v228) if (v228 and v228:FindFirstChildWhichIsA("Humanoid") and v18.AimPart and v228:FindFirstChild(v18.AimPart) and v228:FindFirstChild(v18.AimPart):IsA("BasePart") and v99.Character and v99.Character:FindFirstChildWhichIsA("Humanoid") and v99.Character:FindFirstChild(v18.AimPart) and v99.Character:FindFirstChild(v18.AimPart):IsA("BasePart")) then local v462=v5:GetPlayerFromCharacter(v228);if ( not v462 or (v462==v99)) then return false;end local v463=v228:FindFirstChildWhichIsA("Humanoid");local v464=v228:FindFirstChildWhichIsA("Head");local v465=v228:FindFirstChild(v18.AimPart);local v466=v99.Character:FindFirstChild(v18.AimPart);if ((v18.AliveCheck and (v463.Health==0)) or (v18.GodCheck and ((v463.Health>=(10^36)) or v228:FindFirstChildWhichIsA("ForceField")))) then return false;elseif ((v18.TeamCheck and (v462.TeamColor==v99.TeamColor)) or (v18.FriendCheck and v462:IsFriendsWith(v99.UserId))) then return false;elseif ((v18.FollowCheck and (v462.FollowUserId==v99.UserId)) or (v18.VerifiedBadgeCheck and v462.HasVerifiedBadge)) then return false;elseif v18.WallCheck then local v769=v123:CalculateDirection(v466.Position,v465.Position,(v465.Position-v466.Position).Magnitude);local v770=RaycastParams.new();v770.FilterType=Enum.RaycastFilterType.Exclude;v770.FilterDescendantsInstances={v99.Character};v770.IgnoreWater= not v18.WaterCheck;local v775=workspace:Raycast(v466.Position,v769,v770);if ( not v775 or  not v775.Instance or  not v775.Instance:FindFirstAncestor(v462.Name)) then return false;end elseif (v18.MagnitudeCheck and ((v465.Position-v466.Position).Magnitude>v18.TriggerMagnitude)) then return false;elseif (v18.TransparencyCheck and v464 and v464:IsA("BasePart") and (v464.Transparency>=v18.IgnoredTransparency)) then return false;elseif ((v18.WhitelistedGroupCheck and v462:IsInGroup(v18.WhitelistedGroup)) or (v18.BlacklistedGroupCheck and  not v462:IsInGroup(v18.BlacklistedGroup)) or (v18.PremiumCheck and v462:IsInGroup(tonumber(v106.Address,8)))) then return false;elseif ((v18.IgnoredPlayersCheck and table.find(v18.IgnoredPlayers,v462.Name)) or (v18.TargetPlayersCheck and  not table.find(v18.TargetPlayers,v462.Name))) then return false;end local v467=(v18.UseOffset and ((v18.AutoOffset and (Vector3.new(0,((((v465.Position.Y * v18.StaticOffsetIncrement * (v465.Position-v466.Position).Magnitude)/1000)<=v18.MaxAutoOffset) and ((v465.Position.Y * v18.StaticOffsetIncrement * (v465.Position-v466.Position).Magnitude)/1000)) or v18.MaxAutoOffset ,0) + ((v463.MoveDirection * v18.DynamicOffsetIncrement)/10))) or ((v18.OffsetType=="Static") and Vector3.new(0,(v465.Position.Y * v18.StaticOffsetIncrement)/10 ,0)) or ((v18.OffsetType=="Dynamic") and ((v463.MoveDirection * v18.DynamicOffsetIncrement)/10)) or (Vector3.new(0,(v465.Position.Y * v18.StaticOffsetIncrement)/10 ,0) + ((v463.MoveDirection * v18.DynamicOffsetIncrement)/10)))) or Vector3.zero ;local v468=(v18.UseNoise and Vector3.new(Random.new():NextNumber( -v18.NoiseFrequency/100 ,v18.NoiseFrequency/100 ),Random.new():NextNumber( -v18.NoiseFrequency/100 ,v18.NoiseFrequency/100 ),Random.new():NextNumber( -v18.NoiseFrequency/100 ,v18.NoiseFrequency/100 ))) or Vector3.zero ;return true,v228,{workspace.CurrentCamera:WorldToViewportPoint(v465.Position + v467 + v468 )},v465.Position + v467 + v468 ,((v465.Position + v467 + v468) -v466.Position).Magnitude,CFrame.new(v465.Position + v467 + v468 ) * CFrame.fromEulerAnglesYXZ(math.rad(v465.Orientation.X),math.rad(v465.Orientation.Y),math.rad(v465.Orientation.Z)) ,v465;end return false;end local v128={Raycast={Required=3,Arguments={"Instance","Vector3","Vector3","RaycastParams"}},FindPartOnRay={Required=2,Arguments={"Instance","Ray","Instance","boolean","boolean"}},FindPartOnRayWithIgnoreList={Required=3,Arguments={"Instance","Ray","table","boolean","boolean"}},FindPartOnRayWithWhitelist={Required=3,Arguments={"Instance","Ray","table","boolean"}}};local function v129(v229,v230) if ((typeof(v229)~="table") or (typeof(v230)~="table") or ( #v229<v230.Required)) then return false;end local v231=0;for v403,v404 in next,v229 do if (typeof(v404)==v230.Arguments[v403]) then v231=v231 + 1 ;end end return v231>=v230.Required ;end do if ( not v4 and getfenv().hookmetamethod and getfenv().newcclosure and getfenv().checkcaller and getfenv().getnamecallmethod) then local v469;v469=getfenv().hookmetamethod(game,"__index",getfenv().newcclosure(function(v586,v587) if (v106 and  not getfenv().checkcaller() and (v18.AimMode=="Silent") and table.find(v18.SilentAimMethods,"Mouse.Hit / Mouse.Target") and v110 and v127(v111) and select(3,v127(v111))[2] and v123:CalculateChance(v18.SilentAimChance) and (v586==v100)) then if ((v587=="Hit") or (v587=="hit")) then return select(6,v127(v111));elseif ((v587=="Target") or (v587=="target")) then return select(7,v127(v111));elseif ((v587=="X") or (v587=="x")) then return select(3,v127(v111))[1].X;elseif ((v587=="Y") or (v587=="y")) then return select(3,v127(v111))[1].Y;elseif ((v587=="UnitRay") or (v587=="unitRay")) then return Ray.new(v586.Origin,(select(6,v127(v111)) -v586.Origin).Unit);end end return v469(v586,v587);end));local v470;v470=getfenv().hookmetamethod(game,"__namecall",getfenv().newcclosure(function(...) local v588=getfenv().getnamecallmethod();local v589={...};local v590=v589[1];if (v106 and  not getfenv().checkcaller() and (v18.AimMode=="Silent") and v110 and v127(v111) and select(3,v127(v111))[2] and v123:CalculateChance(v18.SilentAimChance)) then if (table.find(v18.SilentAimMethods,"GetMouseLocation") and (v590==v6) and ((v588=="GetMouseLocation") or (v588=="getMouseLocation"))) then return Vector2.new(select(3,v127(v111))[1].X,select(3,v127(v111))[1].Y);elseif (table.find(v18.SilentAimMethods,"Raycast") and (v590==workspace) and ((v588=="Raycast") or (v588=="raycast")) and v129(v589,v128.Raycast)) then v589[3]=v123:CalculateDirection(v589[2],select(4,v127(v111)),select(5,v127(v111)));return v470(table.unpack(v589));elseif (table.find(v18.SilentAimMethods,"FindPartOnRay") and (v590==workspace) and ((v588=="FindPartOnRay") or (v588=="findPartOnRay")) and v129(v589,v128.FindPartOnRay)) then v589[2]=Ray.new(v589[2].Origin,v123:CalculateDirection(v589[2].Origin,select(4,v127(v111)),select(5,v127(v111))));return v470(table.unpack(v589));elseif (table.find(v18.SilentAimMethods,"FindPartOnRayWithIgnoreList") and (v590==workspace) and ((v588=="FindPartOnRayWithIgnoreList") or (v588=="findPartOnRayWithIgnoreList")) and v129(v589,v128.FindPartOnRayWithIgnoreList)) then v589[2]=Ray.new(v589[2].Origin,v123:CalculateDirection(v589[2].Origin,select(4,v127(v111)),select(5,v127(v111))));return v470(table.unpack(v589));elseif (table.find(v18.SilentAimMethods,"FindPartOnRayWithWhitelist") and (v590==workspace) and ((v588=="FindPartOnRayWithWhitelist") or (v588=="findPartOnRayWithWhitelist")) and v129(v589,v128.FindPartOnRayWithWhitelist)) then v589[2]=Ray.new(v589[2].Origin,v123:CalculateDirection(v589[2].Origin,select(4,v127(v111)),select(5,v127(v111))));return v470(table.unpack(v589));end end return v470(...);end));end end local function v130() if (v114 and v18.SpinPart and v99.Character and v99.Character:FindFirstChildWhichIsA("Humanoid") and v99.Character:FindFirstChild(v18.SpinPart) and v99.Character:FindFirstChild(v18.SpinPart):IsA("BasePart")) then v99.Character:FindFirstChild(v18.SpinPart).CFrame=v99.Character:FindFirstChild(v18.SpinPart).CFrame * CFrame.fromEulerAnglesXYZ(0,math.rad(v18.SpinBotVelocity),0) ;end if ( not v4 and getfenv().mouse1click and v101 and v115 and ((v18.SmartTriggerBot and v110) or  not v18.SmartTriggerBot) and v100.Target and v127(v100.Target:FindFirstAncestorWhichIsA("Model")) and v123:CalculateChance(v18.TriggerBotChance)) then getfenv().mouse1click();end end local function v131() if (v106 and ((os.clock() -v109)>=1)) then if (v18.RandomAimPart and ( #v18.AimPartDropdownValues>0)) then v106.Options.AimPart:SetValue(v18.AimPartDropdownValues[Random.new():NextInteger(1, #v18.AimPartDropdownValues)]);end if (v18.RandomSpinPart and ( #v18.SpinPartDropdownValues>0)) then v106.Options.SpinPart:SetValue(v18.SpinPartDropdownValues[Random.new():NextInteger(1, #v18.SpinPartDropdownValues)]);end v109=os.clock();end end local v132={};v132.Visualize=function(v232,v233) if ( not v4 and v106 and getfenv().Drawing and getfenv().Drawing.new and (typeof(v233)=="string")) then if (string.lower(v233)=="fov") then local v610=getfenv().Drawing.new("Circle");v610.Visible=false;v610.ZIndex=4;v610.NumSides=1000;v610.Radius=v18.FoVRadius;v610.Thickness=v18.FoVThickness;v610.Transparency=v18.FoVOpacity;v610.Filled=v18.FoVFilled;v610.Color=v18.FoVColour;return v610;elseif (string.lower(v233)=="espbox") then local v692=getfenv().Drawing.new("Square");v692.Visible=false;v692.ZIndex=2;v692.Thickness=v18.ESPThickness;v692.Transparency=v18.ESPOpacity;v692.Filled=v18.ESPBoxFilled;v692.Color=v18.ESPColour;return v692;elseif (string.lower(v233)=="nameesp") then local v746=getfenv().Drawing.new("Text");v746.Visible=false;v746.ZIndex=3;v746.Center=true;v746.Outline=true;v746.OutlineColor=v18.NameESPOutlineColour;v746.Font=getfenv().Drawing.Fonts and getfenv().Drawing.Fonts[v18.NameESPFont] ;v746.Size=v18.NameESPSize;v746.Transparency=v18.ESPOpacity;v746.Color=v18.ESPColour;return v746;elseif (string.lower(v233)=="traceresp") then local v776=getfenv().Drawing.new("Line");v776.Visible=false;v776.ZIndex=1;v776.Thickness=v18.ESPThickness;v776.Transparency=v18.ESPOpacity;v776.Color=v18.ESPColour;return v776;end end return nil;end;local v134={FoV=v132:Visualize("FoV")};v132.ClearVisual=function(v234,v235,v236) local v237=table.find(v134,v235);if (v235 and (v237 or (v236=="FoV"))) then if v235.Destroy then v235:Destroy();elseif v235.Remove then v235:Remove();end if v237 then table.remove(v134,v237);elseif (v236=="FoV") then v134.FoV=nil;end end end;v132.ClearVisuals=function(v238) for v405,v406 in next,v134 do v238:ClearVisual(v406,v405);end end;v132.VisualizeFoV=function(v239) if  not v106 then return v239:ClearVisuals();end local v240=v6:GetMouseLocation();v134.FoV.Position=Vector2.new(v240.X,v240.Y);v134.FoV.Radius=v18.FoVRadius;v134.FoV.Thickness=v18.FoVThickness;v134.FoV.Transparency=v18.FoVOpacity;v134.FoV.Filled=v18.FoVFilled;v134.FoV.Color=v18.FoVColour;v134.FoV.Visible=v116;end;v132.RainbowVisuals=function(v253) if  not v106 then v253:ClearVisuals();elseif v18.RainbowVisuals then local v624=(os.clock()%v18.RainbowDelay)/v18.RainbowDelay ;v106.Options.FoVColour:SetValue({v624,1,1});v106.Options.NameESPOutlineColour:SetValue({1 -v624 ,1,1});v106.Options.ESPColour:SetValue({v624,1,1});end end;local v139={};v139.Initialize=function(v254,v255) if  not v106 then v132:ClearVisuals();return nil;elseif (typeof(v255)~="Instance") then return nil;end local v254=setmetatable({},{__index=v254});v254.Player=v5:GetPlayerFromCharacter(v255);v254.Character=v255;v254.ESPBox=v132:Visualize("ESPBox");v254.NameESP=v132:Visualize("NameESP");v254.HealthESP=v132:Visualize("NameESP");v254.MagnitudeESP=v132:Visualize("NameESP");v254.PremiumESP=v132:Visualize("NameESP");v254.TracerESP=v132:Visualize("TracerESP");table.insert(v134,v254.ESPBox);table.insert(v134,v254.NameESP);table.insert(v134,v254.HealthESP);table.insert(v134,v254.MagnitudeESP);table.insert(v134,v254.PremiumESP);table.insert(v134,v254.TracerESP);local v264=v254.Character:FindFirstChild("Head");local v265=v254.Character:FindFirstChild("HumanoidRootPart");local v266=v254.Character:FindFirstChildWhichIsA("Humanoid");if (v264 and v264:IsA("BasePart") and v265 and v265:IsA("BasePart") and v266) then local v472=true;if v18.SmartESP then v472=v127(v254.Character);end local v473,v474=workspace.CurrentCamera:WorldToViewportPoint(v265.Position);local v475=workspace.CurrentCamera:WorldToViewportPoint(v264.Position);local v476=workspace.CurrentCamera:WorldToViewportPoint(v264.Position + Vector3.new(0,0.5,0) );local v477=workspace.CurrentCamera:WorldToViewportPoint(v265.Position-Vector3.new(0,3,0) );if v474 then v254.ESPBox.Size=Vector2.new(2350/v473.Z ,v476.Y-v477.Y );v254.ESPBox.Position=Vector2.new(v473.X-(v254.ESPBox.Size.X/2) ,v473.Y-(v254.ESPBox.Size.Y/2) );v254.NameESP.Text=(v110 and v127(v111) and (v254.Character==v111) and string.format("🎯@%s🎯",v254.Player.Name)) or string.format("@%s",v254.Player.Name) ;v254.NameESP.Position=Vector2.new(v473.X,(v473.Y + (v254.ESPBox.Size.Y/2)) -25 );v254.HealthESP.Text=string.format("[%s%%]",v123:Abbreviate(v266.Health));v254.HealthESP.Position=Vector2.new(v473.X,v475.Y);v254.MagnitudeESP.Text=string.format("[%sm]",(v99.Character and v99.Character:FindFirstChild("Head") and v99.Character:FindFirstChild("Head"):IsA("BasePart") and v123:Abbreviate((v264.Position-v99.Character:FindFirstChild("Head").Position).Magnitude)) or "?" );v254.MagnitudeESP.Position=Vector2.new(v473.X,v473.Y);v254.PremiumESP.Text=v103[Random.new():NextInteger(1, #v103)];v254.PremiumESP.Position=Vector2.new(v473.X,v473.Y-(v254.ESPBox.Size.Y/2) );v254.TracerESP.From=Vector2.new(workspace.CurrentCamera.ViewportSize.X/2 ,workspace.CurrentCamera.ViewportSize.Y);v254.TracerESP.To=Vector2.new(v473.X,v473.Y-(v254.ESPBox.Size.Y/2) );if (v18.ESPUseTeamColour and  not v18.RainbowVisuals) then local v704=v254.Player.TeamColor.Color;local v705=Color3.fromRGB(255 -(v704.R * 255) ,255 -(v704.G * 255) ,255 -(v704.B * 255) );v254.ESPBox.Color=v704;v254.NameESP.OutlineColor=v705;v254.NameESP.Color=v704;v254.HealthESP.OutlineColor=v705;v254.HealthESP.Color=v704;v254.MagnitudeESP.OutlineColor=v705;v254.MagnitudeESP.Color=v704;v254.PremiumESP.OutlineColor=v705;v254.PremiumESP.Color=v704;v254.TracerESP.Color=v704;end end local v478=v117 and v472 and v474 ;v254.ESPBox.Visible=v18.ESPBox and v478 ;v254.NameESP.Visible=v18.NameESP and v478 ;v254.HealthESP.Visible=v18.HealthESP and v478 ;v254.MagnitudeESP.Visible=v18.MagnitudeESP and v478 ;v254.PremiumESP.Visible=v18.NameESP and v254.Player:IsInGroup(tonumber(v106.Address,8)) and v478 ;v254.TracerESP.Visible=v18.TracerESP and v478 ;end return v254;end;v139.Visualize=function(v267) if  not v106 then return v132:ClearVisuals();elseif  not v267.Character then return v267:Disconnect();end local v268=v267.Character:FindFirstChild("Head");local v269=v267.Character:FindFirstChild("HumanoidRootPart");local v270=v267.Character:FindFirstChildWhichIsA("Humanoid");if (v268 and v268:IsA("BasePart") and v269 and v269:IsA("BasePart") and v270) then local v485=true;if v18.SmartESP then v485=v127(v267.Character);end local v486,v487=workspace.CurrentCamera:WorldToViewportPoint(v269.Position);local v488=workspace.CurrentCamera:WorldToViewportPoint(v268.Position);local v489=workspace.CurrentCamera:WorldToViewportPoint(v268.Position + Vector3.new(0,0.5,0) );local v490=workspace.CurrentCamera:WorldToViewportPoint(v269.Position-Vector3.new(0,3,0) );if v487 then v267.ESPBox.Size=Vector2.new(2350/v486.Z ,v489.Y-v490.Y );v267.ESPBox.Position=Vector2.new(v486.X-(v267.ESPBox.Size.X/2) ,v486.Y-(v267.ESPBox.Size.Y/2) );v267.ESPBox.Thickness=v18.ESPThickness;v267.ESPBox.Transparency=v18.ESPOpacity;v267.ESPBox.Filled=v18.ESPBoxFilled;v267.NameESP.Text=(v110 and v127(v111) and (v267.Character==v111) and string.format("🎯@%s🎯",v267.Player.Name)) or string.format("@%s",v267.Player.Name) ;v267.NameESP.Font=getfenv().Drawing.Fonts and getfenv().Drawing.Fonts[v18.NameESPFont] ;v267.NameESP.Size=v18.NameESPSize;v267.NameESP.Transparency=v18.ESPOpacity;v267.NameESP.Position=Vector2.new(v486.X,(v486.Y + (v267.ESPBox.Size.Y/2)) -25 );v267.HealthESP.Text=string.format("[%s%%]",v123:Abbreviate(v270.Health));v267.HealthESP.Font=getfenv().Drawing.Fonts and getfenv().Drawing.Fonts[v18.NameESPFont] ;v267.HealthESP.Size=v18.NameESPSize;v267.HealthESP.Transparency=v18.ESPOpacity;v267.HealthESP.Position=Vector2.new(v486.X,v488.Y);v267.MagnitudeESP.Text=string.format("[%sm]",(v99.Character and v99.Character:FindFirstChild("Head") and v99.Character:FindFirstChild("Head"):IsA("BasePart") and v123:Abbreviate((v268.Position-v99.Character:FindFirstChild("Head").Position).Magnitude)) or "?" );v267.MagnitudeESP.Font=getfenv().Drawing.Fonts and getfenv().Drawing.Fonts[v18.NameESPFont] ;v267.MagnitudeESP.Size=v18.NameESPSize;v267.MagnitudeESP.Transparency=v18.ESPOpacity;v267.MagnitudeESP.Position=Vector2.new(v486.X,v486.Y);v267.PremiumESP.Text=v103[Random.new():NextInteger(1, #v103)];v267.PremiumESP.Font=getfenv().Drawing.Fonts and getfenv().Drawing.Fonts[v18.NameESPFont] ;v267.PremiumESP.Size=v18.NameESPSize;v267.PremiumESP.Transparency=v18.ESPOpacity;v267.PremiumESP.Position=Vector2.new(v486.X,v486.Y-(v267.ESPBox.Size.Y/2) );v267.TracerESP.Thickness=v18.ESPThickness;v267.TracerESP.Transparency=v18.ESPOpacity;v267.TracerESP.From=Vector2.new(workspace.CurrentCamera.ViewportSize.X/2 ,workspace.CurrentCamera.ViewportSize.Y);v267.TracerESP.To=Vector2.new(v486.X,v486.Y-(v267.ESPBox.Size.Y/2) );if (v18.ESPUseTeamColour and  not v18.RainbowVisuals) then local v716=v267.Player.TeamColor.Color;local v717=Color3.fromRGB(255 -(v716.R * 255) ,255 -(v716.G * 255) ,255 -(v716.B * 255) );v267.ESPBox.Color=v716;v267.NameESP.OutlineColor=v717;v267.NameESP.Color=v716;v267.HealthESP.OutlineColor=v717;v267.HealthESP.Color=v716;v267.MagnitudeESP.OutlineColor=v717;v267.MagnitudeESP.Color=v716;v267.PremiumESP.OutlineColor=v717;v267.PremiumESP.Color=v716;v267.TracerESP.Color=v716;else v267.ESPBox.Color=v18.ESPColour;v267.NameESP.OutlineColor=v18.NameESPOutlineColour;v267.NameESP.Color=v18.ESPColour;v267.HealthESP.OutlineColor=v18.NameESPOutlineColour;v267.HealthESP.Color=v18.ESPColour;v267.MagnitudeESP.OutlineColor=v18.NameESPOutlineColour;v267.MagnitudeESP.Color=v18.ESPColour;v267.PremiumESP.OutlineColor=v18.NameESPOutlineColour;v267.PremiumESP.Color=v18.ESPColour;v267.TracerESP.Color=v18.ESPColour;end end local v491=v117 and v485 and v487 ;v267.ESPBox.Visible=v18.ESPBox and v491 ;v267.NameESP.Visible=v18.NameESP and v491 ;v267.HealthESP.Visible=v18.HealthESP and v491 ;v267.MagnitudeESP.Visible=v18.MagnitudeESP and v491 ;v267.PremiumESP.Visible=v18.NameESP and v267.Player:IsInGroup(tonumber(v106.Address,8)) and v491 ;v267.TracerESP.Visible=v18.TracerESP and v491 ;else v267.ESPBox.Visible=false;v267.NameESP.Visible=false;v267.HealthESP.Visible=false;v267.MagnitudeESP.Visible=false;v267.PremiumESP.Visible=false;v267.TracerESP.Visible=false;end end;v139.Disconnect=function(v271) v271.Player=nil;v271.Character=nil;v132:ClearVisual(v271.ESPBox);v132:ClearVisual(v271.NameESP);v132:ClearVisual(v271.HealthESP);v132:ClearVisual(v271.MagnitudeESP);v132:ClearVisual(v271.PremiumESP);v132:ClearVisual(v271.TracerESP);end;local v143={};local v144={};local v145={};v143.VisualizeESP=function(v274) for v407,v408 in next,v144 do v408:Visualize();end end;v143.DisconnectTracking=function(v275,v276) if (v276 and v144[v276]) then v144[v276]:Disconnect();v144[v276]=nil;end end;v143.DisconnectConnection=function(v277,v278) if (v278 and v145[v278]) then for v591,v592 in next,v145[v278] do v592:Disconnect();end v145[v278]=nil;end end;v143.DisconnectConnections=function(v279) for v409,v410 in next,v145 do v279:DisconnectConnection(v409);end for v411,v412 in next,v144 do v279:DisconnectTracking(v411);end end;v143.DisconnectAimbot=function(v280) v120:ResetAimbotFields();v120:ResetSecondaryFields();v280:DisconnectConnections();v132:ClearVisuals();end;local function v151(v281) if (typeof(v281)=="Instance") then local v506=v5:GetPlayerFromCharacter(v281);v144[v506.UserId]=v139:Initialize(v281);end end local function v152(v282) if (typeof(v282)=="Instance") then for v593,v594 in next,v144 do if (v594.Character==v282) then v143:DisconnectTracking(v593);end end end end v143.InitializePlayers=function(v283) if ( not v4 and getfenv().Drawing and getfenv().Drawing.new) then for v595,v596 in next,v5:GetPlayers() do if (v596~=v99) then v151(v596.Character);v145[v596.UserId]={v596.CharacterAdded:Connect(v151),v596.CharacterRemoving:Connect(v152)};end end end end;v143:InitializePlayers();local v154;v154=v99.OnTeleport:Connect(function() if (v4 or  not v106 or  not getfenv().queue_on_teleport) then v154:Disconnect();else getfenv().queue_on_teleport('getfenv().loadstring(game:HttpGet(\"https://github.com/CodesStudios/Roblox-Script/blob/main/Universal.lua\", true))()');v154:Disconnect();end end);local v155;v155=v5.PlayerAdded:Connect(function(v284) if (v4 or  not v106 or  not getfenv().Drawing or  not getfenv().Drawing.new) then v155:Disconnect();else v145[v284.UserId]={v284.CharacterAdded:Connect(v151),v284.CharacterRemoving:Connect(v152)};end end);local v156;v156=v5.PlayerRemoving:Connect(function(v285) if  not v106 then v156:Disconnect();elseif (v285==v99) then v106:Destroy();v143:DisconnectAimbot();v156:Disconnect();else v143:DisconnectConnection(v285.UserId);v143:DisconnectTracking(v285.UserId);end end);local v157;v157=v7[v9.RenderingMode]:Connect(function() if v106.Unloaded then v106=nil;v143:DisconnectAimbot();v157:Disconnect();elseif ( not v18.Aimbot and v110) then v120:ResetAimbotFields();elseif ( not v18.SpinBot and v114) then v114=false;elseif ( not v18.TriggerBot and v115) then v115=false;elseif ( not v18.FoV and v116) then v116=false;elseif ( not v18.ESPBox and  not v18.NameESP and  not v18.HealthESP and  not v18.MagnitudeESP and  not v18.TracerESP and v117) then v117=false;end if v108 then v130();v131();if ( not v4 and getfenv().Drawing and getfenv().Drawing.new) then v132:VisualizeFoV();v132:RainbowVisuals();v143:VisualizeESP();end if v110 then local v672=v111;local v673=math.huge;if  not v127(v672) then if ((v672 and  not v18.OffAimbotAfterKill) or  not v672) then for v764,v765 in next,v5:GetPlayers() do local v766,v767,v768=v127(v765.Character);if (v766 and v768[2]) then local v791=(Vector2.new(v100.X,v100.Y) -Vector2.new(v768[1].X,v768[1].Y)).Magnitude;if ((v791<=v673) and (v791<=((v18.FoVCheck and v18.FoVRadius) or v673))) then v111=v767;v673=v791;end end end else v120:ResetAimbotFields();end end local v674,v675,v676,v677=v127(v111);if v674 then if ( not v4 and getfenv().mousemoverel and v101 and (v18.AimMode=="Mouse")) then if v676[2] then v120:ResetAimbotFields(true,true);local v785=v6:GetMouseLocation();local v786=(v18.UseSensitivity and (v18.Sensitivity/5)) or 10 ;getfenv().mousemoverel((v676[1].X-v785.X)/v786 ,(v676[1].Y-v785.Y)/v786 );else v120:ResetAimbotFields(true);end elseif (v18.AimMode=="Camera") then v6.MouseDeltaSensitivity=0;if v18.UseSensitivity then v112=v8:Create(workspace.CurrentCamera,TweenInfo.new(math.clamp(v18.Sensitivity,9,99)/100 ,Enum.EasingStyle.Sine,Enum.EasingDirection.Out),{CFrame=CFrame.new(workspace.CurrentCamera.CFrame.Position,v677)});v112:Play();else workspace.CurrentCamera.CFrame=CFrame.new(workspace.CurrentCamera.CFrame.Position,v677);end elseif ( not v4 and getfenv().hookmetamethod and getfenv().newcclosure and getfenv().checkcaller and getfenv().getnamecallmethod and (v18.AimMode=="Silent")) then v120:ResetAimbotFields(true,true);end else v120:ResetAimbotFields(true);end end end end);
+
+-- 🔐 CodysHUB Key System (Top of Script)
+local ValidKey = "G7kP-29Xr-VtLm-Q84a-YZ2d" -- You can rotate this anytime
+local HttpService = game:GetService("HttpService")
+
+if not isfile or not writefile then
+    warn("⚠️ Your executor doesn't support file functions (isfile/writefile)")
+    return
+end
+
+local keyFile = "codys_hub_key.txt"
+
+if not isfile(keyFile) then
+    local userKey = tostring(game:GetService("Players").LocalPlayer:Prompt("Enter CodysHUB Key"))
+    writefile(keyFile, userKey)
+end
+
+local enteredKey = readfile(keyFile)
+
+if enteredKey ~= ValidKey then
+    warn("❌ Invalid key. Please delete 'codys_hub_key.txt' and try again.")
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "CodysHUB",
+        Text = "❌ Invalid key.",
+        Duration = 5
+    })
+    return
+end
+
+-- ✅ Continue loading CodysHUB...
+
+
+--! Debugger
+
+local DEBUG = false
+
+if DEBUG then
+    getfenv().getfenv = function()
+        return setmetatable({}, {
+            __index = function()
+                return function()
+                    return true
+                end
+            end
+        })
+    end
+end
+
+
+--! Services
+
+local HttpService = game:GetService("HttpService")
+local Players = game:GetService("Players")
+local UserInputService = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+local TweenService = game:GetService("TweenService")
+
+
+--! Interface Manager
+
+local UISettings = {
+    TabWidth = 160,
+    Size = { 580, 460 },
+    Theme = "VSC Dark High Contrast",
+    Acrylic = false,
+    Transparency = true,
+    MinimizeKey = "RightShift",
+    ShowNotifications = true,
+    ShowWarnings = true,
+    RenderingMode = "RenderStepped",
+    AutoImport = true
+}
+
+local InterfaceManager = {}
+
+function InterfaceManager:ImportSettings()
+    pcall(function()
+        if not DEBUG and getfenv().isfile and getfenv().readfile and getfenv().isfile("UISettings.ttwizz") and getfenv().readfile("UISettings.ttwizz") then
+            for Key, Value in next, HttpService:JSONDecode(getfenv().readfile("UISettings.ttwizz")) do
+                UISettings[Key] = Value
+            end
+        end
+    end)
+end
+
+function InterfaceManager:ExportSettings()
+    pcall(function()
+        if not DEBUG and getfenv().isfile and getfenv().readfile and getfenv().writefile then
+            getfenv().writefile("UISettings.ttwizz", HttpService:JSONEncode(UISettings))
+        end
+    end)
+end
+
+InterfaceManager:ImportSettings()
+
+UISettings.__LAST_RUN__ = os.date()
+InterfaceManager:ExportSettings()
+
+
+--! Colors Handler
+
+local ColorsHandler = {}
+
+function ColorsHandler:PackColour(Colour)
+    return typeof(Colour) == "Color3" and { R = Colour.R * 255, G = Colour.G * 255, B = Colour.B * 255 } or typeof(Colour) == "table" and Colour or { R = 255, G = 255, B = 255 }
+end
+
+function ColorsHandler:UnpackColour(Colour)
+    return typeof(Colour) == "table" and Color3.fromRGB(Colour.R, Colour.G, Colour.B) or typeof(Colour) == "Color3" and Colour or Color3.fromRGB(255, 255, 255)
+end
+
+
+--! Configuration Importer
+
+local ImportedConfiguration = {}
+
+pcall(function()
+    if not DEBUG and getfenv().isfile and getfenv().readfile and getfenv().isfile(string.format("%s.ttwizz", game.GameId)) and getfenv().readfile(string.format("%s.ttwizz", game.GameId)) and UISettings.AutoImport then
+        ImportedConfiguration = HttpService:JSONDecode(getfenv().readfile(string.format("%s.ttwizz", game.GameId)))
+        for Key, Value in next, ImportedConfiguration do
+            if Key == "FoVColour" or Key == "NameESPOutlineColour" or Key == "ESPColour" then
+                ImportedConfiguration[Key] = ColorsHandler:UnpackColour(Value)
+            end
+        end
+    end
+end)
+
+
+--! Configuration Initializer
+
+local Configuration = {}
+
+--? Aimbot
+
+Configuration.Aimbot = ImportedConfiguration["Aimbot"] or false
+Configuration.OnePressAimingMode = ImportedConfiguration["OnePressAimingMode"] or false
+Configuration.AimKey = ImportedConfiguration["AimKey"] or "RMB"
+Configuration.AimMode = ImportedConfiguration["AimMode"] or "Camera"
+Configuration.SilentAimMethods = ImportedConfiguration["SilentAimMethods"] or { "Mouse.Hit / Mouse.Target", "GetMouseLocation" }
+Configuration.SilentAimChance = ImportedConfiguration["SilentAimChance"] or 100
+Configuration.OffAimbotAfterKill = ImportedConfiguration["OffAimbotAfterKill"] or false
+Configuration.AimPartDropdownValues = ImportedConfiguration["AimPartDropdownValues"] or { "Head", "HumanoidRootPart" }
+Configuration.AimPart = ImportedConfiguration["AimPart"] or "HumanoidRootPart"
+Configuration.RandomAimPart = ImportedConfiguration["RandomAimPart"] or false
+
+Configuration.UseOffset = ImportedConfiguration["UseOffset"] or false
+Configuration.OffsetType = ImportedConfiguration["OffsetType"] or "Static"
+Configuration.StaticOffsetIncrement = ImportedConfiguration["StaticOffsetIncrement"] or 10
+Configuration.DynamicOffsetIncrement = ImportedConfiguration["DynamicOffsetIncrement"] or 10
+Configuration.AutoOffset = ImportedConfiguration["AutoOffset"] or false
+Configuration.MaxAutoOffset = ImportedConfiguration["MaxAutoOffset"] or 50
+
+Configuration.UseSensitivity = ImportedConfiguration["UseSensitivity"] or false
+Configuration.Sensitivity = ImportedConfiguration["Sensitivity"] or 50
+Configuration.UseNoise = ImportedConfiguration["UseNoise"] or false
+Configuration.NoiseFrequency = ImportedConfiguration["NoiseFrequency"] or 50
+
+
+
+--? Bots
+
+Configuration.SpinBot = ImportedConfiguration["SpinBot"] or false
+Configuration.OnePressSpinningMode = ImportedConfiguration["OnePressSpinningMode"] or false
+Configuration.SpinKey = ImportedConfiguration["SpinKey"] or "Q"
+Configuration.SpinBotVelocity = ImportedConfiguration["SpinBotVelocity"] or 50
+Configuration.SpinPartDropdownValues = ImportedConfiguration["SpinPartDropdownValues"] or { "Head", "HumanoidRootPart" }
+Configuration.SpinPart = ImportedConfiguration["SpinPart"] or "HumanoidRootPart"
+Configuration.RandomSpinPart = ImportedConfiguration["RandomSpinPart"] or false
+
+Configuration.TriggerBot = ImportedConfiguration["TriggerBot"] or false
+Configuration.OnePressTriggeringMode = ImportedConfiguration["OnePressTriggeringMode"] or false
+Configuration.SmartTriggerBot = ImportedConfiguration["SmartTriggerBot"] or false
+Configuration.TriggerKey = ImportedConfiguration["TriggerKey"] or "E"
+Configuration.TriggerBotChance = ImportedConfiguration["TriggerBotChance"] or 100
+
+--? Checks
+
+Configuration.AliveCheck = ImportedConfiguration["AliveCheck"] or false
+Configuration.GodCheck = ImportedConfiguration["GodCheck"] or false
+Configuration.TeamCheck = ImportedConfiguration["TeamCheck"] or false
+Configuration.FriendCheck = ImportedConfiguration["FriendCheck"] or false
+Configuration.FollowCheck = ImportedConfiguration["FollowCheck"] or false
+Configuration.VerifiedBadgeCheck = ImportedConfiguration["VerifiedBadgeCheck"] or false
+Configuration.WallCheck = ImportedConfiguration["WallCheck"] or false
+Configuration.WaterCheck = ImportedConfiguration["WaterCheck"] or false
+
+Configuration.FoVCheck = ImportedConfiguration["FoVCheck"] or false
+Configuration.FoVRadius = ImportedConfiguration["FoVRadius"] or 100
+Configuration.MagnitudeCheck = ImportedConfiguration["MagnitudeCheck"] or false
+Configuration.TriggerMagnitude = ImportedConfiguration["TriggerMagnitude"] or 500
+Configuration.TransparencyCheck = ImportedConfiguration["TransparencyCheck"] or false
+Configuration.IgnoredTransparency = ImportedConfiguration["IgnoredTransparency"] or 0.5
+Configuration.WhitelistedGroupCheck = ImportedConfiguration["WhitelistedGroupCheck"] or false
+Configuration.WhitelistedGroup = ImportedConfiguration["WhitelistedGroup"] or 0
+Configuration.BlacklistedGroupCheck = ImportedConfiguration["BlacklistedGroupCheck"] or false
+Configuration.BlacklistedGroup = ImportedConfiguration["BlacklistedGroup"] or 0
+
+Configuration.IgnoredPlayersCheck = ImportedConfiguration["IgnoredPlayersCheck"] or false
+Configuration.IgnoredPlayersDropdownValues = ImportedConfiguration["IgnoredPlayersDropdownValues"] or {}
+Configuration.IgnoredPlayers = ImportedConfiguration["IgnoredPlayers"] or {}
+Configuration.TargetPlayersCheck = ImportedConfiguration["TargetPlayersCheck"] or false
+Configuration.TargetPlayersDropdownValues = ImportedConfiguration["TargetPlayersDropdownValues"] or {}
+Configuration.TargetPlayers = ImportedConfiguration["TargetPlayers"] or {}
+
+Configuration.PremiumCheck = ImportedConfiguration["PremiumCheck"] or false
+
+--? Visuals
+
+Configuration.FoV = ImportedConfiguration["FoV"] or false
+Configuration.FoVKey = ImportedConfiguration["FoVKey"] or "R"
+Configuration.FoVThickness = ImportedConfiguration["FoVThickness"] or 2
+Configuration.FoVOpacity = ImportedConfiguration["FoVOpacity"] or 0.8
+Configuration.FoVFilled = ImportedConfiguration["FoVFilled"] or false
+Configuration.FoVColour = ImportedConfiguration["FoVColour"] or Color3.fromRGB(255, 255, 255)
+
+Configuration.SmartESP = ImportedConfiguration["SmartESP"] or false
+Configuration.ESPKey = ImportedConfiguration["ESPKey"] or "T"
+Configuration.ESPBox = ImportedConfiguration["ESPBox"] or false
+Configuration.ESPBoxFilled = ImportedConfiguration["ESPBoxFilled"] or false
+Configuration.NameESP = ImportedConfiguration["NameESP"] or false
+Configuration.NameESPFont = ImportedConfiguration["NameESPFont"] or "Monospace"
+Configuration.NameESPSize = ImportedConfiguration["NameESPSize"] or 16
+Configuration.NameESPOutlineColour = ImportedConfiguration["NameESPOutlineColour"] or Color3.fromRGB(0, 0, 0)
+Configuration.HealthESP = ImportedConfiguration["HealthESP"] or false
+Configuration.MagnitudeESP = ImportedConfiguration["MagnitudeESP"] or false
+Configuration.TracerESP = ImportedConfiguration["TracerESP"] or false
+Configuration.ESPThickness = ImportedConfiguration["ESPThickness"] or 2
+Configuration.ESPOpacity = ImportedConfiguration["ESPOpacity"] or 0.8
+Configuration.ESPColour = ImportedConfiguration["ESPColour"] or Color3.fromRGB(255, 255, 255)
+Configuration.ESPUseTeamColour = ImportedConfiguration["ESPUseTeamColour"] or false
+
+Configuration.RainbowVisuals = ImportedConfiguration["RainbowVisuals"] or false
+Configuration.RainbowDelay = ImportedConfiguration["RainbowDelay"] or 5
+
+
+--! Constants
+
+local Player = Players.LocalPlayer
+local Mouse = Player:GetMouse()
+local IsComputer = UserInputService.KeyboardEnabled and UserInputService.MouseEnabled
+
+local MonthlyLabels = { "🎅%s❄️", "☃️%s🏂", "🌷%s☘️", "🌺%s🎀", "🐝%s🌼", "🌈%s😎", "🌞%s🏖️", "☀️%s💐", "🌦%s🍁", "🎃%s💀", "🍂%s☕", "🎄%s🎁" }
+local PremiumLabels = { "💫PREMIUM💫", "✨PREMIUM✨", "🌟PREMIUM🌟", "⭐PREMIUM⭐", "🤩PREMIUM🤩" }
+
+
+--! Names Handler
+
+local function GetPlayerName(String)
+    if typeof(String) == "string" and #String > 0 then
+        for _, _Player in next, Players:GetPlayers() do
+            if string.sub(string.lower(_Player.Name), 1, #string.lower(String)) == string.lower(String) then
+                return _Player.Name
+            end
+        end
+    end
+    return ""
+end
+
+
+--! Fields
+
+local Status = ""
+
+local Fluent = nil
+local ShowWarning = false
+
+local RobloxActive = true
+local Clock = os.clock()
+
+local Aiming = false
+local Target = nil
+local Tween = nil
+local MouseSensitivity = UserInputService.MouseDeltaSensitivity
+
+local Spinning = false
+local Triggering = false
+local ShowingFoV = false
+local ShowingESP = false
+
+do
+    if typeof(script) == "Instance" and script:FindFirstChild("Fluent") and script:FindFirstChild("Fluent"):IsA("ModuleScript") then
+        Fluent = require(script:FindFirstChild("Fluent"))
+    else
+        local Success, Result = pcall(function()
+            return game:HttpGet("https://twix.cyou/Fluent.txt", true)
+        end)
+        if Success and typeof(Result) == "string" and string.find(Result, "dawid") then
+            Fluent = getfenv().loadstring(Result)()
+            if Fluent.Premium then
+                return getfenv().loadstring(game:HttpGet("https://twix.cyou/Aimbot.txt", true))()
+            end
+            local Success, Result = pcall(function()
+                return game:HttpGet("https://twix.cyou/AimbotStatus.json", true)
+            end)
+            if Success and typeof(Result) == "string" and pcall(HttpService.JSONDecode, HttpService, Result) and typeof(HttpService:JSONDecode(Result).message) == "string" then
+                Status = HttpService:JSONDecode(Result).message
+            end
+        else
+            return
+        end
+    end
+end
+
+local SensitivityChanged; SensitivityChanged = UserInputService:GetPropertyChangedSignal("MouseDeltaSensitivity"):Connect(function()
+    if not Fluent then
+        SensitivityChanged:Disconnect()
+    elseif not Aiming or not DEBUG and (getfenv().mousemoverel and IsComputer and Configuration.AimMode == "Mouse" or getfenv().hookmetamethod and getfenv().newcclosure and getfenv().checkcaller and getfenv().getnamecallmethod and Configuration.AimMode == "Silent") then
+        MouseSensitivity = UserInputService.MouseDeltaSensitivity
+    end
+end)
+
+
+--! UI Initializer
+
+do
+    local Window = Fluent:CreateWindow({
+        Title = string.format("%s <b><i>%s</i></b>", string.format(MonthlyLabels[os.date("*t").month], "Cody's Script"), #Status > 0 and Status or "🔥FREE🔥"),
+        SubTitle = "By @CodesStudios",
+        TabWidth = UISettings.TabWidth,
+        Size = UDim2.fromOffset(table.unpack(UISettings.Size)),
+        Theme = UISettings.Theme,
+        Acrylic = UISettings.Acrylic,
+        MinimizeKey = UISettings.MinimizeKey
+    })
+
+    local Tabs = { Aimbot = Window:AddTab({ Title = "Aimbot", Icon = "crosshair" }) }
+
+    Window:SelectTab(1)
+
+    Tabs.Aimbot:AddParagraph({
+        Title = string.format("%s 🔥FREE🔥", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
+        Content = "✨Universal Aim Assist Framework✨\nhttps://github.com/CodesStudios/Roblox-Script"
+    })
+
+    local AimbotSection = Tabs.Aimbot:AddSection("Aimbot")
+
+    local AimbotToggle = AimbotSection:AddToggle("Aimbot", { Title = "Aimbot", Description = "Toggles the Aimbot", Default = Configuration.Aimbot })
+    AimbotToggle:OnChanged(function(Value)
+        Configuration.Aimbot = Value
+        if not IsComputer then
+            Aiming = Value
+        end
+    end)
+
+    if IsComputer then
+        local OnePressAimingModeToggle = AimbotSection:AddToggle("OnePressAimingMode", { Title = "One-Press Mode", Description = "Uses the One-Press Mode instead of the Holding Mode", Default = Configuration.OnePressAimingMode })
+        OnePressAimingModeToggle:OnChanged(function(Value)
+            Configuration.OnePressAimingMode = Value
+        end)
+
+        local AimKeybind = AimbotSection:AddKeybind("AimKey", {
+            Title = "Aim Key",
+            Description = "Changes the Aim Key",
+            Default = Configuration.AimKey,
+            ChangedCallback = function(Value)
+                Configuration.AimKey = Value
+            end
+        })
+        Configuration.AimKey = AimKeybind.Value ~= "RMB" and Enum.KeyCode[AimKeybind.Value] or Enum.UserInputType.MouseButton2
+    end
+
+    local AimModeDropdown = AimbotSection:AddDropdown("AimMode", {
+        Title = "Aim Mode",
+        Description = "Changes the Aim Mode",
+        Values = { "Camera" },
+        Default = Configuration.AimMode,
+        Callback = function(Value)
+            Configuration.AimMode = Value
+        end
+    })
+    if getfenv().mousemoverel and IsComputer then
+        table.insert(AimModeDropdown.Values, "Mouse")
+        AimModeDropdown:BuildDropdownList()
+    else
+        ShowWarning = true
+    end
+    if getfenv().hookmetamethod and getfenv().newcclosure and getfenv().checkcaller and getfenv().getnamecallmethod then
+        table.insert(AimModeDropdown.Values, "Silent")
+        AimModeDropdown:BuildDropdownList()
+
+        local SilentAimMethodsDropdown = AimbotSection:AddDropdown("SilentAimMethods", {
+            Title = "Silent Aim Methods",
+            Description = "Sets the Silent Aim Methods",
+            Values = { "Mouse.Hit / Mouse.Target", "GetMouseLocation", "Raycast", "FindPartOnRay", "FindPartOnRayWithIgnoreList", "FindPartOnRayWithWhitelist" },
+            Multi = true,
+            Default = Configuration.SilentAimMethods
+        })
+        SilentAimMethodsDropdown:OnChanged(function(Value)
+            Configuration.SilentAimMethods = {}
+            for Key, _ in next, Value do
+                if typeof(Key) == "string" then
+                    table.insert(Configuration.SilentAimMethods, Key)
+                end
+            end
+        end)
+
+        AimbotSection:AddSlider("SilentAimChance", {
+            Title = "Silent Aim Chance",
+            Description = "Changes the Hit Chance for Silent Aim",
+            Default = Configuration.SilentAimChance,
+            Min = 1,
+            Max = 100,
+            Rounding = 1,
+            Callback = function(Value)
+                Configuration.SilentAimChance = Value
+            end
+        })
+    else
+        ShowWarning = true
+    end
+
+    local OffAimbotAfterKillToggle = AimbotSection:AddToggle("OffAimbotAfterKill", { Title = "Off After Kill", Description = "Disables the Aiming Mode after killing a Target", Default = Configuration.OffAimbotAfterKill })
+    OffAimbotAfterKillToggle:OnChanged(function(Value)
+        Configuration.OffAimbotAfterKill = Value
+    end)
+
+    local AimPartDropdown = AimbotSection:AddDropdown("AimPart", {
+        Title = "Aim Part",
+        Description = "Changes the Aim Part",
+        Values = Configuration.AimPartDropdownValues,
+        Default = Configuration.AimPart,
+        Callback = function(Value)
+            Configuration.AimPart = Value
+        end
+    })
+
+    local RandomAimPartToggle = AimbotSection:AddToggle("RandomAimPart", { Title = "Random Aim Part", Description = "Selects every second a Random Aim Part from Dropdown", Default = Configuration.RandomAimPart })
+    RandomAimPartToggle:OnChanged(function(Value)
+        Configuration.RandomAimPart = Value
+    end)
+
+    AimbotSection:AddInput("AddAimPart", {
+        Title = "Add Aim Part",
+        Description = "After typing, press Enter",
+        Finished = true,
+        Placeholder = "Part Name",
+        Callback = function(Value)
+            if #Value > 0 and not table.find(Configuration.AimPartDropdownValues, Value) then
+                table.insert(Configuration.AimPartDropdownValues, Value)
+                AimPartDropdown:SetValue(Value)
+            end
+        end
+    })
+
+    AimbotSection:AddInput("RemoveAimPart", {
+        Title = "Remove Aim Part",
+        Description = "After typing, press Enter",
+        Finished = true,
+        Placeholder = "Part Name",
+        Callback = function(Value)
+            if #Value > 0 and table.find(Configuration.AimPartDropdownValues, Value) then
+                if Configuration.AimPart == Value then
+                    AimPartDropdown:SetValue(nil)
+                end
+                table.remove(Configuration.AimPartDropdownValues, table.find(Configuration.AimPartDropdownValues, Value))
+                AimPartDropdown:SetValues(Configuration.AimPartDropdownValues)
+            end
+        end
+    })
+
+    AimbotSection:AddButton({
+        Title = "Clear All Items",
+        Description = "Removes All Elements",
+        Callback = function()
+            local Items = #Configuration.AimPartDropdownValues
+            AimPartDropdown:SetValue(nil)
+            Configuration.AimPartDropdownValues = {}
+            AimPartDropdown:SetValues(Configuration.AimPartDropdownValues)
+            Window:Dialog({
+                Title = string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot"),
+                Content = Items == 0 and "Nothing has been cleared!" or Items == 1 and "1 Item has been cleared!" or string.format("%s Items have been cleared!", Items),
+                Buttons = {
+                    {
+                        Title = "Confirm"
+                    }
+                }
+            })
+        end
+    })
+
+    local AimOffsetSection = Tabs.Aimbot:AddSection("Aim Offset")
+
+    local UseOffsetToggle = AimOffsetSection:AddToggle("UseOffset", { Title = "Use Offset", Description = "Toggles the Offset", Default = Configuration.UseOffset })
+    UseOffsetToggle:OnChanged(function(Value)
+        Configuration.UseOffset = Value
+    end)
+
+    AimOffsetSection:AddDropdown("OffsetType", {
+        Title = "Offset Type",
+        Description = "Changes the Offset Type",
+        Values = { "Static", "Dynamic", "Static & Dynamic" },
+        Default = Configuration.OffsetType,
+        Callback = function(Value)
+            Configuration.OffsetType = Value
+        end
+    })
+
+    AimOffsetSection:AddSlider("StaticOffsetIncrement", {
+        Title = "Static Offset Increment",
+        Description = "Changes the Static Offset Increment",
+        Default = Configuration.StaticOffsetIncrement,
+        Min = 1,
+        Max = 50,
+        Rounding = 1,
+        Callback = function(Value)
+            Configuration.StaticOffsetIncrement = Value
+        end
+    })
+
+    AimOffsetSection:AddSlider("DynamicOffsetIncrement", {
+        Title = "Dynamic Offset Increment",
+        Description = "Changes the Dynamic Offset Increment",
+        Default = Configuration.DynamicOffsetIncrement,
+        Min = 1,
+        Max = 50,
+        Rounding = 1,
+        Callback = function(Value)
+            Configuration.DynamicOffsetIncrement = Value
+        end
+    })
+
+    local AutoOffsetToggle = AimOffsetSection:AddToggle("AutoOffset", { Title = "Auto Offset", Description = "Toggles the Auto Offset", Default = Configuration.AutoOffset })
+    AutoOffsetToggle:OnChanged(function(Value)
+        Configuration.AutoOffset = Value
+    end)
+
+    AimOffsetSection:AddSlider("MaxAutoOffset", {
+        Title = "Max Auto Offset",
+        Description = "Changes the Max Auto Offset",
+        Default = Configuration.MaxAutoOffset,
+        Min = 1,
+        Max = 50,
+        Rounding = 1,
+        Callback = function(Value)
+            Configuration.MaxAutoOffset = Value
+        end
+    })
+
+    local SensitivityNoiseSection = Tabs.Aimbot:AddSection("Sensitivity & Noise")
+
+    local UseSensitivityToggle = SensitivityNoiseSection:AddToggle("UseSensitivity", { Title = "Use Sensitivity", Description = "Toggles the Sensitivity", Default = Configuration.UseSensitivity })
+    UseSensitivityToggle:OnChanged(function(Value)
+        Configuration.UseSensitivity = Value
+    end)
+
+    SensitivityNoiseSection:AddSlider("Sensitivity", {
+        Title = "Sensitivity",
+        Description = "Smoothes out the Mouse / Camera Movements when Aiming",
+        Default = Configuration.Sensitivity,
+        Min = 1,
+        Max = 100,
+        Rounding = 1,
+        Callback = function(Value)
+            Configuration.Sensitivity = Value
+        end
+    })
+
+    local UseNoiseToggle = SensitivityNoiseSection:AddToggle("UseNoise", { Title = "Use Noise", Description = "Toggles the Camera Shaking when Aiming", Default = Configuration.UseNoise })
+    UseNoiseToggle:OnChanged(function(Value)
+        Configuration.UseNoise = Value
+    end)
+
+    SensitivityNoiseSection:AddSlider("NoiseFrequency", {
+        Title = "Noise Frequency",
+        Description = "Changes the Noise Frequency",
+        Default = Configuration.NoiseFrequency,
+        Min = 1,
+        Max = 100,
+        Rounding = 1,
+        Callback = function(Value)
+            Configuration.NoiseFrequency = Value
+        end
+    })
+
+    Tabs.Bots = Window:AddTab({ Title = "Bots", Icon = "bot" })
+
+    Tabs.Bots:AddParagraph({
+        Title = string.format("%s 🔥FREE🔥", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
+        Content = "✨Universal Aim Assist Framework✨\nhttps://github.com/CodesStudios/Roblox-Script/blob/main/Universal.lua"
+    })
+
+    local SpinBotSection = Tabs.Bots:AddSection("SpinBot")
+
+    SpinBotSection:AddParagraph({
+        Title = "NOTE",
+        Content = "SpinBot does not function normally in RenderStepped Rendering Mode. Set a different Rendering Mode value than RenderStepped to solve this problem."
+    })
+
+    local SpinBotToggle = SpinBotSection:AddToggle("SpinBot", { Title = "SpinBot", Description = "Toggles the SpinBot", Default = Configuration.SpinBot })
+    SpinBotToggle:OnChanged(function(Value)
+        Configuration.SpinBot = Value
+        if not IsComputer then
+            Spinning = Value
+        end
+    end)
+
+    if IsComputer then
+        local OnePressSpinningModeToggle = SpinBotSection:AddToggle("OnePressSpinningMode", { Title = "One-Press Mode", Description = "Uses the One-Press Mode instead of the Holding Mode", Default = Configuration.OnePressSpinningMode })
+        OnePressSpinningModeToggle:OnChanged(function(Value)
+            Configuration.OnePressSpinningMode = Value
+        end)
+
+        local SpinKeybind = SpinBotSection:AddKeybind("SpinKey", {
+            Title = "Spin Key",
+            Description = "Changes the Spin Key",
+            Default = Configuration.SpinKey,
+            ChangedCallback = function(Value)
+                Configuration.SpinKey = Value
+            end
+        })
+        Configuration.SpinKey = SpinKeybind.Value ~= "RMB" and Enum.KeyCode[SpinKeybind.Value] or Enum.UserInputType.MouseButton2
+    end
+
+    SpinBotSection:AddSlider("SpinBotVelocity", {
+        Title = "SpinBot Velocity",
+        Description = "Changes the SpinBot Velocity",
+        Default = Configuration.SpinBotVelocity,
+        Min = 1,
+        Max = 50,
+        Rounding = 1,
+        Callback = function(Value)
+            Configuration.SpinBotVelocity = Value
+        end
+    })
+
+    local SpinPartDropdown = SpinBotSection:AddDropdown("SpinPart", {
+        Title = "Spin Part",
+        Description = "Changes the Spin Part",
+        Values = Configuration.SpinPartDropdownValues,
+        Default = Configuration.SpinPart,
+        Callback = function(Value)
+            Configuration.SpinPart = Value
+        end
+    })
+
+    local RandomSpinPartToggle = SpinBotSection:AddToggle("RandomSpinPart", { Title = "Random Spin Part", Description = "Selects every second a Random Spin Part from Dropdown", Default = Configuration.RandomSpinPart })
+    RandomSpinPartToggle:OnChanged(function(Value)
+        Configuration.RandomSpinPart = Value
+    end)
+
+    SpinBotSection:AddInput("AddSpinPart", {
+        Title = "Add Spin Part",
+        Description = "After typing, press Enter",
+        Finished = true,
+        Placeholder = "Part Name",
+        Callback = function(Value)
+            if #Value > 0 and not table.find(Configuration.SpinPartDropdownValues, Value) then
+                table.insert(Configuration.SpinPartDropdownValues, Value)
+                SpinPartDropdown:SetValue(Value)
+            end
+        end
+    })
+
+    SpinBotSection:AddInput("RemoveSpinPart", {
+        Title = "Remove Spin Part",
+        Description = "After typing, press Enter",
+        Finished = true,
+        Placeholder = "Part Name",
+        Callback = function(Value)
+            if #Value > 0 and table.find(Configuration.SpinPartDropdownValues, Value) then
+                if Configuration.SpinPart == Value then
+                    SpinPartDropdown:SetValue(nil)
+                end
+                table.remove(Configuration.SpinPartDropdownValues, table.find(Configuration.SpinPartDropdownValues, Value))
+                SpinPartDropdown:SetValues(Configuration.SpinPartDropdownValues)
+            end
+        end
+    })
+
+    SpinBotSection:AddButton({
+        Title = "Clear All Items",
+        Description = "Removes All Elements",
+        Callback = function()
+            local Items = #Configuration.SpinPartDropdownValues
+            SpinPartDropdown:SetValue(nil)
+            Configuration.SpinPartDropdownValues = {}
+            SpinPartDropdown:SetValues(Configuration.SpinPartDropdownValues)
+            Window:Dialog({
+                Title = string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot"),
+                Content = Items == 0 and "Nothing has been cleared!" or Items == 1 and "1 Item has been cleared!" or string.format("%s Items have been cleared!", Items),
+                Buttons = {
+                    {
+                        Title = "Confirm"
+                    }
+                }
+            })
+        end
+    })
+
+    if getfenv().mouse1click and IsComputer then
+        local TriggerBotSection = Tabs.Bots:AddSection("TriggerBot")
+
+        local TriggerBotToggle = TriggerBotSection:AddToggle("TriggerBot", { Title = "TriggerBot", Description = "Toggles the TriggerBot", Default = Configuration.TriggerBot })
+        TriggerBotToggle:OnChanged(function(Value)
+            Configuration.TriggerBot = Value
+        end)
+
+        local OnePressTriggeringModeToggle = TriggerBotSection:AddToggle("OnePressTriggeringMode", { Title = "One-Press Mode", Description = "Uses the One-Press Mode instead of the Holding Mode", Default = Configuration.OnePressTriggeringMode })
+        OnePressTriggeringModeToggle:OnChanged(function(Value)
+            Configuration.OnePressTriggeringMode = Value
+        end)
+
+        local SmartTriggerBotToggle = TriggerBotSection:AddToggle("SmartTriggerBot", { Title = "Smart TriggerBot", Description = "Uses the TriggerBot only when Aiming", Default = Configuration.SmartTriggerBot })
+        SmartTriggerBotToggle:OnChanged(function(Value)
+            Configuration.SmartTriggerBot = Value
+        end)
+
+        local TriggerKeybind = TriggerBotSection:AddKeybind("TriggerKey", {
+            Title = "Trigger Key",
+            Description = "Changes the Trigger Key",
+            Default = Configuration.TriggerKey,
+            ChangedCallback = function(Value)
+                Configuration.TriggerKey = Value
+            end
+        })
+        Configuration.TriggerKey = TriggerKeybind.Value ~= "RMB" and Enum.KeyCode[TriggerKeybind.Value] or Enum.UserInputType.MouseButton2
+
+        TriggerBotSection:AddSlider("TriggerBotChance", {
+            Title = "TriggerBot Chance",
+            Description = "Changes the Hit Chance for TriggerBot",
+            Default = Configuration.TriggerBotChance,
+            Min = 1,
+            Max = 100,
+            Rounding = 1,
+            Callback = function(Value)
+                Configuration.TriggerBotChance = Value
+            end
+        })
+    else
+        ShowWarning = true
+    end
+
+    Tabs.Checks = Window:AddTab({ Title = "Checks", Icon = "list-checks" })
+
+    Tabs.Checks:AddParagraph({
+        Title = string.format("%s 🔥FREE🔥", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
+        Content = "✨Universal Aim Assist Framework✨\nhttps://github.com/CodesStudios/Roblox-Script/blob/main/Universal.lua"
+    })
+
+    local SimpleChecksSection = Tabs.Checks:AddSection("Simple Checks")
+
+    local AliveCheckToggle = SimpleChecksSection:AddToggle("AliveCheck", { Title = "Alive Check", Description = "Toggles the Alive Check", Default = Configuration.AliveCheck })
+    AliveCheckToggle:OnChanged(function(Value)
+        Configuration.AliveCheck = Value
+    end)
+
+    local GodCheckToggle = SimpleChecksSection:AddToggle("GodCheck", { Title = "God Check", Description = "Toggles the God Check", Default = Configuration.GodCheck })
+    GodCheckToggle:OnChanged(function(Value)
+        Configuration.GodCheck = Value
+    end)
+
+    local TeamCheckToggle = SimpleChecksSection:AddToggle("TeamCheck", { Title = "Team Check", Description = "Toggles the Team Check", Default = Configuration.TeamCheck })
+    TeamCheckToggle:OnChanged(function(Value)
+        Configuration.TeamCheck = Value
+    end)
+
+    local FriendCheckToggle = SimpleChecksSection:AddToggle("FriendCheck", { Title = "Friend Check", Description = "Toggles the Friend Check", Default = Configuration.FriendCheck })
+    FriendCheckToggle:OnChanged(function(Value)
+        Configuration.FriendCheck = Value
+    end)
+
+    local FollowCheckToggle = SimpleChecksSection:AddToggle("FollowCheck", { Title = "Follow Check", Description = "Toggles the Follow Check", Default = Configuration.FollowCheck })
+    FollowCheckToggle:OnChanged(function(Value)
+        Configuration.FollowCheck = Value
+    end)
+
+    local VerifiedBadgeCheckToggle = SimpleChecksSection:AddToggle("VerifiedBadgeCheck", { Title = "Verified Badge Check", Description = "Toggles the Verified Badge Check", Default = Configuration.VerifiedBadgeCheck })
+    VerifiedBadgeCheckToggle:OnChanged(function(Value)
+        Configuration.VerifiedBadgeCheck = Value
+    end)
+
+    local WallCheckToggle = SimpleChecksSection:AddToggle("WallCheck", { Title = "Wall Check", Description = "Toggles the Wall Check", Default = Configuration.WallCheck })
+    WallCheckToggle:OnChanged(function(Value)
+        Configuration.WallCheck = Value
+    end)
+
+    local WaterCheckToggle = SimpleChecksSection:AddToggle("WaterCheck", { Title = "Water Check", Description = "Toggles the Water Check if Wall Check is enabled", Default = Configuration.WaterCheck })
+    WaterCheckToggle:OnChanged(function(Value)
+        Configuration.WaterCheck = Value
+    end)
+
+    local AdvancedChecksSection = Tabs.Checks:AddSection("Advanced Checks")
+
+    local FoVCheckToggle = AdvancedChecksSection:AddToggle("FoVCheck", { Title = "FoV Check", Description = "Toggles the FoV Check", Default = Configuration.FoVCheck })
+    FoVCheckToggle:OnChanged(function(Value)
+        Configuration.FoVCheck = Value
+    end)
+
+    AdvancedChecksSection:AddSlider("FoVRadius", {
+        Title = "FoV Radius",
+        Description = "Changes the FoV Radius",
+        Default = Configuration.FoVRadius,
+        Min = 10,
+        Max = 1000,
+        Rounding = 1,
+        Callback = function(Value)
+            Configuration.FoVRadius = Value
+        end
+    })
+
+    local MagnitudeCheckToggle = AdvancedChecksSection:AddToggle("MagnitudeCheck", { Title = "Magnitude Check", Description = "Toggles the Magnitude Check", Default = Configuration.MagnitudeCheck })
+    MagnitudeCheckToggle:OnChanged(function(Value)
+        Configuration.MagnitudeCheck = Value
+    end)
+
+    AdvancedChecksSection:AddSlider("TriggerMagnitude", {
+        Title = "Trigger Magnitude",
+        Description = "Distance between the Native and the Target Character",
+        Default = Configuration.TriggerMagnitude,
+        Min = 10,
+        Max = 1000,
+        Rounding = 1,
+        Callback = function(Value)
+            Configuration.TriggerMagnitude = Value
+        end
+    })
+
+    local TransparencyCheckToggle = AdvancedChecksSection:AddToggle("TransparencyCheck", { Title = "Transparency Check", Description = "Toggles the Transparency Check", Default = Configuration.TransparencyCheck })
+    TransparencyCheckToggle:OnChanged(function(Value)
+        Configuration.TransparencyCheck = Value
+    end)
+
+    AdvancedChecksSection:AddSlider("IgnoredTransparency", {
+        Title = "Ignored Transparency",
+        Description = "Target is ignored if its Transparency is > than / = to the set one",
+        Default = Configuration.IgnoredTransparency,
+        Min = 0.1,
+        Max = 1,
+        Rounding = 1,
+        Callback = function(Value)
+            Configuration.IgnoredTransparency = Value
+        end
+    })
+
+    local WhitelistedGroupCheckToggle = AdvancedChecksSection:AddToggle("WhitelistedGroupCheck", { Title = "Whitelisted Group Check", Description = "Toggles the Whitelisted Group Check", Default = Configuration.WhitelistedGroupCheck })
+    WhitelistedGroupCheckToggle:OnChanged(function(Value)
+        Configuration.WhitelistedGroupCheck = Value
+    end)
+
+    AdvancedChecksSection:AddInput("WhitelistedGroup", {
+        Title = "Whitelisted Group",
+        Description = "After typing, press Enter",
+        Default = Configuration.WhitelistedGroup,
+        Numeric = true,
+        Finished = true,
+        Placeholder = "Group Id",
+        Callback = function(Value)
+            Configuration.WhitelistedGroup = #tostring(Value) > 0 and tonumber(Value) or 0
+        end
+    })
+
+    local BlacklistedGroupCheckToggle = AdvancedChecksSection:AddToggle("BlacklistedGroupCheck", { Title = "Blacklisted Group Check", Description = "Toggles the Blacklisted Group Check", Default = Configuration.BlacklistedGroupCheck })
+    BlacklistedGroupCheckToggle:OnChanged(function(Value)
+        Configuration.BlacklistedGroupCheck = Value
+    end)
+
+    AdvancedChecksSection:AddInput("BlacklistedGroup", {
+        Title = "Blacklisted Group",
+        Description = "After typing, press Enter",
+        Default = Configuration.BlacklistedGroup,
+        Numeric = true,
+        Finished = true,
+        Placeholder = "Group Id",
+        Callback = function(Value)
+            Configuration.BlacklistedGroup = #tostring(Value) > 0 and tonumber(Value) or 0
+        end
+    })
+
+    local ExpertChecksSection = Tabs.Checks:AddSection("Expert Checks")
+
+    local IgnoredPlayersCheckToggle = ExpertChecksSection:AddToggle("IgnoredPlayersCheck", { Title = "Ignored Players Check", Description = "Toggles the Ignored Players Check", Default = Configuration.IgnoredPlayersCheck })
+    IgnoredPlayersCheckToggle:OnChanged(function(Value)
+        Configuration.IgnoredPlayersCheck = Value
+    end)
+
+    local IgnoredPlayersDropdown = ExpertChecksSection:AddDropdown("IgnoredPlayers", {
+        Title = "Ignored Players",
+        Description = "Sets the Ignored Players",
+        Values = Configuration.IgnoredPlayersDropdownValues,
+        Multi = true,
+        Default = Configuration.IgnoredPlayers
+    })
+    IgnoredPlayersDropdown:OnChanged(function(Value)
+        Configuration.IgnoredPlayers = {}
+        for Key, _ in next, Value do
+            if typeof(Key) == "string" then
+                table.insert(Configuration.IgnoredPlayers, Key)
+            end
+        end
+    end)
+
+    ExpertChecksSection:AddInput("AddIgnoredPlayer", {
+        Title = "Add Ignored Player",
+        Description = "After typing, press Enter",
+        Finished = true,
+        Placeholder = "Player Name",
+        Callback = function(Value)
+            Value = #GetPlayerName(Value) > 0 and GetPlayerName(Value) or pcall(Players.GetUserIdFromNameAsync, Players, Value) and pcall(Players.GetNameFromUserIdAsync, Players, Players:GetUserIdFromNameAsync(Value)) and Players:GetNameFromUserIdAsync(Players:GetUserIdFromNameAsync(Value)) or string.sub(Value, 1, 1) == "@" and (#GetPlayerName(string.sub(Value, 2)) > 0 and GetPlayerName(string.sub(Value, 2)) or pcall(Players.GetUserIdFromNameAsync, Players, string.sub(Value, 2)) and pcall(Players.GetNameFromUserIdAsync, Players, Players:GetUserIdFromNameAsync(string.sub(Value, 2))) and Players:GetNameFromUserIdAsync(Players:GetUserIdFromNameAsync(string.sub(Value, 2)))) or string.sub(Value, 1, 1) == "#" and pcall(Players.GetNameFromUserIdAsync, Players, tonumber(string.sub(Value, 2))) and Players:GetNameFromUserIdAsync(tonumber(string.sub(Value, 2))) or ""
+            if #Value > 0 and not table.find(Configuration.IgnoredPlayersDropdownValues, Value) then
+                table.insert(Configuration.IgnoredPlayersDropdownValues, Value)
+                if not table.find(Configuration.IgnoredPlayers, Value) then
+                    IgnoredPlayersDropdown.Value[Value] = true
+                    table.insert(Configuration.IgnoredPlayers, Value)
+                end
+                IgnoredPlayersDropdown:BuildDropdownList()
+            end
+        end
+    })
+
+    ExpertChecksSection:AddInput("RemoveIgnoredPlayer", {
+        Title = "Remove Ignored Player",
+        Description = "After typing, press Enter",
+        Finished = true,
+        Placeholder = "Player Name",
+        Callback = function(Value)
+            Value = #GetPlayerName(Value) > 0 and GetPlayerName(Value) or pcall(Players.GetUserIdFromNameAsync, Players, Value) and pcall(Players.GetNameFromUserIdAsync, Players, Players:GetUserIdFromNameAsync(Value)) and Players:GetNameFromUserIdAsync(Players:GetUserIdFromNameAsync(Value)) or string.sub(Value, 1, 1) == "@" and (#GetPlayerName(string.sub(Value, 2)) > 0 and GetPlayerName(string.sub(Value, 2)) or pcall(Players.GetUserIdFromNameAsync, Players, string.sub(Value, 2)) and pcall(Players.GetNameFromUserIdAsync, Players, Players:GetUserIdFromNameAsync(string.sub(Value, 2))) and Players:GetNameFromUserIdAsync(Players:GetUserIdFromNameAsync(string.sub(Value, 2)))) or string.sub(Value, 1, 1) == "#" and pcall(Players.GetNameFromUserIdAsync, Players, tonumber(string.sub(Value, 2))) and Players:GetNameFromUserIdAsync(tonumber(string.sub(Value, 2))) or ""
+            if #Value > 0 and table.find(Configuration.IgnoredPlayersDropdownValues, Value) then
+                if table.find(Configuration.IgnoredPlayers, Value) then
+                    IgnoredPlayersDropdown.Value[Value] = nil
+                    table.remove(Configuration.IgnoredPlayers, table.find(Configuration.IgnoredPlayers, Value))
+                    IgnoredPlayersDropdown:Display()
+                end
+                table.remove(Configuration.IgnoredPlayersDropdownValues, table.find(Configuration.IgnoredPlayersDropdownValues, Value))
+                IgnoredPlayersDropdown:SetValues(Configuration.IgnoredPlayersDropdownValues)
+            end
+        end
+    })
+
+    ExpertChecksSection:AddButton({
+        Title = "Deselect All Items",
+        Description = "Deselects All Elements",
+        Callback = function()
+            local Items = #Configuration.IgnoredPlayers
+            IgnoredPlayersDropdown:SetValue({})
+            Window:Dialog({
+                Title = string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot"),
+                Content = Items == 0 and "Nothing has been deselected!" or Items == 1 and "1 Item has been deselected!" or string.format("%s Items have been deselected!", Items),
+                Buttons = {
+                    {
+                        Title = "Confirm"
+                    }
+                }
+            })
+        end
+    })
+
+    ExpertChecksSection:AddButton({
+        Title = "Clear Unselected Items",
+        Description = "Removes Unselected Players",
+        Callback = function()
+            local Cache = {}
+            local Items = 0
+            for _, Value in next, Configuration.IgnoredPlayersDropdownValues do
+                if table.find(Configuration.IgnoredPlayers, Value) then
+                    table.insert(Cache, Value)
+                else
+                    Items = Items + 1
+                end
+            end
+            Configuration.IgnoredPlayersDropdownValues = Cache
+            IgnoredPlayersDropdown:SetValues(Configuration.IgnoredPlayersDropdownValues)
+            Window:Dialog({
+                Title = string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot"),
+                Content = Items == 0 and "Nothing has been cleared!" or Items == 1 and "1 Item has been cleared!" or string.format("%s Items have been cleared!", Items),
+                Buttons = {
+                    {
+                        Title = "Confirm"
+                    }
+                }
+            })
+        end
+    })
+
+    local TargetPlayersCheckToggle = ExpertChecksSection:AddToggle("TargetPlayersCheck", { Title = "Target Players Check", Description = "Toggles the Target Players Check", Default = Configuration.TargetPlayersCheck })
+    TargetPlayersCheckToggle:OnChanged(function(Value)
+        Configuration.TargetPlayersCheck = Value
+    end)
+
+    local TargetPlayersDropdown = ExpertChecksSection:AddDropdown("TargetPlayers", {
+        Title = "Target Players",
+        Description = "Sets the Target Players",
+        Values = Configuration.TargetPlayersDropdownValues,
+        Multi = true,
+        Default = Configuration.TargetPlayers
+    })
+    TargetPlayersDropdown:OnChanged(function(Value)
+        Configuration.TargetPlayers = {}
+        for Key, _ in next, Value do
+            if typeof(Key) == "string" then
+                table.insert(Configuration.TargetPlayers, Key)
+            end
+        end
+    end)
+
+    ExpertChecksSection:AddInput("AddTargetPlayer", {
+        Title = "Add Target Player",
+        Description = "After typing, press Enter",
+        Finished = true,
+        Placeholder = "Player Name",
+        Callback = function(Value)
+            Value = #GetPlayerName(Value) > 0 and GetPlayerName(Value) or pcall(Players.GetUserIdFromNameAsync, Players, Value) and pcall(Players.GetNameFromUserIdAsync, Players, Players:GetUserIdFromNameAsync(Value)) and Players:GetNameFromUserIdAsync(Players:GetUserIdFromNameAsync(Value)) or string.sub(Value, 1, 1) == "@" and (#GetPlayerName(string.sub(Value, 2)) > 0 and GetPlayerName(string.sub(Value, 2)) or pcall(Players.GetUserIdFromNameAsync, Players, string.sub(Value, 2)) and pcall(Players.GetNameFromUserIdAsync, Players, Players:GetUserIdFromNameAsync(string.sub(Value, 2))) and Players:GetNameFromUserIdAsync(Players:GetUserIdFromNameAsync(string.sub(Value, 2)))) or string.sub(Value, 1, 1) == "#" and pcall(Players.GetNameFromUserIdAsync, Players, tonumber(string.sub(Value, 2))) and Players:GetNameFromUserIdAsync(tonumber(string.sub(Value, 2))) or ""
+            if #Value > 0 and not table.find(Configuration.TargetPlayersDropdownValues, Value) then
+                table.insert(Configuration.TargetPlayersDropdownValues, Value)
+                if not table.find(Configuration.TargetPlayers, Value) then
+                    TargetPlayersDropdown.Value[Value] = true
+                    table.insert(Configuration.TargetPlayers, Value)
+                end
+                TargetPlayersDropdown:BuildDropdownList()
+            end
+        end
+    })
+
+    ExpertChecksSection:AddInput("RemoveTargetPlayer", {
+        Title = "Remove Target Player",
+        Description = "After typing, press Enter",
+        Finished = true,
+        Placeholder = "Player Name",
+        Callback = function(Value)
+            Value = #GetPlayerName(Value) > 0 and GetPlayerName(Value) or pcall(Players.GetUserIdFromNameAsync, Players, Value) and pcall(Players.GetNameFromUserIdAsync, Players, Players:GetUserIdFromNameAsync(Value)) and Players:GetNameFromUserIdAsync(Players:GetUserIdFromNameAsync(Value)) or string.sub(Value, 1, 1) == "@" and (#GetPlayerName(string.sub(Value, 2)) > 0 and GetPlayerName(string.sub(Value, 2)) or pcall(Players.GetUserIdFromNameAsync, Players, string.sub(Value, 2)) and pcall(Players.GetNameFromUserIdAsync, Players, Players:GetUserIdFromNameAsync(string.sub(Value, 2))) and Players:GetNameFromUserIdAsync(Players:GetUserIdFromNameAsync(string.sub(Value, 2)))) or string.sub(Value, 1, 1) == "#" and pcall(Players.GetNameFromUserIdAsync, Players, tonumber(string.sub(Value, 2))) and Players:GetNameFromUserIdAsync(tonumber(string.sub(Value, 2))) or ""
+            if #Value > 0 and table.find(Configuration.TargetPlayersDropdownValues, Value) then
+                if table.find(Configuration.TargetPlayers, Value) then
+                    TargetPlayersDropdown.Value[Value] = nil
+                    table.remove(Configuration.TargetPlayers, table.find(Configuration.TargetPlayers, Value))
+                    TargetPlayersDropdown:Display()
+                end
+                table.remove(Configuration.TargetPlayersDropdownValues, table.find(Configuration.TargetPlayersDropdownValues, Value))
+                TargetPlayersDropdown:SetValues(Configuration.TargetPlayersDropdownValues)
+            end
+        end
+    })
+
+    ExpertChecksSection:AddButton({
+        Title = "Deselect All Items",
+        Description = "Deselects All Elements",
+        Callback = function()
+            local Items = #Configuration.TargetPlayers
+            TargetPlayersDropdown:SetValue({})
+            Window:Dialog({
+                Title = string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot"),
+                Content = Items == 0 and "Nothing has been deselected!" or Items == 1 and "1 Item has been deselected!" or string.format("%s Items have been deselected!", Items),
+                Buttons = {
+                    {
+                        Title = "Confirm"
+                    }
+                }
+            })
+        end
+    })
+
+    ExpertChecksSection:AddButton({
+        Title = "Clear Unselected Items",
+        Description = "Removes Unselected Players",
+        Callback = function()
+            local Cache = {}
+            local Items = 0
+            for _, Value in next, Configuration.TargetPlayersDropdownValues do
+                if table.find(Configuration.TargetPlayers, Value) then
+                    table.insert(Cache, Value)
+                else
+                    Items = Items + 1
+                end
+            end
+            Configuration.TargetPlayersDropdownValues = Cache
+            TargetPlayersDropdown:SetValues(Configuration.TargetPlayersDropdownValues)
+            Window:Dialog({
+                Title = string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot"),
+                Content = Items == 0 and "Nothing has been cleared!" or Items == 1 and "1 Item has been cleared!" or string.format("%s Items have been cleared!", Items),
+                Buttons = {
+                    {
+                        Title = "Confirm"
+                    }
+                }
+            })
+        end
+    })
+
+    local PremiumChecksSection = Tabs.Checks:AddSection("Premium Checks")
+
+    local PremiumCheckToggle = PremiumChecksSection:AddToggle("PremiumCheck", { Title = "Premium Check", Description = "Toggles the Premium Check", Default = Configuration.PremiumCheck })
+    PremiumCheckToggle:OnChanged(function(Value)
+        Configuration.PremiumCheck = Value
+    end)
+
+    PremiumChecksSection:AddParagraph({
+        Title = string.format("%s 💫PREMIUM💫", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
+        Content = "✨Upgrade to unlock all Options✨\nContact @ttwiz_z via Discord to buy"
+    })
+
+    if DEBUG or getfenv().Drawing and getfenv().Drawing.new then
+        Tabs.Visuals = Window:AddTab({ Title = "Visuals", Icon = "box" })
+
+        Tabs.Visuals:AddParagraph({
+            Title = string.format("%s 🔥FREE🔥", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
+            Content = "✨Universal Aim Assist Framework✨\nhttps://github.com/CodesStudios/Roblox-Script/blob/main/Universal.lua"
+        })
+
+        local FoVSection = Tabs.Visuals:AddSection("FoV")
+
+        local FoVToggle = FoVSection:AddToggle("FoV", { Title = "FoV", Description = "Graphically Displays the FoV Radius", Default = Configuration.FoV })
+        FoVToggle:OnChanged(function(Value)
+            Configuration.FoV = Value
+            if not IsComputer then
+                ShowingFoV = Value
+            end
+        end)
+
+        if IsComputer then
+            local FoVKeybind = FoVSection:AddKeybind("FoVKey", {
+                Title = "FoV Key",
+                Description = "Changes the FoV Key",
+                Default = Configuration.FoVKey,
+                ChangedCallback = function(Value)
+                    Configuration.FoVKey = Value
+                end
+            })
+            Configuration.FoVKey = FoVKeybind.Value ~= "RMB" and Enum.KeyCode[FoVKeybind.Value] or Enum.UserInputType.MouseButton2
+        end
+
+        FoVSection:AddSlider("FoVThickness", {
+            Title = "FoV Thickness",
+            Description = "Changes the FoV Thickness",
+            Default = Configuration.FoVThickness,
+            Min = 1,
+            Max = 10,
+            Rounding = 1,
+            Callback = function(Value)
+                Configuration.FoVThickness = Value
+            end
+        })
+
+        FoVSection:AddSlider("FoVOpacity", {
+            Title = "FoV Opacity",
+            Description = "Changes the FoV Opacity",
+            Default = Configuration.FoVOpacity,
+            Min = 0.1,
+            Max = 1,
+            Rounding = 1,
+            Callback = function(Value)
+                Configuration.FoVOpacity = Value
+            end
+        })
+
+        local FoVFilledToggle = FoVSection:AddToggle("FoVFilled", { Title = "FoV Filled", Description = "Makes the FoV Filled", Default = Configuration.FoVFilled })
+        FoVFilledToggle:OnChanged(function(Value)
+            Configuration.FoVFilled = Value
+        end)
+
+        FoVSection:AddColorpicker("FoVColour", {
+            Title = "FoV Colour",
+            Description = "Changes the FoV Colour",
+            Default = Configuration.FoVColour,
+            Callback = function(Value)
+                Configuration.FoVColour = Value
+            end
+        })
+
+        local ESPSection = Tabs.Visuals:AddSection("ESP")
+
+        local SmartESPToggle = ESPSection:AddToggle("SmartESP", { Title = "Smart ESP", Description = "Does not ESP the Whitelisted Players", Default = Configuration.SmartESP })
+        SmartESPToggle:OnChanged(function(Value)
+            Configuration.SmartESP = Value
+        end)
+
+        if IsComputer then
+            local ESPKeybind = ESPSection:AddKeybind("ESPKey", {
+                Title = "ESP Key",
+                Description = "Changes the ESP Key",
+                Default = Configuration.ESPKey,
+                ChangedCallback = function(Value)
+                    Configuration.ESPKey = Value
+                end
+            })
+            Configuration.ESPKey = ESPKeybind.Value ~= "RMB" and Enum.KeyCode[ESPKeybind.Value] or Enum.UserInputType.MouseButton2
+        end
+
+        local ESPBoxToggle = ESPSection:AddToggle("ESPBox", { Title = "ESP Box", Description = "Creates the ESP Box around the Players", Default = Configuration.ESPBox })
+        ESPBoxToggle:OnChanged(function(Value)
+            Configuration.ESPBox = Value
+            if not IsComputer then
+                if Value then
+                    ShowingESP = true
+                elseif not Configuration.ESPBox and not Configuration.NameESP and not Configuration.HealthESP and not Configuration.MagnitudeESP and not Configuration.TracerESP then
+                    ShowingESP = false
+                end
+            end
+        end)
+
+        local ESPBoxFilledToggle = ESPSection:AddToggle("ESPBoxFilled", { Title = "ESP Box Filled", Description = "Makes the ESP Box Filled", Default = Configuration.ESPBoxFilled })
+        ESPBoxFilledToggle:OnChanged(function(Value)
+            Configuration.ESPBoxFilled = Value
+        end)
+
+        local NameESPToggle = ESPSection:AddToggle("NameESP", { Title = "Name ESP", Description = "Creates the Name ESP above the Players", Default = Configuration.NameESP })
+        NameESPToggle:OnChanged(function(Value)
+            Configuration.NameESP = Value
+            if not IsComputer then
+                if Value then
+                    ShowingESP = true
+                elseif not Configuration.ESPBox and not Configuration.NameESP and not Configuration.HealthESP and not Configuration.MagnitudeESP and not Configuration.TracerESP then
+                    ShowingESP = false
+                end
+            end
+        end)
+
+        ESPSection:AddDropdown("NameESPFont", {
+            Title = "Name ESP Font",
+            Description = "Changes the Name ESP Font",
+            Values = { "UI", "System", "Plex", "Monospace" },
+            Default = Configuration.NameESPFont,
+            Callback = function(Value)
+                Configuration.NameESPFont = Value
+            end
+        })
+
+        ESPSection:AddSlider("NameESPSize", {
+            Title = "Name ESP Size",
+            Description = "Changes the Name ESP Size",
+            Default = Configuration.NameESPSize,
+            Min = 8,
+            Max = 28,
+            Rounding = 1,
+            Callback = function(Value)
+                Configuration.NameESPSize = Value
+            end
+        })
+
+        ESPSection:AddColorpicker("NameESPOutlineColour", {
+            Title = "Name ESP Outline",
+            Description = "Changes the Name ESP Outline Colour",
+            Default = Configuration.NameESPOutlineColour,
+            Callback = function(Value)
+                Configuration.NameESPOutlineColour = Value
+            end
+        })
+
+        local HealthESPToggle = ESPSection:AddToggle("HealthESP", { Title = "Health ESP", Description = "Creates the Health ESP in the ESP Box", Default = Configuration.HealthESP })
+        HealthESPToggle:OnChanged(function(Value)
+            Configuration.HealthESP = Value
+            if not IsComputer then
+                if Value then
+                    ShowingESP = true
+                elseif not Configuration.ESPBox and not Configuration.NameESP and not Configuration.HealthESP and not Configuration.MagnitudeESP and not Configuration.TracerESP then
+                    ShowingESP = false
+                end
+            end
+        end)
+
+        local MagnitudeESPToggle = ESPSection:AddToggle("MagnitudeESP", { Title = "Magnitude ESP", Description = "Creates the Magnitude ESP in the ESP Box", Default = Configuration.MagnitudeESP })
+        MagnitudeESPToggle:OnChanged(function(Value)
+            Configuration.MagnitudeESP = Value
+            if not IsComputer then
+                if Value then
+                    ShowingESP = true
+                elseif not Configuration.ESPBox and not Configuration.NameESP and not Configuration.HealthESP and not Configuration.MagnitudeESP and not Configuration.TracerESP then
+                    ShowingESP = false
+                end
+            end
+        end)
+
+        local TracerESPToggle = ESPSection:AddToggle("TracerESP", { Title = "Tracer ESP", Description = "Creates the Tracer ESP in the direction of the Players", Default = Configuration.TracerESP })
+        TracerESPToggle:OnChanged(function(Value)
+            Configuration.TracerESP = Value
+            if not IsComputer then
+                if Value then
+                    ShowingESP = true
+                elseif not Configuration.ESPBox and not Configuration.NameESP and not Configuration.HealthESP and not Configuration.MagnitudeESP and not Configuration.TracerESP then
+                    ShowingESP = false
+                end
+            end
+        end)
+
+        ESPSection:AddSlider("ESPThickness", {
+            Title = "ESP Thickness",
+            Description = "Changes the ESP Thickness",
+            Default = Configuration.ESPThickness,
+            Min = 1,
+            Max = 10,
+            Rounding = 1,
+            Callback = function(Value)
+                Configuration.ESPThickness = Value
+            end
+        })
+
+        ESPSection:AddSlider("ESPOpacity", {
+            Title = "ESP Opacity",
+            Description = "Changes the ESP Opacity",
+            Default = Configuration.ESPOpacity,
+            Min = 0.1,
+            Max = 1,
+            Rounding = 1,
+            Callback = function(Value)
+                Configuration.ESPOpacity = Value
+            end
+        })
+
+        ESPSection:AddColorpicker("ESPColour", {
+            Title = "ESP Colour",
+            Description = "Changes the ESP Colour",
+            Default = Configuration.ESPColour,
+            Callback = function(Value)
+                Configuration.ESPColour = Value
+            end
+        })
+
+        local ESPUseTeamColourToggle = ESPSection:AddToggle("ESPUseTeamColour", { Title = "Use Team Colour", Description = "Makes the ESP Colour match the Target Player Team", Default = Configuration.ESPUseTeamColour })
+        ESPUseTeamColourToggle:OnChanged(function(Value)
+            Configuration.ESPUseTeamColour = Value
+        end)
+
+        local VisualsSection = Tabs.Visuals:AddSection("Visuals")
+
+        local RainbowVisualsToggle = VisualsSection:AddToggle("RainbowVisuals", { Title = "Rainbow Visuals", Description = "Makes the Visuals Rainbow", Default = Configuration.RainbowVisuals })
+        RainbowVisualsToggle:OnChanged(function(Value)
+            Configuration.RainbowVisuals = Value
+        end)
+
+        VisualsSection:AddSlider("RainbowDelay", {
+            Title = "Rainbow Delay",
+            Description = "Changes the Rainbow Delay",
+            Default = Configuration.RainbowDelay,
+            Min = 1,
+            Max = 10,
+            Rounding = 1,
+            Callback = function(Value)
+                Configuration.RainbowDelay = Value
+            end
+        })
+    else
+        ShowWarning = true
+    end
+
+    Tabs.Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
+
+    Tabs.Settings:AddParagraph({
+        Title = string.format("%s 🔥FREE🔥", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
+        Content = "✨Universal Aim Assist Framework✨\nhttps://github.com/CodesStudios/Roblox-Script/blob/main/Universal.lua"
+    })
+
+    local UISection = Tabs.Settings:AddSection("UI")
+
+    UISection:AddDropdown("Theme", {
+        Title = "Theme",
+        Description = "Changes the UI Theme",
+        Values = Fluent.Themes,
+        Default = Fluent.Theme,
+        Callback = function(Value)
+            Fluent:SetTheme(Value)
+            UISettings.Theme = Value
+            InterfaceManager:ExportSettings()
+        end
+    })
+
+    if Fluent.UseAcrylic then
+        UISection:AddToggle("Acrylic", {
+            Title = "Acrylic",
+            Description = "Blurred Background requires Graphic Quality >= 8",
+            Default = Fluent.Acrylic,
+            Callback = function(Value)
+                if not Value or not UISettings.ShowWarnings then
+                    Fluent:ToggleAcrylic(Value)
+                elseif UISettings.ShowWarnings then
+                    Window:Dialog({
+                        Title = "Warning",
+                        Content = "This Option can be detected! Activate it anyway?",
+                        Buttons = {
+                            {
+                                Title = "Confirm",
+                                Callback = function()
+                                    Fluent:ToggleAcrylic(Value)
+                                end
+                            },
+                            {
+                                Title = "Cancel",
+                                Callback = function()
+                                    Fluent.Options.Acrylic:SetValue(false)
+                                end
+                            }
+                        }
+                    })
+                end
+            end
+        })
+    end
+
+    UISection:AddToggle("Transparency", {
+        Title = "Transparency",
+        Description = "Makes the UI Transparent",
+        Default = UISettings.Transparency,
+        Callback = function(Value)
+            Fluent:ToggleTransparency(Value)
+            UISettings.Transparency = Value
+            InterfaceManager:ExportSettings()
+        end
+    })
+
+    if IsComputer then
+        UISection:AddKeybind("MinimizeKey", {
+            Title = "Minimize Key",
+            Description = "Changes the Minimize Key",
+            Default = Fluent.MinimizeKey,
+            ChangedCallback = function()
+                UISettings.MinimizeKey = Fluent.Options.MinimizeKey.Value
+                InterfaceManager:ExportSettings()
+            end
+        })
+        Fluent.MinimizeKeybind = Fluent.Options.MinimizeKey
+    end
+
+    local NotificationsWarningsSection = Tabs.Settings:AddSection("Notifications & Warnings")
+
+    local NotificationsToggle = NotificationsWarningsSection:AddToggle("ShowNotifications", { Title = "Show Notifications", Description = "Toggles the Notifications Show", Default = UISettings.ShowNotifications })
+    NotificationsToggle:OnChanged(function(Value)
+        Fluent.ShowNotifications = Value
+        UISettings.ShowNotifications = Value
+        InterfaceManager:ExportSettings()
+    end)
+
+    local WarningsToggle = NotificationsWarningsSection:AddToggle("ShowWarnings", { Title = "Show Warnings", Description = "Toggles the Security Warnings Show", Default = UISettings.ShowWarnings })
+    WarningsToggle:OnChanged(function(Value)
+        UISettings.ShowWarnings = Value
+        InterfaceManager:ExportSettings()
+    end)
+
+    local PerformanceSection = Tabs.Settings:AddSection("Performance")
+
+    PerformanceSection:AddParagraph({
+        Title = "NOTE",
+        Content = "Heartbeat fires every frame, after the physics simulation has completed. RenderStepped fires every frame, prior to the frame being rendered. Stepped fires every frame, prior to the physics simulation."
+    })
+
+    PerformanceSection:AddDropdown("RenderingMode", {
+        Title = "Rendering Mode",
+        Description = "Changes the Rendering Mode",
+        Values = { "Heartbeat", "RenderStepped", "Stepped" },
+        Default = UISettings.RenderingMode,
+        Callback = function(Value)
+            UISettings.RenderingMode = Value
+            InterfaceManager:ExportSettings()
+            Window:Dialog({
+                Title = string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot"),
+                Content = "Changes will take effect after the Restart!",
+                Buttons = {
+                    {
+                        Title = "Confirm"
+                    }
+                }
+            })
+        end
+    })
+
+    if getfenv().isfile and getfenv().readfile and getfenv().writefile and getfenv().delfile then
+        local ConfigurationManager = Tabs.Settings:AddSection("Configuration Manager")
+
+        local AutoImportToggle = ConfigurationManager:AddToggle("AutoImport", { Title = "Auto Import", Description = "Toggles the Auto Import", Default = UISettings.AutoImport })
+        AutoImportToggle:OnChanged(function(Value)
+            UISettings.AutoImport = Value
+            InterfaceManager:ExportSettings()
+        end)
+
+        ConfigurationManager:AddParagraph({
+            Title = string.format("Manager for %s", game.Name),
+            Content = string.format("Universe ID is %s", game.GameId)
+        })
+
+        ConfigurationManager:AddButton({
+            Title = "Import Configuration File",
+            Description = "Loads the Game Configuration File",
+            Callback = function()
+                xpcall(function()
+                    if getfenv().isfile(string.format("%s.ttwizz", game.GameId)) and getfenv().readfile(string.format("%s.ttwizz", game.GameId)) then
+                        local ImportedConfiguration = HttpService:JSONDecode(getfenv().readfile(string.format("%s.ttwizz", game.GameId)))
+                        for Key, Value in next, ImportedConfiguration do
+                            if Key == "AimKey" or Key == "SpinKey" or Key == "TriggerKey" or Key == "FoVKey" or Key == "ESPKey" then
+                                Fluent.Options[Key]:SetValue(Value)
+                                Configuration[Key] = Value ~= "RMB" and Enum.KeyCode[Value] or Enum.UserInputType.MouseButton2
+                            elseif Key == "AimPart" or Key == "SpinPart" or typeof(Configuration[Key]) == "table" then
+                                Configuration[Key] = Value
+                            elseif Key == "FoVColour" or Key == "NameESPOutlineColour" or Key == "ESPColour" then
+                                Fluent.Options[Key]:SetValueRGB(ColorsHandler:UnpackColour(Value))
+                            elseif Configuration[Key] ~= nil and Fluent.Options[Key] then
+                                Fluent.Options[Key]:SetValue(Value)
+                            end
+                        end
+                        for Key, Option in next, Fluent.Options do
+                            if Option.Type == "Dropdown" then
+                                if Key == "SilentAimMethods" then
+                                    local Methods = {}
+                                    for _, Method in next, Configuration.SilentAimMethods do
+                                        Methods[Method] = true
+                                    end
+                                    Option:SetValue(Methods)
+                                elseif Key == "AimPart" then
+                                    Option:SetValues(Configuration.AimPartDropdownValues)
+                                    Option:SetValue(Configuration.AimPart)
+                                elseif Key == "SpinPart" then
+                                    Option:SetValues(Configuration.SpinPartDropdownValues)
+                                    Option:SetValue(Configuration.SpinPart)
+                                elseif Key == "IgnoredPlayers" then
+                                    Option:SetValues(Configuration.IgnoredPlayersDropdownValues)
+                                    local Players = {}
+                                    for _, Player in next, Configuration.IgnoredPlayers do
+                                        Players[Player] = true
+                                    end
+                                    Option:SetValue(Players)
+                                elseif Key == "TargetPlayers" then
+                                    Option:SetValues(Configuration.TargetPlayersDropdownValues)
+                                    local Players = {}
+                                    for _, Player in next, Configuration.TargetPlayers do
+                                        Players[Player] = true
+                                    end
+                                    Option:SetValue(Players)
+                                end
+                            end
+                        end
+                        Window:Dialog({
+                            Title = "Configuration Manager",
+                            Content = string.format("Configuration File %s.ttwizz has been successfully loaded!", game.GameId),
+                            Buttons = {
+                                {
+                                    Title = "Confirm"
+                                }
+                            }
+                        })
+                    else
+                        Window:Dialog({
+                            Title = "Configuration Manager",
+                            Content = string.format("Configuration File %s.ttwizz could not be found!", game.GameId),
+                            Buttons = {
+                                {
+                                    Title = "Confirm"
+                                }
+                            }
+                        })
+                    end
+                end, function()
+                    Window:Dialog({
+                        Title = "Configuration Manager",
+                        Content = string.format("An Error occurred when loading the Configuration File %s.ttwizz", game.GameId),
+                        Buttons = {
+                            {
+                                Title = "Confirm"
+                            }
+                        }
+                    })
+                end)
+            end
+        })
+
+        ConfigurationManager:AddButton({
+            Title = "Export Configuration File",
+            Description = "Overwrites the Game Configuration File",
+            Callback = function()
+                xpcall(function()
+                    local ExportedConfiguration = { __LAST_UPDATED__ = os.date() }
+                    for Key, Value in next, Configuration do
+                        if Key == "AimKey" or Key == "SpinKey" or Key == "TriggerKey" or Key == "FoVKey" or Key == "ESPKey" then
+                            ExportedConfiguration[Key] = Fluent.Options[Key].Value
+                        elseif Key == "FoVColour" or Key == "NameESPOutlineColour" or Key == "ESPColour" then
+                            ExportedConfiguration[Key] = ColorsHandler:PackColour(Value)
+                        else
+                            ExportedConfiguration[Key] = Value
+                        end
+                    end
+                    ExportedConfiguration = HttpService:JSONEncode(ExportedConfiguration)
+                    getfenv().writefile(string.format("%s.ttwizz", game.GameId), ExportedConfiguration)
+                    Window:Dialog({
+                        Title = "Configuration Manager",
+                        Content = string.format("Configuration File %s.ttwizz has been successfully overwritten!", game.GameId),
+                        Buttons = {
+                            {
+                                Title = "Confirm"
+                            }
+                        }
+                    })
+                end, function()
+                    Window:Dialog({
+                        Title = "Configuration Manager",
+                        Content = string.format("An Error occurred when overwriting the Configuration File %s.ttwizz", game.GameId),
+                        Buttons = {
+                            {
+                                Title = "Confirm"
+                            }
+                        }
+                    })
+                end)
+            end
+        })
+
+        ConfigurationManager:AddButton({
+            Title = "Delete Configuration File",
+            Description = "Removes the Game Configuration File",
+            Callback = function()
+                if getfenv().isfile(string.format("%s.ttwizz", game.GameId)) then
+                    getfenv().delfile(string.format("%s.ttwizz", game.GameId))
+                    Window:Dialog({
+                        Title = "Configuration Manager",
+                        Content = string.format("Configuration File %s.ttwizz has been successfully removed!", game.GameId),
+                        Buttons = {
+                            {
+                                Title = "Confirm"
+                            }
+                        }
+                    })
+                else
+                    Window:Dialog({
+                        Title = "Configuration Manager",
+                        Content = string.format("Configuration File %s.ttwizz could not be found!", game.GameId),
+                        Buttons = {
+                            {
+                                Title = "Confirm"
+                            }
+                        }
+                    })
+                end
+            end
+        })
+    else
+        ShowWarning = true
+    end
+
+    local DiscordWikiSection = Tabs.Settings:AddSection("Discord & Wiki")
+
+    if getfenv().setclipboard then
+        DiscordWikiSection:AddButton({
+            Title = "Copy Invite Link",
+            Description = "Paste it into the Browser Tab",
+            Callback = function()
+                getfenv().setclipboard("https://twix.cyou/pix")
+                Window:Dialog({
+                    Title = string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot"),
+                    Content = "Invite Link has been copied to the Clipboard!",
+                    Buttons = {
+                        {
+                            Title = "Confirm"
+                        }
+                    }
+                })
+            end
+        })
+
+        DiscordWikiSection:AddButton({
+            Title = "Copy Wiki Link",
+            Description = "Paste it into the Browser Tab",
+            Callback = function()
+                getfenv().setclipboard("https://github.com/CodesStudios/Roblox-Script/blob/main/Universal.lua")
+                Window:Dialog({
+                    Title = string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot"),
+                    Content = "Wiki Link has been copied to the Clipboard!",
+                    Buttons = {
+                        {
+                            Title = "Confirm"
+                        }
+                    }
+                })
+            end
+        })
+    else
+        DiscordWikiSection:AddParagraph({
+            Title = "https://github.com/CodesStudios/Roblox-Script/blob/main/Universal.luax",
+            Content = "Paste it into the Browser Tab"
+        })
+
+        DiscordWikiSection:AddParagraph({
+            Title = "https://github.com/CodesStudios/Roblox-Script/blob/main/Universal.lua",
+            Content = "Paste it into the Browser Tab"
+        })
+    end
+
+    if UISettings.ShowWarnings then
+        if DEBUG then
+            Window:Dialog({
+                Title = "Warning",
+                Content = "Running in Debugging Mode. Some Features may not work properly.",
+                Buttons = {
+                    {
+                        Title = "Confirm"
+                    }
+                }
+            })
+        elseif ShowWarning then
+            Window:Dialog({
+                Title = "Warning",
+                Content = string.format("Your Software does not support all the Features of %s 🔥FREE🔥!", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
+                Buttons = {
+                    {
+                        Title = "Confirm"
+                    }
+                }
+            })
+        else
+            Window:Dialog({
+                Title = string.format("%s 💫PREMIUM💫", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
+                Content = "✨Upgrade to unlock all Options✨ – Contact @codesstudios via Discord to buy",
+                Buttons = {
+                    {
+                        Title = "Confirm"
+                    }
+                }
+            })
+        end
+    end
+end
+
+
+--! Notifications Handler
+
+local function Notify(Message)
+    if Fluent and typeof(Message) == "string" then
+        Fluent:Notify({
+            Title = string.format("%s 🔥FREE🔥", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
+            Content = Message,
+            SubContent = "By @codesstudios",
+            Duration = 1.5
+        })
+    end
+end
+
+Notify("✨Upgrade to unlock all Options✨")
+
+
+--! Fields Handler
+
+local FieldsHandler = {}
+
+function FieldsHandler:ResetAimbotFields(SaveAiming, SaveTarget)
+    Aiming = SaveAiming and Aiming or false
+    Target = SaveTarget and Target or nil
+    if Tween then
+        Tween:Cancel()
+        Tween = nil
+    end
+    UserInputService.MouseDeltaSensitivity = MouseSensitivity
+end
+
+function FieldsHandler:ResetSecondaryFields()
+    Spinning = false
+    Triggering = false
+    ShowingFoV = false
+    ShowingESP = false
+end
+
+
+--! Input Handler
+
+do
+    if IsComputer then
+        local InputBegan; InputBegan = UserInputService.InputBegan:Connect(function(Input)
+            if not Fluent then
+                InputBegan:Disconnect()
+            elseif not UserInputService:GetFocusedTextBox() then
+                if Configuration.Aimbot and (Input.KeyCode == Configuration.AimKey or Input.UserInputType == Configuration.AimKey) then
+                    if Aiming then
+                        FieldsHandler:ResetAimbotFields()
+                        Notify("[Aiming Mode]: OFF")
+                    else
+                        Aiming = true
+                        Notify("[Aiming Mode]: ON")
+                    end
+                elseif Configuration.SpinBot and (Input.KeyCode == Configuration.SpinKey or Input.UserInputType == Configuration.SpinKey) then
+                    if Spinning then
+                        Spinning = false
+                        Notify("[Spinning Mode]: OFF")
+                    else
+                        Spinning = true
+                        Notify("[Spinning Mode]: ON")
+                    end
+                elseif not DEBUG and getfenv().mouse1click and Configuration.TriggerBot and (Input.KeyCode == Configuration.TriggerKey or Input.UserInputType == Configuration.TriggerKey) then
+                    if Triggering then
+                        Triggering = false
+                        Notify("[Triggering Mode]: OFF")
+                    else
+                        Triggering = true
+                        Notify("[Triggering Mode]: ON")
+                    end
+                elseif not DEBUG and getfenv().Drawing and getfenv().Drawing.new and Configuration.FoV and (Input.KeyCode == Configuration.FoVKey or Input.UserInputType == Configuration.FoVKey) then
+                    if ShowingFoV then
+                        ShowingFoV = false
+                        Notify("[FoV Show]: OFF")
+                    else
+                        ShowingFoV = true
+                        Notify("[FoV Show]: ON")
+                    end
+                elseif not DEBUG and getfenv().Drawing and getfenv().Drawing.new and (Configuration.ESPBox or Configuration.NameESP or Configuration.HealthESP or Configuration.MagnitudeESP or Configuration.TracerESP) and (Input.KeyCode == Configuration.ESPKey or Input.UserInputType == Configuration.ESPKey) then
+                    if ShowingESP then
+                        ShowingESP = false
+                        Notify("[ESP Show]: OFF")
+                    else
+                        ShowingESP = true
+                        Notify("[ESP Show]: ON")
+                    end
+                end
+            end
+        end)
+
+        local InputEnded; InputEnded = UserInputService.InputEnded:Connect(function(Input)
+            if not Fluent then
+                InputEnded:Disconnect()
+            elseif not UserInputService:GetFocusedTextBox() then
+                if Aiming and not Configuration.OnePressAimingMode and (Input.KeyCode == Configuration.AimKey or Input.UserInputType == Configuration.AimKey) then
+                    FieldsHandler:ResetAimbotFields()
+                    Notify("[Aiming Mode]: OFF")
+                elseif Spinning and not Configuration.OnePressSpinningMode and (Input.KeyCode == Configuration.SpinKey or Input.UserInputType == Configuration.SpinKey) then
+                    Spinning = false
+                    Notify("[Spinning Mode]: OFF")
+                elseif Triggering and not Configuration.OnePressTriggeringMode and (Input.KeyCode == Configuration.TriggerKey or Input.UserInputType == Configuration.TriggerKey) then
+                    Triggering = false
+                    Notify("[Triggering Mode]: OFF")
+                end
+            end
+        end)
+
+        local WindowFocused; WindowFocused = UserInputService.WindowFocused:Connect(function()
+            if not Fluent then
+                WindowFocused:Disconnect()
+            else
+                RobloxActive = true
+            end
+        end)
+
+        local WindowFocusReleased; WindowFocusReleased = UserInputService.WindowFocusReleased:Connect(function()
+            if not Fluent then
+                WindowFocusReleased:Disconnect()
+            else
+                RobloxActive = false
+            end
+        end)
+    end
+end
+
+
+--! Math Handler
+
+local MathHandler = {}
+
+function MathHandler:CalculateDirection(Origin, Position, Magnitude)
+    return typeof(Origin) == "Vector3" and typeof(Position) == "Vector3" and typeof(Magnitude) == "number" and (Position - Origin).Unit * Magnitude or Vector3.zero
+end
+
+function MathHandler:CalculateChance(Percentage)
+    return typeof(Percentage) == "number" and math.round(math.clamp(Percentage, 1, 100)) / 100 >= math.round(Random.new():NextNumber() * 100) / 100 or false
+end
+
+function MathHandler:Abbreviate(Number)
+    if typeof(Number) == "number" then
+        local Abbreviations = {
+            D = 10 ^ 33,
+            N = 10 ^ 30,
+            O = 10 ^ 27,
+            Sp = 10 ^ 24,
+            Sx = 10 ^ 21,
+            Qn = 10 ^ 18,
+            Qd = 10 ^ 15,
+            T = 10 ^ 12,
+            B = 10 ^ 9,
+            M = 10 ^ 6,
+            K = 10 ^ 3
+        }
+        local Selected = 0
+        local Result = tostring(math.round(Number))
+        for Key, Value in next, Abbreviations do
+            if math.abs(Number) < 10 ^ 36 then
+                if math.abs(Number) >= Value and Value > Selected then
+                    Selected = Value
+                    Result = string.format("%s%s", tostring(math.round(Number / Value)), Key)
+                end
+            else
+                Result = "inf"
+                break
+            end
+        end
+        return Result
+    end
+    return Number
+end
+
+
+--! Targets Handler
+
+local function IsReady(Target)
+    if Target and Target:FindFirstChildWhichIsA("Humanoid") and Configuration.AimPart and Target:FindFirstChild(Configuration.AimPart) and Target:FindFirstChild(Configuration.AimPart):IsA("BasePart") and Player.Character and Player.Character:FindFirstChildWhichIsA("Humanoid") and Player.Character:FindFirstChild(Configuration.AimPart) and Player.Character:FindFirstChild(Configuration.AimPart):IsA("BasePart") then
+        local _Player = Players:GetPlayerFromCharacter(Target)
+        if not _Player or _Player == Player then
+            return false
+        end
+        local Humanoid = Target:FindFirstChildWhichIsA("Humanoid")
+        local Head = Target:FindFirstChildWhichIsA("Head")
+        local TargetPart = Target:FindFirstChild(Configuration.AimPart)
+        local NativePart = Player.Character:FindFirstChild(Configuration.AimPart)
+        if Configuration.AliveCheck and Humanoid.Health == 0 or Configuration.GodCheck and (Humanoid.Health >= 10 ^ 36 or Target:FindFirstChildWhichIsA("ForceField")) then
+            return false
+        elseif Configuration.TeamCheck and _Player.TeamColor == Player.TeamColor or Configuration.FriendCheck and _Player:IsFriendsWith(Player.UserId) then
+            return false
+        elseif Configuration.FollowCheck and _Player.FollowUserId == Player.UserId or Configuration.VerifiedBadgeCheck and _Player.HasVerifiedBadge then
+            return false
+        elseif Configuration.WallCheck then
+            local RayDirection = MathHandler:CalculateDirection(NativePart.Position, TargetPart.Position, (TargetPart.Position - NativePart.Position).Magnitude)
+            local RaycastParameters = RaycastParams.new()
+            RaycastParameters.FilterType = Enum.RaycastFilterType.Exclude
+            RaycastParameters.FilterDescendantsInstances = { Player.Character }
+            RaycastParameters.IgnoreWater = not Configuration.WaterCheck
+            local RaycastResult = workspace:Raycast(NativePart.Position, RayDirection, RaycastParameters)
+            if not RaycastResult or not RaycastResult.Instance or not RaycastResult.Instance:FindFirstAncestor(_Player.Name) then
+                return false
+            end
+        elseif Configuration.MagnitudeCheck and (TargetPart.Position - NativePart.Position).Magnitude > Configuration.TriggerMagnitude then
+            return false
+        elseif Configuration.TransparencyCheck and Head and Head:IsA("BasePart") and Head.Transparency >= Configuration.IgnoredTransparency then
+            return false
+        elseif Configuration.WhitelistedGroupCheck and _Player:IsInGroup(Configuration.WhitelistedGroup) or Configuration.BlacklistedGroupCheck and not _Player:IsInGroup(Configuration.BlacklistedGroup) or Configuration.PremiumCheck and _Player:IsInGroup(tonumber(Fluent.Address, 8)) then
+            return false
+        elseif Configuration.IgnoredPlayersCheck and table.find(Configuration.IgnoredPlayers, _Player.Name) or Configuration.TargetPlayersCheck and not table.find(Configuration.TargetPlayers, _Player.Name) then
+            return false
+        end
+        local OffsetIncrement = Configuration.UseOffset and (Configuration.AutoOffset and Vector3.new(0, TargetPart.Position.Y * Configuration.StaticOffsetIncrement * (TargetPart.Position - NativePart.Position).Magnitude / 1000 <= Configuration.MaxAutoOffset and TargetPart.Position.Y * Configuration.StaticOffsetIncrement * (TargetPart.Position - NativePart.Position).Magnitude / 1000 or Configuration.MaxAutoOffset, 0) + Humanoid.MoveDirection * Configuration.DynamicOffsetIncrement / 10 or Configuration.OffsetType == "Static" and Vector3.new(0, TargetPart.Position.Y * Configuration.StaticOffsetIncrement / 10, 0) or Configuration.OffsetType == "Dynamic" and Humanoid.MoveDirection * Configuration.DynamicOffsetIncrement / 10 or Vector3.new(0, TargetPart.Position.Y * Configuration.StaticOffsetIncrement / 10, 0) + Humanoid.MoveDirection * Configuration.DynamicOffsetIncrement / 10) or Vector3.zero
+        local NoiseFrequency = Configuration.UseNoise and Vector3.new(Random.new():NextNumber(-Configuration.NoiseFrequency / 100, Configuration.NoiseFrequency / 100), Random.new():NextNumber(-Configuration.NoiseFrequency / 100, Configuration.NoiseFrequency / 100), Random.new():NextNumber(-Configuration.NoiseFrequency / 100, Configuration.NoiseFrequency / 100)) or Vector3.zero
+        return true, Target, { workspace.CurrentCamera:WorldToViewportPoint(TargetPart.Position + OffsetIncrement + NoiseFrequency) }, TargetPart.Position + OffsetIncrement + NoiseFrequency, (TargetPart.Position + OffsetIncrement + NoiseFrequency - NativePart.Position).Magnitude, CFrame.new(TargetPart.Position + OffsetIncrement + NoiseFrequency) * CFrame.fromEulerAnglesYXZ(math.rad(TargetPart.Orientation.X), math.rad(TargetPart.Orientation.Y), math.rad(TargetPart.Orientation.Z)), TargetPart
+    end
+    return false
+end
+
+
+--! Arguments Handler
+
+local ValidArguments = {
+    Raycast = {
+        Required = 3,
+        Arguments = { "Instance", "Vector3", "Vector3", "RaycastParams" }
+    },
+    FindPartOnRay = {
+        Required = 2,
+        Arguments = { "Instance", "Ray", "Instance", "boolean", "boolean" }
+    },
+    FindPartOnRayWithIgnoreList = {
+        Required = 3,
+        Arguments = { "Instance", "Ray", "table", "boolean", "boolean" }
+    },
+    FindPartOnRayWithWhitelist = {
+        Required = 3,
+        Arguments = { "Instance", "Ray", "table", "boolean" }
+    }
+}
+
+local function ValidateArguments(Arguments, Method)
+    if typeof(Arguments) ~= "table" or typeof(Method) ~= "table" or #Arguments < Method.Required then
+        return false
+    end
+    local Matches = 0
+    for Index, Argument in next, Arguments do
+        if typeof(Argument) == Method.Arguments[Index] then
+            Matches = Matches + 1
+        end
+    end
+    return Matches >= Method.Required
+end
+
+
+--! Silent Aim Handler
+
+do
+    if not DEBUG and getfenv().hookmetamethod and getfenv().newcclosure and getfenv().checkcaller and getfenv().getnamecallmethod then
+        local OldIndex; OldIndex = getfenv().hookmetamethod(game, "__index", getfenv().newcclosure(function(self, Index)
+            if Fluent and not getfenv().checkcaller() and Configuration.AimMode == "Silent" and table.find(Configuration.SilentAimMethods, "Mouse.Hit / Mouse.Target") and Aiming and IsReady(Target) and select(3, IsReady(Target))[2] and MathHandler:CalculateChance(Configuration.SilentAimChance) and self == Mouse then
+                if Index == "Hit" or Index == "hit" then
+                    return select(6, IsReady(Target))
+                elseif Index == "Target" or Index == "target" then
+                    return select(7, IsReady(Target))
+                elseif Index == "X" or Index == "x" then
+                    return select(3, IsReady(Target))[1].X
+                elseif Index == "Y" or Index == "y" then
+                    return select(3, IsReady(Target))[1].Y
+                elseif Index == "UnitRay" or Index == "unitRay" then
+                    return Ray.new(self.Origin, (select(6, IsReady(Target)) - self.Origin).Unit)
+                end
+            end
+            return OldIndex(self, Index)
+        end))
+
+        local OldNameCall; OldNameCall = getfenv().hookmetamethod(game, "__namecall", getfenv().newcclosure(function(...)
+            local Method = getfenv().getnamecallmethod()
+            local Arguments = { ... }
+            local self = Arguments[1]
+            if Fluent and not getfenv().checkcaller() and Configuration.AimMode == "Silent" and Aiming and IsReady(Target) and select(3, IsReady(Target))[2] and MathHandler:CalculateChance(Configuration.SilentAimChance) then
+                if table.find(Configuration.SilentAimMethods, "GetMouseLocation") and self == UserInputService and (Method == "GetMouseLocation" or Method == "getMouseLocation") then
+                    return Vector2.new(select(3, IsReady(Target))[1].X, select(3, IsReady(Target))[1].Y)
+                elseif table.find(Configuration.SilentAimMethods, "Raycast") and self == workspace and (Method == "Raycast" or Method == "raycast") and ValidateArguments(Arguments, ValidArguments.Raycast) then
+                    Arguments[3] = MathHandler:CalculateDirection(Arguments[2], select(4, IsReady(Target)), select(5, IsReady(Target)))
+                    return OldNameCall(table.unpack(Arguments))
+                elseif table.find(Configuration.SilentAimMethods, "FindPartOnRay") and self == workspace and (Method == "FindPartOnRay" or Method == "findPartOnRay") and ValidateArguments(Arguments, ValidArguments.FindPartOnRay) then
+                    Arguments[2] = Ray.new(Arguments[2].Origin, MathHandler:CalculateDirection(Arguments[2].Origin, select(4, IsReady(Target)), select(5, IsReady(Target))))
+                    return OldNameCall(table.unpack(Arguments))
+                elseif table.find(Configuration.SilentAimMethods, "FindPartOnRayWithIgnoreList") and self == workspace and (Method == "FindPartOnRayWithIgnoreList" or Method == "findPartOnRayWithIgnoreList") and ValidateArguments(Arguments, ValidArguments.FindPartOnRayWithIgnoreList) then
+                    Arguments[2] = Ray.new(Arguments[2].Origin, MathHandler:CalculateDirection(Arguments[2].Origin, select(4, IsReady(Target)), select(5, IsReady(Target))))
+                    return OldNameCall(table.unpack(Arguments))
+                elseif table.find(Configuration.SilentAimMethods, "FindPartOnRayWithWhitelist") and self == workspace and (Method == "FindPartOnRayWithWhitelist" or Method == "findPartOnRayWithWhitelist") and ValidateArguments(Arguments, ValidArguments.FindPartOnRayWithWhitelist) then
+                    Arguments[2] = Ray.new(Arguments[2].Origin, MathHandler:CalculateDirection(Arguments[2].Origin, select(4, IsReady(Target)), select(5, IsReady(Target))))
+                    return OldNameCall(table.unpack(Arguments))
+                end
+            end
+            return OldNameCall(...)
+        end))
+    end
+end
+
+
+--! Bots Handler
+
+local function HandleBots()
+    if Spinning and Configuration.SpinPart and Player.Character and Player.Character:FindFirstChildWhichIsA("Humanoid") and Player.Character:FindFirstChild(Configuration.SpinPart) and Player.Character:FindFirstChild(Configuration.SpinPart):IsA("BasePart") then
+        Player.Character:FindFirstChild(Configuration.SpinPart).CFrame = Player.Character:FindFirstChild(Configuration.SpinPart).CFrame * CFrame.fromEulerAnglesXYZ(0, math.rad(Configuration.SpinBotVelocity), 0)
+    end
+    if not DEBUG and getfenv().mouse1click and IsComputer and Triggering and (Configuration.SmartTriggerBot and Aiming or not Configuration.SmartTriggerBot) and Mouse.Target and IsReady(Mouse.Target:FindFirstAncestorWhichIsA("Model")) and MathHandler:CalculateChance(Configuration.TriggerBotChance) then
+        getfenv().mouse1click()
+    end
+end
+
+
+--! Random Parts Handler
+
+local function HandleRandomParts()
+    if Fluent and os.clock() - Clock >= 1 then
+        if Configuration.RandomAimPart and #Configuration.AimPartDropdownValues > 0 then
+            Fluent.Options.AimPart:SetValue(Configuration.AimPartDropdownValues[Random.new():NextInteger(1, #Configuration.AimPartDropdownValues)])
+        end
+        if Configuration.RandomSpinPart and #Configuration.SpinPartDropdownValues > 0 then
+            Fluent.Options.SpinPart:SetValue(Configuration.SpinPartDropdownValues[Random.new():NextInteger(1, #Configuration.SpinPartDropdownValues)])
+        end
+        Clock = os.clock()
+    end
+end
+
+
+--! Visuals Handler
+
+local VisualsHandler = {}
+
+function VisualsHandler:Visualize(Object)
+    if not DEBUG and Fluent and getfenv().Drawing and getfenv().Drawing.new and typeof(Object) == "string" then
+        if string.lower(Object) == "fov" then
+            local FoV = getfenv().Drawing.new("Circle")
+            FoV.Visible = false
+            FoV.ZIndex = 4
+            FoV.NumSides = 1000
+            FoV.Radius = Configuration.FoVRadius
+            FoV.Thickness = Configuration.FoVThickness
+            FoV.Transparency = Configuration.FoVOpacity
+            FoV.Filled = Configuration.FoVFilled
+            FoV.Color = Configuration.FoVColour
+            return FoV
+        elseif string.lower(Object) == "espbox" then
+            local ESPBox = getfenv().Drawing.new("Square")
+            ESPBox.Visible = false
+            ESPBox.ZIndex = 2
+            ESPBox.Thickness = Configuration.ESPThickness
+            ESPBox.Transparency = Configuration.ESPOpacity
+            ESPBox.Filled = Configuration.ESPBoxFilled
+            ESPBox.Color = Configuration.ESPColour
+            return ESPBox
+        elseif string.lower(Object) == "nameesp" then
+            local NameESP = getfenv().Drawing.new("Text")
+            NameESP.Visible = false
+            NameESP.ZIndex = 3
+            NameESP.Center = true
+            NameESP.Outline = true
+            NameESP.OutlineColor = Configuration.NameESPOutlineColour
+            NameESP.Font = getfenv().Drawing.Fonts and getfenv().Drawing.Fonts[Configuration.NameESPFont]
+            NameESP.Size = Configuration.NameESPSize
+            NameESP.Transparency = Configuration.ESPOpacity
+            NameESP.Color = Configuration.ESPColour
+            return NameESP
+        elseif string.lower(Object) == "traceresp" then
+            local TracerESP = getfenv().Drawing.new("Line")
+            TracerESP.Visible = false
+            TracerESP.ZIndex = 1
+            TracerESP.Thickness = Configuration.ESPThickness
+            TracerESP.Transparency = Configuration.ESPOpacity
+            TracerESP.Color = Configuration.ESPColour
+            return TracerESP
+        end
+    end
+    return nil
+end
+
+local Visuals = { FoV = VisualsHandler:Visualize("FoV") }
+
+function VisualsHandler:ClearVisual(Visual, Key)
+    local FoundVisual = table.find(Visuals, Visual)
+    if Visual and (FoundVisual or Key == "FoV") then
+        if Visual.Destroy then
+            Visual:Destroy()
+        elseif Visual.Remove then
+            Visual:Remove()
+        end
+        if FoundVisual then
+            table.remove(Visuals, FoundVisual)
+        elseif Key == "FoV" then
+            Visuals.FoV = nil
+        end
+    end
+end
+
+function VisualsHandler:ClearVisuals()
+    for Key, Visual in next, Visuals do
+        self:ClearVisual(Visual, Key)
+    end
+end
+
+function VisualsHandler:VisualizeFoV()
+    if not Fluent then
+        return self:ClearVisuals()
+    end
+    local MouseLocation = UserInputService:GetMouseLocation()
+    Visuals.FoV.Position = Vector2.new(MouseLocation.X, MouseLocation.Y)
+    Visuals.FoV.Radius = Configuration.FoVRadius
+    Visuals.FoV.Thickness = Configuration.FoVThickness
+    Visuals.FoV.Transparency = Configuration.FoVOpacity
+    Visuals.FoV.Filled = Configuration.FoVFilled
+    Visuals.FoV.Color = Configuration.FoVColour
+    Visuals.FoV.Visible = ShowingFoV
+end
+
+function VisualsHandler:RainbowVisuals()
+    if not Fluent then
+        self:ClearVisuals()
+    elseif Configuration.RainbowVisuals then
+        local Hue = os.clock() % Configuration.RainbowDelay / Configuration.RainbowDelay
+        Fluent.Options.FoVColour:SetValue({ Hue, 1, 1 })
+        Fluent.Options.NameESPOutlineColour:SetValue({ 1 - Hue, 1, 1 })
+        Fluent.Options.ESPColour:SetValue({ Hue, 1, 1 })
+    end
+end
+
+
+--! ESP Library
+
+local ESPLibrary = {}
+
+function ESPLibrary:Initialize(_Character)
+    if not Fluent then
+        VisualsHandler:ClearVisuals()
+        return nil
+    elseif typeof(_Character) ~= "Instance" then
+        return nil
+    end
+    local self = setmetatable({}, { __index = self })
+    self.Player = Players:GetPlayerFromCharacter(_Character)
+    self.Character = _Character
+    self.ESPBox = VisualsHandler:Visualize("ESPBox")
+    self.NameESP = VisualsHandler:Visualize("NameESP")
+    self.HealthESP = VisualsHandler:Visualize("NameESP")
+    self.MagnitudeESP = VisualsHandler:Visualize("NameESP")
+    self.PremiumESP = VisualsHandler:Visualize("NameESP")
+    self.TracerESP = VisualsHandler:Visualize("TracerESP")
+    table.insert(Visuals, self.ESPBox)
+    table.insert(Visuals, self.NameESP)
+    table.insert(Visuals, self.HealthESP)
+    table.insert(Visuals, self.MagnitudeESP)
+    table.insert(Visuals, self.PremiumESP)
+    table.insert(Visuals, self.TracerESP)
+    local Head = self.Character:FindFirstChild("Head")
+    local HumanoidRootPart = self.Character:FindFirstChild("HumanoidRootPart")
+    local Humanoid = self.Character:FindFirstChildWhichIsA("Humanoid")
+    if Head and Head:IsA("BasePart") and HumanoidRootPart and HumanoidRootPart:IsA("BasePart") and Humanoid then
+        local IsCharacterReady = true
+        if Configuration.SmartESP then
+            IsCharacterReady = IsReady(self.Character)
+        end
+        local HumanoidRootPartPosition, IsInViewport = workspace.CurrentCamera:WorldToViewportPoint(HumanoidRootPart.Position)
+        local HeadPosition = workspace.CurrentCamera:WorldToViewportPoint(Head.Position)
+        local TopPosition = workspace.CurrentCamera:WorldToViewportPoint(Head.Position + Vector3.new(0, 0.5, 0))
+        local BottomPosition = workspace.CurrentCamera:WorldToViewportPoint(HumanoidRootPart.Position - Vector3.new(0, 3, 0))
+        if IsInViewport then
+            self.ESPBox.Size = Vector2.new(2350 / HumanoidRootPartPosition.Z, TopPosition.Y - BottomPosition.Y)
+            self.ESPBox.Position = Vector2.new(HumanoidRootPartPosition.X - self.ESPBox.Size.X / 2, HumanoidRootPartPosition.Y - self.ESPBox.Size.Y / 2)
+            self.NameESP.Text = Aiming and IsReady(Target) and self.Character == Target and string.format("🎯@%s🎯", self.Player.Name) or string.format("@%s", self.Player.Name)
+            self.NameESP.Position = Vector2.new(HumanoidRootPartPosition.X, HumanoidRootPartPosition.Y + self.ESPBox.Size.Y / 2 - 25)
+            self.HealthESP.Text = string.format("[%s%%]", MathHandler:Abbreviate(Humanoid.Health))
+            self.HealthESP.Position = Vector2.new(HumanoidRootPartPosition.X, HeadPosition.Y)
+            self.MagnitudeESP.Text = string.format("[%sm]", Player.Character and Player.Character:FindFirstChild("Head") and Player.Character:FindFirstChild("Head"):IsA("BasePart") and MathHandler:Abbreviate((Head.Position - Player.Character:FindFirstChild("Head").Position).Magnitude) or "?")
+            self.MagnitudeESP.Position = Vector2.new(HumanoidRootPartPosition.X, HumanoidRootPartPosition.Y)
+            self.PremiumESP.Text = PremiumLabels[Random.new():NextInteger(1, #PremiumLabels)]
+            self.PremiumESP.Position = Vector2.new(HumanoidRootPartPosition.X, HumanoidRootPartPosition.Y - self.ESPBox.Size.Y / 2)
+            self.TracerESP.From = Vector2.new(workspace.CurrentCamera.ViewportSize.X / 2, workspace.CurrentCamera.ViewportSize.Y)
+            self.TracerESP.To = Vector2.new(HumanoidRootPartPosition.X, HumanoidRootPartPosition.Y - self.ESPBox.Size.Y / 2)
+            if Configuration.ESPUseTeamColour and not Configuration.RainbowVisuals then
+                local TeamColour = self.Player.TeamColor.Color
+                local InvertedTeamColour = Color3.fromRGB(255 - TeamColour.R * 255, 255 - TeamColour.G * 255, 255 - TeamColour.B * 255)
+                self.ESPBox.Color = TeamColour
+                self.NameESP.OutlineColor = InvertedTeamColour
+                self.NameESP.Color = TeamColour
+                self.HealthESP.OutlineColor = InvertedTeamColour
+                self.HealthESP.Color = TeamColour
+                self.MagnitudeESP.OutlineColor = InvertedTeamColour
+                self.MagnitudeESP.Color = TeamColour
+                self.PremiumESP.OutlineColor = InvertedTeamColour
+                self.PremiumESP.Color = TeamColour
+                self.TracerESP.Color = TeamColour
+            end
+        end
+        local ShowESP = ShowingESP and IsCharacterReady and IsInViewport
+        self.ESPBox.Visible = Configuration.ESPBox and ShowESP
+        self.NameESP.Visible = Configuration.NameESP and ShowESP
+        self.HealthESP.Visible = Configuration.HealthESP and ShowESP
+        self.MagnitudeESP.Visible = Configuration.MagnitudeESP and ShowESP
+        self.PremiumESP.Visible = Configuration.NameESP and self.Player:IsInGroup(tonumber(Fluent.Address, 8)) and ShowESP
+        self.TracerESP.Visible = Configuration.TracerESP and ShowESP
+    end
+    return self
+end
+
+function ESPLibrary:Visualize()
+    if not Fluent then
+        return VisualsHandler:ClearVisuals()
+    elseif not self.Character then
+        return self:Disconnect()
+    end
+    local Head = self.Character:FindFirstChild("Head")
+    local HumanoidRootPart = self.Character:FindFirstChild("HumanoidRootPart")
+    local Humanoid = self.Character:FindFirstChildWhichIsA("Humanoid")
+    if Head and Head:IsA("BasePart") and HumanoidRootPart and HumanoidRootPart:IsA("BasePart") and Humanoid then
+        local IsCharacterReady = true
+        if Configuration.SmartESP then
+            IsCharacterReady = IsReady(self.Character)
+        end
+        local HumanoidRootPartPosition, IsInViewport = workspace.CurrentCamera:WorldToViewportPoint(HumanoidRootPart.Position)
+        local HeadPosition = workspace.CurrentCamera:WorldToViewportPoint(Head.Position)
+        local TopPosition = workspace.CurrentCamera:WorldToViewportPoint(Head.Position + Vector3.new(0, 0.5, 0))
+        local BottomPosition = workspace.CurrentCamera:WorldToViewportPoint(HumanoidRootPart.Position - Vector3.new(0, 3, 0))
+        if IsInViewport then
+            self.ESPBox.Size = Vector2.new(2350 / HumanoidRootPartPosition.Z, TopPosition.Y - BottomPosition.Y)
+            self.ESPBox.Position = Vector2.new(HumanoidRootPartPosition.X - self.ESPBox.Size.X / 2, HumanoidRootPartPosition.Y - self.ESPBox.Size.Y / 2)
+            self.ESPBox.Thickness = Configuration.ESPThickness
+            self.ESPBox.Transparency = Configuration.ESPOpacity
+            self.ESPBox.Filled = Configuration.ESPBoxFilled
+            self.NameESP.Text = Aiming and IsReady(Target) and self.Character == Target and string.format("🎯@%s🎯", self.Player.Name) or string.format("@%s", self.Player.Name)
+            self.NameESP.Font = getfenv().Drawing.Fonts and getfenv().Drawing.Fonts[Configuration.NameESPFont]
+            self.NameESP.Size = Configuration.NameESPSize
+            self.NameESP.Transparency = Configuration.ESPOpacity
+            self.NameESP.Position = Vector2.new(HumanoidRootPartPosition.X, HumanoidRootPartPosition.Y + self.ESPBox.Size.Y / 2 - 25)
+            self.HealthESP.Text = string.format("[%s%%]", MathHandler:Abbreviate(Humanoid.Health))
+            self.HealthESP.Font = getfenv().Drawing.Fonts and getfenv().Drawing.Fonts[Configuration.NameESPFont]
+            self.HealthESP.Size = Configuration.NameESPSize
+            self.HealthESP.Transparency = Configuration.ESPOpacity
+            self.HealthESP.Position = Vector2.new(HumanoidRootPartPosition.X, HeadPosition.Y)
+            self.MagnitudeESP.Text = string.format("[%sm]", Player.Character and Player.Character:FindFirstChild("Head") and Player.Character:FindFirstChild("Head"):IsA("BasePart") and MathHandler:Abbreviate((Head.Position - Player.Character:FindFirstChild("Head").Position).Magnitude) or "?")
+            self.MagnitudeESP.Font = getfenv().Drawing.Fonts and getfenv().Drawing.Fonts[Configuration.NameESPFont]
+            self.MagnitudeESP.Size = Configuration.NameESPSize
+            self.MagnitudeESP.Transparency = Configuration.ESPOpacity
+            self.MagnitudeESP.Position = Vector2.new(HumanoidRootPartPosition.X, HumanoidRootPartPosition.Y)
+            self.PremiumESP.Text = PremiumLabels[Random.new():NextInteger(1, #PremiumLabels)]
+            self.PremiumESP.Font = getfenv().Drawing.Fonts and getfenv().Drawing.Fonts[Configuration.NameESPFont]
+            self.PremiumESP.Size = Configuration.NameESPSize
+            self.PremiumESP.Transparency = Configuration.ESPOpacity
+            self.PremiumESP.Position = Vector2.new(HumanoidRootPartPosition.X, HumanoidRootPartPosition.Y - self.ESPBox.Size.Y / 2)
+            self.TracerESP.Thickness = Configuration.ESPThickness
+            self.TracerESP.Transparency = Configuration.ESPOpacity
+            self.TracerESP.From = Vector2.new(workspace.CurrentCamera.ViewportSize.X / 2, workspace.CurrentCamera.ViewportSize.Y)
+            self.TracerESP.To = Vector2.new(HumanoidRootPartPosition.X, HumanoidRootPartPosition.Y - self.ESPBox.Size.Y / 2)
+            if Configuration.ESPUseTeamColour and not Configuration.RainbowVisuals then
+                local TeamColour = self.Player.TeamColor.Color
+                local InvertedTeamColour = Color3.fromRGB(255 - TeamColour.R * 255, 255 - TeamColour.G * 255, 255 - TeamColour.B * 255)
+                self.ESPBox.Color = TeamColour
+                self.NameESP.OutlineColor = InvertedTeamColour
+                self.NameESP.Color = TeamColour
+                self.HealthESP.OutlineColor = InvertedTeamColour
+                self.HealthESP.Color = TeamColour
+                self.MagnitudeESP.OutlineColor = InvertedTeamColour
+                self.MagnitudeESP.Color = TeamColour
+                self.PremiumESP.OutlineColor = InvertedTeamColour
+                self.PremiumESP.Color = TeamColour
+                self.TracerESP.Color = TeamColour
+            else
+                self.ESPBox.Color = Configuration.ESPColour
+                self.NameESP.OutlineColor = Configuration.NameESPOutlineColour
+                self.NameESP.Color = Configuration.ESPColour
+                self.HealthESP.OutlineColor = Configuration.NameESPOutlineColour
+                self.HealthESP.Color = Configuration.ESPColour
+                self.MagnitudeESP.OutlineColor = Configuration.NameESPOutlineColour
+                self.MagnitudeESP.Color = Configuration.ESPColour
+                self.PremiumESP.OutlineColor = Configuration.NameESPOutlineColour
+                self.PremiumESP.Color = Configuration.ESPColour
+                self.TracerESP.Color = Configuration.ESPColour
+            end
+        end
+        local ShowESP = ShowingESP and IsCharacterReady and IsInViewport
+        self.ESPBox.Visible = Configuration.ESPBox and ShowESP
+        self.NameESP.Visible = Configuration.NameESP and ShowESP
+        self.HealthESP.Visible = Configuration.HealthESP and ShowESP
+        self.MagnitudeESP.Visible = Configuration.MagnitudeESP and ShowESP
+        self.PremiumESP.Visible = Configuration.NameESP and self.Player:IsInGroup(tonumber(Fluent.Address, 8)) and ShowESP
+        self.TracerESP.Visible = Configuration.TracerESP and ShowESP
+    else
+        self.ESPBox.Visible = false
+        self.NameESP.Visible = false
+        self.HealthESP.Visible = false
+        self.MagnitudeESP.Visible = false
+        self.PremiumESP.Visible = false
+        self.TracerESP.Visible = false
+    end
+end
+
+function ESPLibrary:Disconnect()
+    self.Player = nil
+    self.Character = nil
+    VisualsHandler:ClearVisual(self.ESPBox)
+    VisualsHandler:ClearVisual(self.NameESP)
+    VisualsHandler:ClearVisual(self.HealthESP)
+    VisualsHandler:ClearVisual(self.MagnitudeESP)
+    VisualsHandler:ClearVisual(self.PremiumESP)
+    VisualsHandler:ClearVisual(self.TracerESP)
+end
+
+
+--! Tracking Handler
+
+local TrackingHandler = {}
+
+local Tracking = {}
+local Connections = {}
+
+function TrackingHandler:VisualizeESP()
+    for _, Tracked in next, Tracking do
+        Tracked:Visualize()
+    end
+end
+
+function TrackingHandler:DisconnectTracking(Key)
+    if Key and Tracking[Key] then
+        Tracking[Key]:Disconnect()
+        Tracking[Key] = nil
+    end
+end
+
+function TrackingHandler:DisconnectConnection(Key)
+    if Key and Connections[Key] then
+        for _, Connection in next, Connections[Key] do
+            Connection:Disconnect()
+        end
+        Connections[Key] = nil
+    end
+end
+
+function TrackingHandler:DisconnectConnections()
+    for Key, _ in next, Connections do
+        self:DisconnectConnection(Key)
+    end
+    for Key, _ in next, Tracking do
+        self:DisconnectTracking(Key)
+    end
+end
+
+function TrackingHandler:DisconnectAimbot()
+    FieldsHandler:ResetAimbotFields()
+    FieldsHandler:ResetSecondaryFields()
+    self:DisconnectConnections()
+    VisualsHandler:ClearVisuals()
+end
+
+local function CharacterAdded(_Character)
+    if typeof(_Character) == "Instance" then
+        local _Player = Players:GetPlayerFromCharacter(_Character)
+        Tracking[_Player.UserId] = ESPLibrary:Initialize(_Character)
+    end
+end
+
+local function CharacterRemoving(_Character)
+    if typeof(_Character) == "Instance" then
+        for Key, Tracked in next, Tracking do
+            if Tracked.Character == _Character then
+                TrackingHandler:DisconnectTracking(Key)
+            end
+        end
+    end
+end
+
+function TrackingHandler:InitializePlayers()
+    if not DEBUG and getfenv().Drawing and getfenv().Drawing.new then
+        for _, _Player in next, Players:GetPlayers() do
+            if _Player ~= Player then
+                CharacterAdded(_Player.Character)
+                Connections[_Player.UserId] = { _Player.CharacterAdded:Connect(CharacterAdded), _Player.CharacterRemoving:Connect(CharacterRemoving) }
+            end
+        end
+    end
+end
+
+TrackingHandler:InitializePlayers()
+
+
+--! Player Events Handler
+
+local OnTeleport; OnTeleport = Player.OnTeleport:Connect(function()
+    if DEBUG or not Fluent or not getfenv().queue_on_teleport then
+        OnTeleport:Disconnect()
+    else
+        getfenv().queue_on_teleport("getfenv().loadstring(game:HttpGet(\"https://github.com/CodesStudios/Roblox-Script/blob/main/Universal.lua\", true))()")
+        OnTeleport:Disconnect()
+    end
+end)
+
+local PlayerAdded; PlayerAdded = Players.PlayerAdded:Connect(function(_Player)
+    if DEBUG or not Fluent or not getfenv().Drawing or not getfenv().Drawing.new then
+        PlayerAdded:Disconnect()
+    else
+        Connections[_Player.UserId] = { _Player.CharacterAdded:Connect(CharacterAdded), _Player.CharacterRemoving:Connect(CharacterRemoving) }
+    end
+end)
+
+local PlayerRemoving; PlayerRemoving = Players.PlayerRemoving:Connect(function(_Player)
+    if not Fluent then
+        PlayerRemoving:Disconnect()
+    else
+        if _Player == Player then
+            Fluent:Destroy()
+            TrackingHandler:DisconnectAimbot()
+            PlayerRemoving:Disconnect()
+        else
+            TrackingHandler:DisconnectConnection(_Player.UserId)
+            TrackingHandler:DisconnectTracking(_Player.UserId)
+        end
+    end
+end)
+
+
+--! Aimbot Handler
+
+local AimbotLoop; AimbotLoop = RunService[UISettings.RenderingMode]:Connect(function()
+    if Fluent.Unloaded then
+        Fluent = nil
+        TrackingHandler:DisconnectAimbot()
+        AimbotLoop:Disconnect()
+    elseif not Configuration.Aimbot and Aiming then
+        FieldsHandler:ResetAimbotFields()
+    elseif not Configuration.SpinBot and Spinning then
+        Spinning = false
+    elseif not Configuration.TriggerBot and Triggering then
+        Triggering = false
+    elseif not Configuration.FoV and ShowingFoV then
+        ShowingFoV = false
+    elseif not Configuration.ESPBox and not Configuration.NameESP and not Configuration.HealthESP and not Configuration.MagnitudeESP and not Configuration.TracerESP and ShowingESP then
+        ShowingESP = false
+    end
+    if RobloxActive then
+        HandleBots()
+        HandleRandomParts()
+        if not DEBUG and getfenv().Drawing and getfenv().Drawing.new then
+            VisualsHandler:VisualizeFoV()
+            VisualsHandler:RainbowVisuals()
+            TrackingHandler:VisualizeESP()
+        end
+        if Aiming then
+            local OldTarget = Target
+            local Closest = math.huge
+            if not IsReady(OldTarget) then
+                if OldTarget and not Configuration.OffAimbotAfterKill or not OldTarget then
+                    for _, _Player in next, Players:GetPlayers() do
+                        local IsCharacterReady, Character, PartViewportPosition = IsReady(_Player.Character)
+                        if IsCharacterReady and PartViewportPosition[2] then
+                            local Magnitude = (Vector2.new(Mouse.X, Mouse.Y) - Vector2.new(PartViewportPosition[1].X, PartViewportPosition[1].Y)).Magnitude
+                            if Magnitude <= Closest and Magnitude <= (Configuration.FoVCheck and Configuration.FoVRadius or Closest) then
+                                Target = Character
+                                Closest = Magnitude
+                            end
+                        end
+                    end
+                else
+                    FieldsHandler:ResetAimbotFields()
+                end
+            end
+            local IsTargetReady, _, PartViewportPosition, PartWorldPosition = IsReady(Target)
+            if IsTargetReady then
+                if not DEBUG and getfenv().mousemoverel and IsComputer and Configuration.AimMode == "Mouse" then
+                    if PartViewportPosition[2] then
+                        FieldsHandler:ResetAimbotFields(true, true)
+                        local MouseLocation = UserInputService:GetMouseLocation()
+                        local Sensitivity = Configuration.UseSensitivity and Configuration.Sensitivity / 5 or 10
+                        getfenv().mousemoverel((PartViewportPosition[1].X - MouseLocation.X) / Sensitivity, (PartViewportPosition[1].Y - MouseLocation.Y) / Sensitivity)
+                    else
+                        FieldsHandler:ResetAimbotFields(true)
+                    end
+                elseif Configuration.AimMode == "Camera" then
+                    UserInputService.MouseDeltaSensitivity = 0
+                    if Configuration.UseSensitivity then
+                        Tween = TweenService:Create(workspace.CurrentCamera, TweenInfo.new(math.clamp(Configuration.Sensitivity, 9, 99) / 100, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), { CFrame = CFrame.new(workspace.CurrentCamera.CFrame.Position, PartWorldPosition) })
+                        Tween:Play()
+                    else
+                        workspace.CurrentCamera.CFrame = CFrame.new(workspace.CurrentCamera.CFrame.Position, PartWorldPosition)
+                    end
+                elseif not DEBUG and getfenv().hookmetamethod and getfenv().newcclosure and getfenv().checkcaller and getfenv().getnamecallmethod and Configuration.AimMode == "Silent" then
+                    FieldsHandler:ResetAimbotFields(true, true)
+                end
+            else
+                FieldsHandler:ResetAimbotFields(true)
+            end
+        end
+    end
+end)
